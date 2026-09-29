@@ -1,7 +1,7 @@
 {
-  "name": "video-engine-scaffold",
+  "name": "personal-video-engine",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "A local, agent-friendly Remotion video production workspace",
   "repository": {},
   "license": "UNLICENSED",
   "private": true,
@@ -24,6 +24,12 @@
   "scripts": {
     "dev": "remotion studio",
     "build": "remotion bundle",
+    "validate": "eslint src && tsc",
+    "render:smeds": "remotion render SmedsOmega3Explainer out/smeds-omega3-explainer.mp4",
+    "still:smeds": "remotion still SmedsOmega3Explainer out/smeds-omega3-still.png --frame=290",
+    "render:smeds:vertical": "remotion render SmedsOmega3Vertical out/smeds-omega3-vertical.mp4",
+    "render:demo": "remotion render VideoEngineDemo out/video-engine-demo.mp4",
+    "still:demo": "remotion still VideoEngineDemo out/video-engine-demo.png --frame=270",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc"
   },

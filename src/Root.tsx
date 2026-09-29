@@ -1,10 +1,4 @@
 import "./index.css";
-import { MyComposition } from "./Composition";
+import {VideoEngineComposition} from "./Composition";
 
-export const RemotionRoot: React.FC = () => {
-  return (
-    <>
-      <MyComposition />
-    </>
-  );
-};
+export const RemotionRoot: React.FC = () => <VideoEngineComposition />;

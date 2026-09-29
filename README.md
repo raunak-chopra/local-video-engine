@@ -1,54 +1,35 @@
-# Remotion video
+# Personal Video Engine
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+A local Remotion workspace for producing code-driven videos with Antigravity,
+Codex, and Claude Code. It is intentionally a creator tool, not a SaaS.
 
-Welcome to your Remotion project!
+## Start
 
-## Commands
-
-**Install Dependencies**
-
-```console
-npm i
-```
-
-**Start Preview**
-
-```console
+```powershell
+npm install
 npm run dev
 ```
 
-**Render video**
+Remotion Studio will show the `VideoEngineDemo` composition.
 
-```console
-npx remotion render
+## Verify and render
+
+```powershell
+npm run validate
+npm run still:demo
+npm run render:demo
 ```
 
-**Upgrade Remotion**
+Rendered files are written to `out/` and ignored by Git.
 
-```console
-npx remotion upgrade
-```
+## Working with agents
 
-## Docs
+- `AGENTS.md` is the shared project contract for Codex and Antigravity.
+- `CLAUDE.md` imports that same contract for Claude Code.
+- `docs/CURRENT-TASK.md` records the active objective and handoff state.
+- Change the typed video input in `src/video/project.ts`.
+- Add reusable visuals under `src/components/` and compositions under `src/`.
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Before switching agents, run `npm run validate` and record unfinished work in
+`docs/CURRENT-TASK.md`. Use separate Git worktrees if two agents must edit at
+the same time.
