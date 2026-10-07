@@ -1,0 +1,10 @@
+node_modules/
+.npm-cache/
+out/
+.remotion/
+*.log
+
+# Local credentials and configuration
+.env
+.env.*
+!.env.example

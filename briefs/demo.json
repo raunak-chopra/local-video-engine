@@ -1,0 +1,22 @@
+{
+  "format": "portrait",
+  "fps": 30,
+  "brand": {
+    "name": "YOUR BRAND",
+    "background": "#0B1020",
+    "foreground": "#F6F8FF",
+    "accent": "#65E0CD",
+    "secondary": "#7C8CFF",
+    "font": "Inter",
+    "motion": "calm"
+  },
+  "scenes": [
+    {"kind": "title", "headline": "A sharper way to tell your story", "detail": "Code rendered motion, tailored to your brand.", "duration": 3.5, "transition": "slide"},
+    {"kind": "list", "headline": "Every frame is code", "items": ["Brand fonts and colors", "Frame-perfect timing", "Rendered locally"], "duration": 4, "transition": "wipe"},
+    {"kind": "stat", "value": "1,250+", "headline": "Example metric", "detail": "Replace with a verified number. The value counts up.", "duration": 3.5},
+    {"kind": "compare", "headline": "Before and after", "left": {"label": "Before", "text": "Hand-edited timelines, one video at a time"}, "right": {"label": "After", "text": "One brief, rendered in minutes"}, "duration": 4.5, "transition": "slide"},
+    {"kind": "chart", "headline": "Example chart", "unit": "%", "bars": [{"label": "Option A", "value": 38}, {"label": "Option B", "value": 64}, {"label": "Option C", "value": 91}], "detail": "Placeholder data. Use your own sources.", "duration": 4.5},
+    {"kind": "quote", "headline": "Placeholder quote from a real, approved customer goes here.", "detail": "Name, Role", "duration": 4, "transition": "wipe"},
+    {"kind": "outro", "headline": "Your next story starts here", "detail": "Add your call to action", "duration": 3.5}
+  ]
+}
