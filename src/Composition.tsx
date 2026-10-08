@@ -8,9 +8,23 @@ import {Omega3SmedsVideo} from "./omega3-smeds/Omega3SmedsComposition";
 import {smedsProject} from "./omega3-smeds/project";
 import {ScienceExplainerComposition} from "./science-explainer/ScienceExplainerComposition";
 import {scienceProject} from "./science-explainer/cues";
+import {ProjectComposition, calculateProjectMetadata} from "./engine/ProjectComposition";
+import demoAdProject from "../projects/demo-ad/project.json";
 
 export const VideoEngineComposition: React.FC = () => (
   <>
+    {/* Generic JSON-driven composition. Size, fps and duration come from the project. */}
+    <Composition
+      id="ProjectAd"
+      component={ProjectComposition}
+      durationInFrames={1}
+      fps={30}
+      width={1080}
+      height={1920}
+      defaultProps={{project: demoAdProject as unknown}}
+      calculateMetadata={calculateProjectMetadata}
+    />
+
     {/* 8th-Grade Educational Science Explainer (Option A - 20s / 600 frames) */}
     <Composition
       id="ScienceExplainer"
