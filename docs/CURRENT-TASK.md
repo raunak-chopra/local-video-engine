@@ -1,71 +1,90 @@
-# Current task: Stage 0 repairs and reel readiness
+# Current task: Stage 1 reel engine (slices 1-2 done)
 
 
 ## Active work (2026-10-13)
 
-Stage 0 is committed and pushed (`ae526a2`, branch `engine/phase-0-1-contract`).
-Stage 1 slice 1 (media contract and preparation) is implemented and verified,
-but not yet committed. Governing plan: `docs/REELS-FINAL-UPDATE-PLAN.md`;
-Stage 0 evidence: `docs/STAGE-0-COMPLETION.md`.
+Branch `engine/phase-0-1-contract`. Stage 0 pushed (`ae526a2`); slice 1 pushed
+(`a132929`). Slice 1 gap fixes and slice 2 (footage clips) are implemented and
+verified locally; commit status is in Git. Governing plan:
+`docs/REELS-FINAL-UPDATE-PLAN.md`; Stage 0 evidence: `docs/STAGE-0-COMPLETION.md`.
 Do not read the previous explainer's status as the current reel milestone.
 
-Owner decisions this session: commit and push Stage 0; use free OFL fonts now
-(Noto Sans Devanagari + Inter; Envato fonts plug in later); build on synthetic
-fixtures until real footage is supplied; stop after fixes + slice 1 for review.
+Owner decisions: free OFL fonts now (Noto Sans Devanagari + Inter; Envato fonts
+later); synthetic fixtures until real footage arrives; **owner shoots on an
+Android phone** (portrait = rotated landscape frames, VFR in low light, optional
+HDR10+/HLG).
 
-### Implemented (slice 1 + post-audit fixes)
+### Slice 1: media contract and prepare (done)
 
-- F2: bundled Noto Sans Devanagari Variable 5.3.0 (OFL) as per-glyph fallback
-  behind Inter; render waits for its Devanagari subset. Hindi no longer uses the
-  Windows system font (machine-dependent).
-- F5: resolver reports every caption overlapping a long cue; scene errors use
-  `scenes[i] (id)` paths.
-- v2 project contract (`version: 2`, strict) with `assets[]`: id, kind, path
-  inside `assets/`, optional rights. v1 unchanged; version picks the schema.
-  Deferred formats (GIF, WebM/alpha, LUT, NLE files) fail with a reason.
+- v2 project (`version: 2`, strict) with `assets[]` (id, kind, path inside
+  `assets/`, optional rights). v1 unchanged. Deferred formats fail with a reason.
 - `video prepare <project.json> [--check] [--accept-changes]`: SHA-256, bundled
-  ffprobe, classify (copy / convert / reject), prepared copy under
-  `public/generated-media/<hash>/`, tracked `media.lock.json` next to the project.
-  Converts VFR -> CFR at project fps, non-H.264 -> H.264, odd pixel formats,
-  non-AAC/MP3 audio. Rotated clips are copied with a note; rotated clips that
-  also need re-encoding are rejected (bundled ffmpeg has no transpose filter).
-- still/render of v2 projects pass a prepared-media map in props; the
-  composition refuses missing media. Render refuses missing lock, wrong project,
-  unprepared assets and missing/altered prepared copies.
-- `npm run fixtures`: Remotion-rendered counter clips (frame number + timestamp
-  + top-left marker) and ffmpeg-derived variants in ignored `assets/_fixtures/`;
-  fixture project `projects/_fixtures/media-smoke` (its lock is git-ignored).
+  ffprobe, classify copy/convert/reject, prepared file under
+  `public/generated-media/<hash>/` (hard link when possible), tracked
+  `media.lock.json` (format 2). Changed sources refused unless accepted;
+  `--check` is read-only verification for a restored laptop.
+- Noto Sans Devanagari bundled as per-glyph fallback behind Inter.
 
-### Verified
+### Slice 1 gap check (Android focus) and fixes
 
-- `npm run validate`: lint, tsc, 3 projects, 12/12 tests (6 new media tests,
-  including a real-media prepare test on the fixtures).
-- Fixture prepare: 9 assets, VFR (avg 22.6 fps) converted to CFR 30; rotated
-  clip recorded 90 degrees with display size 540x960; idempotent re-run left
-  the lock byte-identical; `--check` verified; one-byte source change refused by
-  both modes; deleted prepared copy blocked render then was rebuilt.
-- v2 MP4 render: complete, 1080x1920 yuv420p 30 fps 2.0 s (53 s elapsed).
-- Visual: v2 still with mixed English/Devanagari line renders in Noto; v1 demo
-  frame 60 unchanged.
+- G1 fixed: rotated clips that also need conversion were wrongly rejected. The
+  bundled ffmpeg's default autorotate does rotate frames (verified visually), so
+  they now convert to upright clips. Rotated-only clips keep the rotation flag;
+  the renderer honours it (verified).
+- G2 fixed: HDR (PQ/HLG) is tone-mapped to SDR BT.709 (zscale+tonemap).
+- G3 fixed: prepared copies are hard links on the same drive (no 4K duplication).
+- G4 fixed in slice 2: `video studio <project.json> [--port=N] [--no-open]`.
+- Found and recorded: video often starts a few ms after the file start
+  (`videoStartSec` in lock and media props).
+- Open: VFR detection compares avg vs base rate (mildly variable clips <1% are
+  copied; playback seeks by timestamp); 4K decode speed unmeasured; JPEG EXIF
+  orientation dims; per-asset accept-changes; stale prepared-file cleanup;
+  rights not cross-checked with LICENSES.md.
+
+### Slice 2: footage clip scene (done)
+
+- `clip` scene (v2 only): asset, inSec, outSec, fit cover|contain,
+  focus {x,y}, sourceAudio {mute, gainDb}, optional transitionIn fade. No
+  durationSec; length = round(outSec*fps) - round(inSec*fps). Asset must be a
+  video. Trims checked against the prepared duration (half-frame tolerance).
+- Rendered with `@remotion/media@4.0.529` `<Video>`; crop/focus via a box sized
+  to the display aspect (no reliance on object-position). Hard cuts by default.
+- Time convention (verified): trims use the file's own timeline (what a video
+  player shows), not time since the first video frame.
+- Render check now also requires an AAC track when any clip has audible sound.
+
+### Verified (slice 2)
+
+- `npm run validate`: lint, tsc, 4 projects, 17/17 tests.
+- `projects/_fixtures/clip-smoke` (7 scenes, 210 frames): MP4 passed export
+  checks (1080x1920, 30 fps, 7.0 s, AAC). Boundary frames: trim 1.0 s shows
+  source frame 30; rotated clip from 0.5 s shows 15 and is displayed per its
+  rotation; Android rotated+VFR clip upright after conversion; 0.1 s offset clip
+  shows frame 27 at 1.0 s (file timeline); contain letterboxes; focus x=0 keeps
+  the left edge; fade starts transparent.
+- Audio per segment: each clip's own tone (440/550 Hz, peak 0.13), muted and
+  silent clips and the end card are true silence.
+- Studio preview of the v2 project loads prepared media (frame 0 = source 30).
 
 ### Not yet verified / open
 
-- No scene plays media yet, so decoded orientation of rotated clips, VFR
-  playback and trims are untested in the renderer (slice 2).
-- `prepare` probes via the Remotion CLI (~3 s per file); fine for a reel, slow
-  for large batches.
-- HEVC sources: conversion path exists but untested (bundled ffmpeg cannot
-  encode a HEVC fixture). Test with a real iPhone clip.
+- No real Android footage yet: confirm rotation, VFR, HDR and audio on a real
+  clip (and HEVC: the bundled ffmpeg cannot make an HEVC fixture).
+- Graphic scenes still fade from the background (reel opening on a graphic
+  card starts empty). Decide cut/fade option with the text-overlay slice.
+- Full-speed playback review and phone-app preview not done.
+- One `npm run fixtures` run failed in a Remotion render and passed on rerun;
+  cause not captured.
 - Second-laptop restore check pending.
 
-### Next: Stage 1 slice 2 (footage scene)
+### Next: Stage 1 slice 3 (fonts and on-screen text)
 
-`clip` scene `{asset, inSec, outSec, fit, focus, sourceAudio}` via
-`@remotion/media@4.0.529` `<Video>`; duration derived from trims (reject
-`durationSec`); trims validated against lock duration; hard cuts by default,
-fade only when requested (fixes frame-0-empty for reels). Exit: frames
-before/at/after cuts match ffmpeg-extracted source frames; rotated and VFR
-fixtures display correctly; MP4 with AAC passes export checks.
+Font registry (bundled packages or supplied files via `@remotion/fonts`, render
+fails if any font does not load), mixed-script text runs, configurable safe
+insets (192/160/420/64 at 1080x1920), text overlays in output time with lanes
+(hook, step badge, ingredient card, tension, send line). Exit: mixed Hindi and
+English line with conjuncts correct, longest ingredient line wraps inside the
+safe rect, muted comprehension check.
 
 ## Historical explainer status
 

@@ -9,6 +9,7 @@
     "@fontsource-variable/inter": "5.3.0",
     "@fontsource-variable/noto-sans-devanagari": "5.3.0",
     "@remotion/cli": "4.0.529",
+    "@remotion/media": "4.0.529",
     "@remotion/tailwind-v4": "4.0.529",
     "react": "19.2.3",
     "react-dom": "19.2.3",
@@ -39,7 +40,7 @@
     "lint": "eslint src && tsc",
     "video": "tsx tools/video.ts",
     "validate:projects": "tsx tools/validate-projects.ts",
-    "test": "tsx --test tests/stage0.test.ts tests/media.test.ts",
+    "test": "tsx --test tests/stage0.test.ts tests/media.test.ts tests/clip.test.ts",
     "fixtures": "tsx tools/make-fixtures.ts"
   },
   "sideEffects": [

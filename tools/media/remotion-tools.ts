@@ -1,7 +1,8 @@
 /**
  * Runs Remotion's CLI and its bundled ffmpeg/ffprobe (n7.1). No system PATH
- * install is needed. The bundled build is minimal: it has libx264, AAC, MP3,
- * PNG and the scale filter, but no transpose/rotate or fps filters.
+ * install is needed. The bundled build is minimal: libx264, AAC, MP3, PNG,
+ * scale/zscale/tonemap filters and default autorotate on re-encode (verified
+ * to rotate frames upright), but no drawing, test-pattern or fps filters.
  */
 import {spawnSync} from "node:child_process";
 import {createRequire} from "node:module";
@@ -34,6 +35,7 @@ export type FfprobeStream = {
   r_frame_rate?: string;
   avg_frame_rate?: string;
   duration?: string;
+  start_time?: string;
   color_transfer?: string;
   side_data_list?: {side_data_type?: string; rotation?: number}[];
   tags?: Record<string, string>;

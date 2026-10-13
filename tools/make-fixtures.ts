@@ -41,6 +41,22 @@ ffmpeg(["-ss", "2", "-i", portrait, ...x264, "-r", "15", "-an", segB]);
 const list = path.join(work, "concat.txt");
 writeFileSync(list, `file '${segA.replace(/\\/g, "/")}'\nfile '${segB.replace(/\\/g, "/")}'\n`);
 ffmpeg(["-f", "concat", "-safe", "0", "-i", list, "-c", "copy", target("counter-vfr.mp4")]);
+// Android low-light portrait: landscape-coded frames, -90 display rotation
+// (as Android writes it) and a variable frame rate, with AAC audio.
+const landA = path.join(work, "land-a.mp4");
+const landB = path.join(work, "land-b.mp4");
+ffmpeg(["-i", landscape, ...sine(440, 2), "-map", "0:v", "-map", "1:a", "-t", "2", ...x264, "-r", "30", "-c:a", "aac", landA]);
+ffmpeg(["-ss", "2", "-i", landscape, ...sine(440, 2), "-map", "0:v", "-map", "1:a", ...x264, "-r", "15", "-c:a", "aac", "-shortest", landB]);
+const landList = path.join(work, "concat-land.txt");
+writeFileSync(landList, `file '${landA.replace(/\\/g, "/")}'\nfile '${landB.replace(/\\/g, "/")}'\n`);
+const landVfr = path.join(work, "land-vfr.mp4");
+ffmpeg(["-f", "concat", "-safe", "0", "-i", landList, "-c", "copy", landVfr]);
+ffmpeg(["-display_rotation", "-90", "-i", landVfr, "-c", "copy", target("android-portrait-vfr.mp4")]);
+// 10-bit HDR (PQ) tagged clip, as Samsung HDR10+ video arrives.
+ffmpeg(["-i", portrait, "-c:v", "libx264", "-pix_fmt", "yuv420p10le", "-x264-params", "colorprim=bt2020:transfer=smpte2084:colormatrix=bt2020nc", "-an", target("hdr-pq-10bit.mp4")]);
+// Video track starting 0.1 s after the file start (phones often start a few ms
+// late): shows whether the renderer counts source time from the file or the first frame.
+ffmpeg(["-itsoffset", "0.1", "-i", portrait, ...sine(440, 4.1), "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", target("counter-offset-start.mp4")]);
 // 60 fps constant-rate source with audio.
 ffmpeg(["-i", landscape, ...sine(550, 4), "-map", "0:v", "-map", "1:a", ...x264, "-r", "60", "-c:a", "aac", "-shortest", target("counter-60fps.mp4")]);
 // Still image, music-like bed and a short sting.

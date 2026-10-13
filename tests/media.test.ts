@@ -5,7 +5,7 @@ import path from "node:path";
 import {test} from "node:test";
 import {parseProject, type ProjectV2} from "../src/engine/project-schema";
 import {parseOptions} from "../tools/cli-options";
-import {classify} from "../tools/media/classify";
+import {classify, conversionArgs} from "../tools/media/classify";
 import {mediaMapFromLock, type MediaLock} from "../tools/media/lock";
 import {prepareProject, type MediaTools} from "../tools/media/prepare";
 import {ffmpeg, ffprobe, root, type FfprobeResult} from "../tools/media/remotion-tools";
@@ -55,9 +55,17 @@ test("classification copies ready media and converts or rejects the rest", () =>
   assert.ok(rotated.action === "copy");
   assert.deepEqual([rotated.summary.rotation, rotated.summary.width, rotated.summary.height], [270, 1080, 1920]);
 
-  // Rotated and needing re-encode: the bundled ffmpeg cannot rotate, so say so.
-  const rotatedHevc = classify("video", videoProbe({codec_name: "hevc", side_data_list: [{rotation: 90}]}), 30);
-  assert.ok(rotatedHevc.action === "reject" && rotatedHevc.reasons.some((r) => r.includes("upright")));
+  // Rotated and needing re-encode (typical low-light Android clip): ffmpeg's
+  // autorotate makes the converted clip upright.
+  const rotatedVfr = classify("video", videoProbe({avg_frame_rate: "24/1", side_data_list: [{rotation: -90}]}, "aac"), 30);
+  assert.ok(rotatedVfr.action === "convert" && rotatedVfr.notes.some((n) => n.includes("upright")));
+
+  // HDR (Samsung HDR10+ / Pixel HLG) is tone-mapped, not passed through washed out.
+  for (const transfer of ["smpte2084", "arib-std-b67"]) {
+    const hdr = classify("video", videoProbe({codec_name: "hevc", pix_fmt: "yuv420p10le", color_transfer: transfer}), 30);
+    assert.ok(hdr.action === "convert" && hdr.toneMap, transfer);
+    assert.ok(conversionArgs(hdr).join(" ").includes("tonemap"));
+  }
 
   assert.equal(classify("video", {format: {duration: "1"}, streams: [{codec_type: "audio", codec_name: "aac"}]}, 30).action, "reject");
   assert.equal(classify("audio", {format: {duration: "1"}, streams: [{codec_type: "audio", codec_name: "opus"}]}, 30).action, "reject");
@@ -70,7 +78,7 @@ test("rendering refuses unprepared, foreign or altered media", () => {
   const publicDir = mkdtempSync(path.join(tmpdir(), "media-map-"));
   try {
     assert.throws(() => mediaMapFromLock(project, null, publicDir), /no media.lock.json/);
-    const lock: MediaLock = {version: 1, projectId: "other", tools: {remotion: "x", ffmpeg: "y"}, assets: {}};
+    const lock: MediaLock = {version: 2, projectId: "other", tools: {remotion: "x", ffmpeg: "y"}, assets: {}};
     assert.throws(() => mediaMapFromLock(project, lock, publicDir), /belongs to "other"/);
     assert.throws(() => mediaMapFromLock(project, {...lock, projectId: "media-test"}, publicDir), /not prepared/);
   } finally {

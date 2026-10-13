@@ -17,6 +17,9 @@ importers:
       '@remotion/cli':
         specifier: 4.0.529
         version: 4.0.529(lightningcss@1.31.1)(postcss@8.5.28)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(supports-color@8.1.1)(typescript@5.9.3)
+      '@remotion/media':
+        specifier: 4.0.529
+        version: 4.0.529(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@remotion/tailwind-v4':
         specifier: 4.0.529
         version: 4.0.529(@remotion/bundler@4.0.529(lightningcss@1.31.1)(postcss@8.5.28)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@rspack/core@1.7.11)(webpack@5.105.0(esbuild@0.28.1)(lightningcss@1.31.1)(postcss@8.5.28))

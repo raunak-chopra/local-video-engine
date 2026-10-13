@@ -1,6 +1,8 @@
 /**
  * Decides, from ffprobe output alone, whether a media file can be served to
  * the renderer as-is, needs a one-time conversion, or must be rejected.
+ * Tuned for phone footage: Android portrait clips are usually stored as
+ * rotated landscape frames, often with a variable frame rate in low light.
  * Pure: no file access, so every rule is unit-testable with canned probes.
  */
 import type {AssetKind} from "../../src/engine/assets";
@@ -8,6 +10,8 @@ import type {FfprobeResult, FfprobeStream} from "./remotion-tools";
 
 export type ProbeSummary = {
   durationSec: number | null;
+  /** Presentation time of the first video frame; phones often start a few ms late. */
+  videoStartSec: number;
   /** Display size: already swapped for 90/270 degree rotation metadata. */
   width: number | null;
   height: number | null;
@@ -21,7 +25,7 @@ export type ProbeSummary = {
 
 export type Classification =
   | {action: "copy"; summary: ProbeSummary; notes: string[]}
-  | {action: "convert"; summary: ProbeSummary; notes: string[]; reasons: string[]; targetFps: number | null}
+  | {action: "convert"; summary: ProbeSummary; notes: string[]; reasons: string[]; targetFps: number | null; toneMap: boolean}
   | {action: "reject"; summary: ProbeSummary | null; reasons: string[]};
 
 /** Codecs Chromium decodes reliably in an MP4/MOV on every platform. */
@@ -60,6 +64,7 @@ export const summarize = (probe: FfprobeResult): ProbeSummary => {
   const real = rate(video?.r_frame_rate);
   return {
     durationSec: number(probe.format?.duration) ?? number(video?.duration) ?? number(audio?.duration),
+    videoStartSec: Number(video?.start_time ?? 0) || 0,
     width: (sideways ? video?.height : video?.width) ?? null,
     height: (sideways ? video?.width : video?.height) ?? null,
     rotation,
@@ -104,22 +109,27 @@ export const classify = (kind: AssetKind, probe: FfprobeResult | null, projectFp
   if (!READY_PIXEL_FORMATS.includes(video.pix_fmt ?? "")) reasons.push(`pixel format ${video.pix_fmt} is converted to yuv420p`);
   if (summary.variableFrameRate) reasons.push(`variable frame rate (avg ${summary.fps?.toFixed(3)} fps) is converted to constant ${projectFps} fps`);
   if (summary.audioCodec && !READY_AUDIO_IN_VIDEO.includes(summary.audioCodec)) reasons.push(`audio codec ${summary.audioCodec} is converted to AAC`);
-  if (HDR_TRANSFERS.includes(video.color_transfer ?? "")) notes.push(`HDR transfer ${video.color_transfer}: converted without tone mapping; check colours`);
+  const toneMap = HDR_TRANSFERS.includes(video.color_transfer ?? "");
+  if (toneMap) reasons.push(`HDR transfer ${video.color_transfer} is tone-mapped to SDR BT.709`);
   if (summary.rotation !== 0) {
-    notes.push(`display rotation ${summary.rotation} degrees; confirm orientation against decoded frames`);
-    if (reasons.length > 0) {
-      // Re-encoding a rotated clip needs the transpose filter, which the bundled ffmpeg lacks.
-      return {action: "reject", summary, reasons: [...reasons, `clip is rotated ${summary.rotation} degrees and needs re-encoding, which the bundled ffmpeg cannot rotate; export it upright from the phone or editor`]};
-    }
+    // ffmpeg's default autorotate physically rotates frames while re-encoding,
+    // so a converted clip comes out upright with no rotation metadata.
+    notes.push(reasons.length > 0
+      ? `display rotation ${summary.rotation} degrees applied during conversion; prepared clip is upright`
+      : `display rotation ${summary.rotation} degrees kept as metadata; confirm orientation against decoded frames`);
   }
   if (!summary.hasAudio) notes.push("no audio stream");
   if (reasons.length === 0) return {action: "copy", summary, notes};
-  return {action: "convert", summary, notes, reasons, targetFps: summary.variableFrameRate ? projectFps : null};
+  return {action: "convert", summary, notes, reasons, targetFps: summary.variableFrameRate ? projectFps : null, toneMap};
 };
+
+/** Linearize, tone-map and re-encode HDR (PQ or HLG) as SDR BT.709. */
+const TONE_MAP_FILTER = "zscale=t=linear:npl=100,tonemap=hable:desat=0,zscale=t=bt709:m=bt709:p=bt709:r=tv";
 
 /** ffmpeg arguments (after the input) that turn a convertible video into H.264/AAC MP4. */
 export const conversionArgs = (classification: Extract<Classification, {action: "convert"}>): string[] => [
   "-map", "0:v:0", "-map", "0:a:0?",
+  ...(classification.toneMap ? ["-vf", TONE_MAP_FILTER] : []),
   "-c:v", "libx264", "-preset", "medium", "-crf", "16", "-pix_fmt", "yuv420p",
   ...(classification.targetFps ? ["-fps_mode", "cfr", "-r", String(classification.targetFps)] : []),
   "-c:a", "aac", "-b:a", "192k",
@@ -127,5 +137,5 @@ export const conversionArgs = (classification: Extract<Classification, {action: 
 ];
 
 function emptySummary(): ProbeSummary {
-  return {durationSec: null, width: null, height: null, rotation: 0, fps: null, variableFrameRate: false, videoCodec: null, audioCodec: null, hasAudio: false};
+  return {durationSec: null, videoStartSec: 0, width: null, height: null, rotation: 0, fps: null, variableFrameRate: false, videoCodec: null, audioCodec: null, hasAudio: false};
 }

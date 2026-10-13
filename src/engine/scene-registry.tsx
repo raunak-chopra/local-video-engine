@@ -1,6 +1,9 @@
 import React from "react";
-import type {Project, SceneSpec} from "./project-schema";
+import type {MediaMap} from "./assets";
+import type {Project} from "./project-schema";
+import type {ResolvedScene} from "./resolve-timeline";
 import {Chart} from "./scenes/Chart";
+import {Clip} from "./scenes/Clip";
 import {Compare} from "./scenes/Compare";
 import {EndCard} from "./scenes/EndCard";
 import {Hook} from "./scenes/Hook";
@@ -16,11 +19,16 @@ import {Statement} from "./scenes/Statement";
  * is registered here.
  */
 export const renderScene = (
-  scene: SceneSpec,
+  {scene, durationInFrames, trim}: ResolvedScene,
   brand: Project["brand"],
-  durationInFrames: number,
+  media: MediaMap,
 ): React.ReactElement => {
   switch (scene.type) {
+    case "clip": {
+      const source = media[scene.asset];
+      if (!source || !trim) throw new Error(`Clip "${scene.id}" has no prepared media or trim; run prepare.`);
+      return <Clip scene={scene} media={source} trim={trim} />;
+    }
     case "hook":
       return <Hook props={scene.props} brand={brand} durationInFrames={durationInFrames} />;
     case "statement":

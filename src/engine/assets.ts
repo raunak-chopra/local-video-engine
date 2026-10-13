@@ -71,6 +71,8 @@ export const preparedMediaSchema = z.strictObject({
   kind: z.enum(["video", "image", "audio", "font"]),
   src: z.string().startsWith("generated-media/"),
   durationSec: z.number().positive().nullable(),
+  /** Presentation time of the first video frame in the prepared file. */
+  videoStartSec: z.number(),
   width: z.number().int().positive().nullable(),
   height: z.number().int().positive().nullable(),
   rotation: z.number(),

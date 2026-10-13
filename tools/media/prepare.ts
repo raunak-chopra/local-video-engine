@@ -10,12 +10,12 @@
  * - `check` mode re-hashes and reports without writing anything.
  */
 import {createHash} from "node:crypto";
-import {copyFileSync, createReadStream, existsSync, mkdirSync, renameSync, statSync, writeFileSync} from "node:fs";
+import {copyFileSync, createReadStream, existsSync, linkSync, mkdirSync, renameSync, rmSync, statSync, writeFileSync} from "node:fs";
 import path from "node:path";
 import type {AssetSpec} from "../../src/engine/assets";
 import type {ProjectV2} from "../../src/engine/project-schema";
 import {classify, conversionArgs, summarize, type ProbeSummary} from "./classify";
-import {readLock, serializeLock, type LockEntry, type MediaLock} from "./lock";
+import {MEDIA_LOCK_VERSION, readLock, serializeLock, type LockEntry, type MediaLock} from "./lock";
 import type {FfprobeResult} from "./remotion-tools";
 
 export type MediaTools = {
@@ -63,7 +63,24 @@ const probeOf = (tools: MediaTools, asset: AssetSpec, file: string): FfprobeResu
   }
 };
 
-const toLockProbe = (summary: ProbeSummary): LockEntry["probe"] => ({...summary});
+/**
+ * Hard-links when source and public/ share a drive, so 4K phone footage is not
+ * stored twice; falls back to a copy across drives. Replacing an original
+ * changes its hash, which prepare then refuses, so a link cannot drift silently.
+ */
+const placeCopy = (source: string, target: string) => {
+  const pending = `${target}.partial`;
+  rmSync(pending, {force: true});
+  try {
+    linkSync(source, pending);
+  } catch {
+    copyFileSync(source, pending);
+  }
+  rmSync(target, {force: true});
+  renameSync(pending, target);
+};
+
+const toLockProbe =(summary: ProbeSummary): LockEntry["probe"] => ({...summary});
 
 export const prepareProject = async (options: PrepareOptions): Promise<PrepareResult> => {
   const {project, lockPath, assetsRoot, publicDir, mode, tools} = options;
@@ -121,9 +138,7 @@ export const prepareProject = async (options: PrepareOptions): Promise<PrepareRe
     if (classification.action === "copy") {
       const relative = `${dir}/${baseName}`;
       const target = toPublicPath(publicDir, relative);
-      const pending = `${target}.partial`;
-      copyFileSync(source, pending);
-      renameSync(pending, target);
+      placeCopy(source, target);
       entries[asset.id] = {
         path: asset.path, kind: asset.kind, sha256: sha, bytes, status: "ready",
         probe: toLockProbe(classification.summary),
@@ -153,7 +168,7 @@ export const prepareProject = async (options: PrepareOptions): Promise<PrepareRe
   }
 
   if (errors.length > 0 || mode === "check") return {lock: previous, reports, errors};
-  const lock: MediaLock = {version: 1, projectId: project.id, tools: tools.versions(), assets: entries};
+  const lock: MediaLock = {version: MEDIA_LOCK_VERSION, projectId: project.id, tools: tools.versions(), assets: entries};
   mkdirSync(path.dirname(lockPath), {recursive: true});
   writeFileSync(lockPath, serializeLock(lock));
   return {lock, reports, errors};

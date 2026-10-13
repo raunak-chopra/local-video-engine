@@ -100,7 +100,37 @@ export const sceneSchema = z.discriminatedUnion("type", [
   }),
 ]);
 
-export type SceneSpec = z.infer<typeof sceneSchema>;
+/**
+ * v2 footage scene. Its length comes from the source trim, so it takes no
+ * `durationSec`. Times are seconds on the source file's own timeline.
+ */
+const clipSceneSchema = z
+  .strictObject({
+    id: z.string().min(1),
+    type: z.literal("clip"),
+    asset: z.string().min(1),
+    inSec: z.number().min(0),
+    outSec: z.number().positive(),
+    /** cover fills the canvas and crops; contain shows the whole frame. */
+    fit: z.enum(["cover", "contain"]).default("cover"),
+    /** Which part of the source stays in view when cropping (0-1, 0.5 = centre). */
+    focus: z
+      .strictObject({x: z.number().min(0).max(1), y: z.number().min(0).max(1)})
+      .default({x: 0.5, y: 0.5}),
+    sourceAudio: z
+      .strictObject({mute: z.boolean().default(false), gainDb: z.number().min(-60).max(12).default(0)})
+      .default({mute: false, gainDb: 0}),
+    /** Hard cut by default; a fade is an explicit creative choice. */
+    transitionIn: z.strictObject({type: z.literal("fade"), frames: z.number().int().min(1).max(30)}).optional(),
+  })
+  .refine((clip) => clip.outSec > clip.inSec, {message: "outSec must be greater than inSec", path: ["outSec"]});
+
+const reelSceneSchema = z.discriminatedUnion("type", [...sceneSchema.options, clipSceneSchema]);
+
+/** v1 graphic scenes. */
+export type GraphicSceneSpec = z.infer<typeof sceneSchema>;
+export type ClipSceneSpec = z.infer<typeof clipSceneSchema>;
+export type SceneSpec = z.infer<typeof reelSceneSchema>;
 export type SceneType = SceneSpec["type"];
 
 const captionSchema = z
@@ -148,11 +178,24 @@ const projectV2Schema = z
   .strictObject({
     version: z.literal(2),
     ...sharedProjectFields,
+    scenes: z.array(reelSceneSchema).min(1),
     assets: z.array(assetSchema).default([]),
   })
   .superRefine((project, ctx) => {
     rejectDuplicateIds(project.scenes, "scenes", ctx);
     rejectDuplicateIds(project.assets, "assets", ctx);
+    const kinds = new Map(project.assets.map((asset) => [asset.id, asset.kind]));
+    project.scenes.forEach((scene, index) => {
+      if (scene.type !== "clip") return;
+      const kind = kinds.get(scene.asset);
+      if (kind !== "video") {
+        ctx.addIssue({
+          code: "custom",
+          path: ["scenes", index, "asset"],
+          message: kind ? `asset "${scene.asset}" is ${kind}, not video` : `unknown asset "${scene.asset}"`,
+        });
+      }
+    });
   });
 
 export const projectSchema = z.discriminatedUnion("version", [projectV1Schema, projectV2Schema], {

@@ -19,6 +19,7 @@ const lockEntrySchema = z.strictObject({
   status: z.enum(["ready", "converted"]),
   probe: z.strictObject({
     durationSec: z.number().nullable(),
+    videoStartSec: z.number(),
     width: z.number().nullable(),
     height: z.number().nullable(),
     rotation: z.number(),
@@ -41,8 +42,11 @@ const lockEntrySchema = z.strictObject({
     .nullable(),
 });
 
+/** v2 added `videoStartSec`. No v1 lock was ever committed, so there is no migration. */
+export const MEDIA_LOCK_VERSION = 2;
+
 export const mediaLockSchema = z.strictObject({
-  version: z.literal(1),
+  version: z.literal(MEDIA_LOCK_VERSION),
   projectId: z.string(),
   tools: z.strictObject({remotion: z.string(), ffmpeg: z.string()}),
   assets: z.record(z.string(), lockEntrySchema),
@@ -55,7 +59,9 @@ export const lockPathFor = (projectPath: string) => path.join(path.dirname(proje
 
 export const readLock = (lockPath: string): MediaLock | null => {
   if (!existsSync(lockPath)) return null;
-  const parsed = mediaLockSchema.safeParse(JSON.parse(readFileSync(lockPath, "utf8")));
+  const raw = JSON.parse(readFileSync(lockPath, "utf8"));
+  if (raw?.version !== MEDIA_LOCK_VERSION) throw new Error(`${lockPath} uses lock format ${raw?.version}; delete it and run prepare again (sources are re-hashed, nothing is lost).`);
+  const parsed = mediaLockSchema.safeParse(raw);
   if (!parsed.success) throw new Error(`${lockPath} is not a valid media lock: ${parsed.error.issues[0]?.message}`);
   return parsed.data;
 };
@@ -90,6 +96,7 @@ export const mediaMapFromLock = (project: ProjectV2, lock: MediaLock | null, pub
       kind: entry.kind,
       src: entry.prepared.path,
       durationSec: entry.probe.durationSec,
+      videoStartSec: entry.probe.videoStartSec,
       width: entry.probe.width,
       height: entry.probe.height,
       rotation: entry.probe.rotation,

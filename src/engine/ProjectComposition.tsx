@@ -60,8 +60,8 @@ type ResolvedProps = ProjectCompositionProps & {
 /** Validates the project and derives size, fps and duration before any frame renders. */
 export const calculateProjectMetadata: CalculateMetadataFunction<ResolvedProps> = ({props}) => {
   const project = parseProject(props.project);
-  const timeline = resolveTimeline(project);
   const media = resolveMedia(project, props.media);
+  const timeline = resolveTimeline(project, project.version === 2 ? media : undefined);
   return {
     durationInFrames: timeline.durationInFrames,
     fps: timeline.fps,
@@ -73,7 +73,7 @@ export const calculateProjectMetadata: CalculateMetadataFunction<ResolvedProps> 
 
 export const ProjectComposition: React.FC<ResolvedProps> = ({resolved}) => {
   if (!resolved) throw new Error("Project was not resolved; calculateMetadata did not run.");
-  const {project, timeline} = resolved;
+  const {project, timeline, media} = resolved;
   return (
     <AbsoluteFill
       style={{
@@ -82,9 +82,9 @@ export const ProjectComposition: React.FC<ResolvedProps> = ({resolved}) => {
       }}
     >
       <LocalFontReady />
-      {timeline.scenes.map(({scene, from, durationInFrames}) => (
-        <Sequence key={scene.id} from={from} durationInFrames={durationInFrames} name={scene.id}>
-          {renderScene(scene, project.brand, durationInFrames)}
+      {timeline.scenes.map((resolvedScene) => (
+        <Sequence key={resolvedScene.scene.id} from={resolvedScene.from} durationInFrames={resolvedScene.durationInFrames} name={resolvedScene.scene.id}>
+          {renderScene(resolvedScene, project.brand, media)}
         </Sequence>
       ))}
       <Caption cues={timeline.captions} fontFamily={project.brand.fontFamily} safe />

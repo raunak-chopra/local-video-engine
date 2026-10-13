@@ -51,26 +51,55 @@ npm.cmd run video -- prepare projects/my-reel/project.json
 npm.cmd run video -- prepare projects/my-reel/project.json --check
 ```
 
-`prepare` hashes each source, probes it with the bundled ffprobe, then copies it
-(or converts variable-frame-rate/non-H.264 video to H.264 MP4) into the ignored
-`public/generated-media/<hash>/`. It writes `media.lock.json` next to the project;
+`prepare` hashes each source, probes it with the bundled ffprobe, then
+hard-links or copies it into the ignored `public/generated-media/<hash>/`, or
+converts it to H.264/AAC MP4 when needed: variable frame rate (common on Android
+in low light) becomes constant at the project fps, HEVC/10-bit becomes 8-bit
+H.264, HDR (PQ/HLG) is tone-mapped to SDR, and a rotated clip that needs
+converting is rotated upright. Rotated clips that need nothing else keep their
+rotation flag, which the renderer honours. It writes `media.lock.json` next to the project;
 commit that file. Re-running is a no-op for unchanged media. A source whose
 bytes differ from the lock is refused unless `--accept-changes` is given;
 `--check` re-hashes and verifies without writing (use it after restoring media on
-another laptop). Rotated phone clips are accepted with a note; ones that also
-need re-encoding are rejected, since the bundled ffmpeg cannot rotate.
+another laptop).
 
-`npm.cmd run fixtures` generates synthetic counter clips, tones and a font into
-`assets/_fixtures/` for `projects/_fixtures/media-smoke` and the real-media test.
+### Footage clips
+
+```json
+{"id": "pour", "type": "clip", "asset": "pour-01", "inSec": 3.2, "outSec": 5.0,
+ "fit": "cover", "focus": {"x": 0.5, "y": 0.4},
+ "sourceAudio": {"mute": false, "gainDb": -3}}
+```
+
+`inSec`/`outSec` are the times your video player shows for that file (the file's
+own timeline, which can differ by a few milliseconds from "time since the first
+frame" on phone clips). A clip's length comes from its trim; it takes no
+`durationSec`. Clips cut hard by default; add `"transitionIn": {"type": "fade",
+"frames": 8}` for a fade. `cover` fills the 9:16 frame and crops (`focus`
+chooses which part stays, 0–1); `contain` shows the whole frame with bars.
+Trims past the end of the prepared source fail before rendering. Renders with
+audible clip sound must contain an AAC track.
+
+Preview a reel with its prepared media in Remotion Studio (ProjectAd):
+
+```powershell
+npm.cmd run video -- studio projects/my-reel/project.json
+```
+
+`npm.cmd run fixtures` generates synthetic counter clips (frame number and
+timestamp on screen), Android-like rotated/VFR and HDR clips, tones and a font
+into `assets/_fixtures/` for `projects/_fixtures/*` and the real-media test.
 
 ## Current limits
 
 Generic v1 projects support eight graphic scenes and one non-overlapping caption
 lane. Unknown fields, zero-frame spans and overlapping captions fail validation.
 Graphics bundle and wait for Inter Variable plus Noto Sans Devanagari (per-glyph
-fallback, so Hindi no longer depends on an OS font). v2 projects can declare and
-prepare media, but no scene plays it yet: footage clips, supplied fonts,
-mixed-script runs, overlays and audio are the next Stage 1 slices. The seed field is
+fallback, so Hindi no longer depends on an OS font). v2 projects play trimmed
+footage clips with their source sound. Graphic scenes still fade in from the
+background (so a reel opening on a graphic card starts on an empty frame).
+Supplied fonts, mixed-script runs, text overlays, music/SFX layers and reaction
+inserts are the next Stage 1 slices. The seed field is
 reserved; current graphic scenes have no random behavior. Three canvas sizes
 are supported; dedicated landscape editorial layouts remain a later visual task.
 
