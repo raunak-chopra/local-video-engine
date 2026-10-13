@@ -15,6 +15,7 @@ Large media is git-ignored; only this README and `LICENSES.md` are tracked.
 | `fonts/` | the 1-2 fonts for captions/headlines | ttf, otf, woff2 |
 | `images-and-logos/` | logo (SVG/PNG with transparency), product shots, photos | svg, png, jpg |
 | `voiceover/` | any recorded or purchased voiceover | wav, mp3 |
+| `memes/` | Indian meme templates: reaction clips, image templates, audio stings (3-10 s reels) | mp4, mov, gif, png, jpg, mp3, wav |
 | `references/` | reels you want to match in style (links in `links.txt` also fine) | mp4, txt |
 
 Not usable: After Effects / Premiere / Final Cut templates (.aep, .prproj,

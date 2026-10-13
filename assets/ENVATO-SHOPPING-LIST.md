@@ -89,7 +89,25 @@ All as rendered clips (alpha if possible).
 - 3-5 `.cube` LUTs for warm food grading (e.g. "food LUT", "warm cinematic").
   Pick one as your signature look.
 
-## 8. References  -> `references/`
+## 8. Meme templates for 3-10 s reels  -> `memes/`
+Short, punchy reels for recall: a relatable kitchen moment, a meme reaction,
+and a text punchline in Hindi, Hinglish or English.
+
+Envato Elements rarely carries real meme-format clips, so source these from
+wherever you hold the rights; log each in `LICENSES.md`.
+
+| Type | Examples to collect | Format | Quantity |
+|---|---|---|---|
+| Reaction clips (short, 1-4 s) | shocked, disappointed, "wah", facepalm, evil laugh, confused | MP4/MOV, ideally 720p+ | 15-25 |
+| Image templates | two-panel "expectation vs reality", "me vs mom", drake-style, split reaction | PNG/JPG, clean (no existing caption) | 10-15 |
+| Audio stings | dialogue or tune clips (1-5 s), "bruh", laughing, dramatic hit, tabla/dhol hit | MP3/WAV, trimmed | 15-25 |
+| Cooking-meme situations | burnt food, over-salted, "mummy ke haath ka khana", "guests arrived", "one more minute" | any of the above | as needed |
+| Stickers/emoji | "wow", fire, chef-kiss, crying-laugh | PNG with transparency | 10-20 |
+
+Tip: keep clips short and name them by mood (`shocked-01.mp4`,
+`wah-sting-01.mp3`) so I can pick by intent.
+
+## 9. References  -> `references/`
 2-3 reels from cooking channels whose pacing and text style you like (files or
 links in `links.txt`).
 
