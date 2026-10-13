@@ -91,11 +91,16 @@ from 2024-2025, expanded to photos and carousels on 2026-04-30). Adding your
 own commentary, analysis or original graphics can qualify; cropping, resizing,
 watermarking or crediting does not.
 
-Implication for meme templates: licensing a meme clip does not by itself make
-the reel "original" in Instagram's eyes. Make each meme reel transformative:
-your own footage, your own text and joke, your own edit and music, not a
-re-upload of someone else's clip. Check Instagram's Account Status page for
-your account's real standing.
+Decision (owner, 2026-10-13): all reels are original content (own footage,
+text, music and edit). Meme images and short reaction clips are used only as
+emotion accents inside those reels, never as the main content.
+
+Guidelines:
+- Keep a reaction insert short (0.5-2 s) and let your own footage carry the
+  rest of the reel.
+- Place it at an emotional beat: the reveal, the mistake, the first bite.
+- Use at most 1-3 inserts per reel; more starts to look like a repost.
+- Your own text, joke and edit should be on screen over or around the insert.
 
 ## 9. Posting and testing routine
 
@@ -116,7 +121,8 @@ your account's real standing.
 | Loop-match ending (reuse first frame/sound at end) | Rewatches |
 | Ingredient card and step badges scene | Saves |
 | "Send this to..." end line component (Devanagari/Hinglish) | Sends |
-| `meme` scene with setup, beat, punchline timing | 3-10 s recall format |
+| `reactionInsert` overlay: meme image or short clip + sting at a chosen frame, in any scene | Emotion accents inside original reels |
+| `meme` short format (3-10 s) built on your own footage with a reaction insert | Recall format |
 | Safe-area guard for bottom caption and right buttons | Text not covered by UI |
 | Reel log file (`docs/reel-log.md` or JSON) | A/B testing |
 
