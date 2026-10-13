@@ -1,0 +1,40 @@
+---
+name: video-director
+description: Create or refine videos in the local-video-engine repository using Remotion briefs, scene planning, and rendered feedback. Use for video creation and custom motion in this project.
+---
+
+# Direct a local video
+
+Read `AGENTS.md`, `README.md`, `src/brief.ts`, and `briefs/demo.json` from the
+repository root. Use `prompts/video-request.md` for intake and
+`prompts/shot-plan.md` for custom compositions. Keep planning outside brief JSON.
+
+For ordinary scene kinds, edit a new brief. When a visual needs custom motion,
+implement one representative scene in `src/video.tsx` and inspect it before
+expanding. Prefer a clear visual action over repeating the same word reveal.
+Choose springs or easing to suit the action; shape handoffs and clean cuts are
+both available design choices, not universal rules.
+
+When considering libraries, read `docs/animation-tool-selection.md`. For supplied
+references use `prompts/reference-critique.md`; for requested hooks use
+`prompts/opening-variants.md`. Use `preview --sample motion` instead of `--frames`
+to automatically include entrance, ready, settled and transition states.
+
+Run `npm run check`, then `npm run review -- --brief briefs/<name>.json --output
+out/<name>-review.json`. Use the shared final timeline to place captions and audio.
+Reading flags are heuristic; shorten copy and test at the delivery size.
+
+Generate the preview with `npm run preview -- --brief briefs/<name>.json --output
+out/<name>-preview`. For entrances or a repair, add `--frames` with comma-separated
+final-timeline frame numbers from the report. Inspect PNGs using the session's
+image tool; the HTML sheet has a 360px phone-width mode. Neither mode proves
+that fitted text is readable on the intended device.
+
+Fix observed issues, render with `npm run render -- --brief briefs/<name>.json
+--output out/<name>.mp4`, and review motion and all supplied audio. If playback
+is unavailable, state which stills were inspected and what remains unverified.
+Deliver the path, aspect ratio, actual duration, and placeholders.
+
+For real 3D, read `docs/3d-handoff.md`; do not pretend a Blender asset pipeline
+is part of the current renderer. Use only supplied or approved assets. Never
+invent claims or silently add unsupported brief fields.
