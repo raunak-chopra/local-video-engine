@@ -8,6 +8,8 @@ creator workspace, not a SaaS, render service, or multi-user editor.
 ## Working rules
 
 - Read `docs/CURRENT-TASK.md` before changing files.
+- For footage-based reels, read `docs/REEL-PLAYBOOK.md` before planning the edit;
+  use its source-linked creative guidance and distinguish hypotheses from results.
 - Inspect the current Git diff and preserve unrelated work.
 - Keep animation deterministic: derive visuals from props, the current frame,
   and the video configuration.

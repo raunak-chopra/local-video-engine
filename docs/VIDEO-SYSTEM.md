@@ -1,26 +1,36 @@
 # Video system
 
-## Pipeline
+## Current pipeline
 
-1. Define a focused brief and audience.
-2. Approve the narration script.
-3. Record or generate narration locally.
-4. Transcribe final audio and derive word timings.
-5. Convert timings into captions and visual cues.
-6. Implement deterministic Remotion scenes.
-7. Preview scene boundaries and representative frames.
-8. Mix audio, validate, and render the final MP4.
+1. Brief: cooking recipe, sensory montage, technique or own-footage mini-story.
+2. Inspect supplied media/recipe notes and propose source-linked shots.
+3. Author one validated project.json. Generic v1 graphics work today; v2 footage
+   and audio are planned in REELS-FINAL-UPDATE-PLAN.md.
+4. Resolve timings once to integer frames; reject collapsed/overlapping cues.
+5. Preview via ProjectAd and render representative boundaries and a review MP4.
+6. Review playback with sound and muted, then revise a saved project snapshot.
+7. Verify the exported streams and record the result separately from creative QA.
+
+Transcription/narration is an optional speech branch, not a music-only prerequisite.
+Reels use original footage plus optional emotion inserts, Hindi/Hinglish/English,
+and supplied music/ASMR/SFX. No generic v1 audio/media support is claimed.
 
 ## Source of truth
 
-`src/video/project.ts` currently contains typed input for the demonstration.
-Future videos should receive their own project data module and composition.
+projects/<id>/project.json drives ProjectAd; src/engine owns schema/resolution/
+registry. Existing demo/scientific compositions keep their own reviewed data.
+Do not create a second engine or a separate composition for every generic reel.
+Current contract: v1, strict fields, eight graphic scenes, one caption lane.
+Seed is reserved until a frame-driven random effect actually uses it.
 
-Timing is stored in frames at the composition frame rate. Audio-derived tools
-may work in milliseconds, but should convert through a single helper before
-being consumed by scenes.
+## Delivery and limits
 
-## Deliberate exclusions
+Use npm.cmd in PowerShell for flags. Each render has a unique record and project
+snapshot. A failed attempt stays failed/incomplete; publishing names appear only
+after validation. MP4 checks cover dimensions, fps, duration and yuv420p. Local
+Inter is bundled; multilingual font selection is still Stage 1.
 
-This repository does not include a web product, accounts, a database, cloud
-rendering, job queues, billing, or multi-user editing.
+REELS-FINAL-UPDATE-PLAN.md supersedes the older research phases. No hosted job
+API, MCP render server, queues, accounts or cloud rendering are part of this
+personal creator workspace. Local upload controls follow useful reel pilots;
+batching and OTIO are optional. Preserve older compositions and historical docs.

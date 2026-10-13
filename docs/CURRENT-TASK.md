@@ -1,12 +1,20 @@
-# Current task
+# Current task: Stage 0 repairs and reel readiness
 
-## Status
+
+## Active work (2026-10-13)
+
+Stage 0 repairs are implemented and targeted checks passed. Next: Stage 1 media/footage build. Governing plan:
+`docs/REELS-FINAL-UPDATE-PLAN.md`; historical audit:
+`docs/REELS-READINESS-AUDIT-2026-10-13.md`. Completion evidence and Stage 1
+sequence are recorded in `docs/STAGE-0-COMPLETION.md`.
+Do not read the previous explainer's status as the current reel milestone.
+## Historical explainer status
 
 The 18-second CGI explainer `Omega3SmedsExplainer` (540 frames @ 30 fps) has been fully built, structurally validated, and rendered to 1080p MP4.
 
-## Objective
+## Historical explainer objective
 
-Deliver the deterministic CGI-style explainer contrasting traditional omega-3 softgels with Self-Micro Emulsifying Delivery System (SMEDS) softgels inside a stylized aqueous chamber according to `GEMINI-SMEDS-OMEGA3-EXECUTION-PLAN.md`.
+Deliver the deterministic CGI-style explainer contrasting traditional omega-3 softgels with Self-Micro Emulsifying Delivery System (SMEDS) softgels inside a stylized aqueous chamber according to `projects/smeds-omega3-cgi/GEMINI-EXECUTION-PLAN.md`.
 
 ## Deliverables Generated
 
@@ -23,7 +31,7 @@ Deliver the deterministic CGI-style explainer contrasting traditional omega-3 so
 ## Claim Gate Status
 
 - Marked with persistent `DRAFT - CLAIMS UNVERIFIED` watermark and `Illustrative visualization - not to scale`.
-- Awaiting final studio VO (`smeds-omega3-vo.wav`), product SKU approval, and clinical citation text.
+- `public/audio/smeds-omega3-vo.wav` exists, but final studio/review status is unconfirmed. Product SKU approval and clinical citation text remain unresolved; file existence does not approve the narration or claims.
 
 ## Engine build (branch `engine/phase-0-1-contract`)
 
@@ -48,3 +56,25 @@ Plan: `docs/RESEARCH-AND-FINALISATION-PLAN.md` (phases) and `ENGINE-PLAN.md` (ar
 - Added: meme-template short format (3-10 s). `assets/memes/` folder. Planned `meme` scene: reaction clip or image template + top/bottom text (Devanagari/Hinglish/English) + audio sting + punchline timing; also an `expectationReality` split layout. Not built yet.
 - Reel research playbook: `docs/REEL-PLAYBOOK.md` (draft, third-party sources). Drives the hook-first template, beat sync, tension overlays, loop-match ending, sends/saves components and reel log.
 - Decision: reels are original content; meme images/reaction clips are short emotion inserts (0.5-2 s, 1-3 per reel), not standalone content. Planned `reactionInsert` overlay usable in any scene; the 3-10 s format is built on own footage plus an insert.
+
+## Final plan reconciliation (2026-10-13)
+
+- Execution plan: `docs/REELS-FINAL-UPDATE-PLAN.md`. Stage 0 fixes precede an expanded Stage 1 with 30–60 s recipes and 3–10 s own-footage meme-style reels, reaction overlay/stings, mixed-script font runs, layered music/ASMR/SFX and optional hook/tension/loop/send-line controls. Plan only; these features remain unbuilt.
+- Owner confirms one-person operation for a personal, non-commercial Instagram page. Installed/upstream Remotion licence eligibility covers this stated individual use for free; no paid licence is needed.
+- Git does not transfer git-ignored media/fonts or generated media. Main-laptop handoff needs separate selected-asset copying, hash verification and local preparation. Remind the owner to install Whisper/model files there if transcription is wanted; optional for this channel.
+- Envato kit and `assets/LICENSES.md` provenance must flow into the prepared manifest. Organic vertical text-safe house insets: top 192, right 160, bottom 420, left 64 px, configurable and checked in the actual app.
+- Batch throughput and OTIO remain optional after the first useful pilots. No video/editor implementation or two-laptop restore has been verified in this reconciliation.
+
+## Readiness audit (2026-10-13)
+
+- Inventory and next build: `docs/REELS-READINESS-AUDIT-2026-10-13.md`. No reel feature code has been implemented in this conversation; existing v1 graphics engine is the working foundation.
+- Fresh checks: lint/type check and both demo project validations pass. Direct Remotion frame-45 still rendered outside the sandbox and was inspected; no full playback or cooking footage QA performed.
+- Open Stage 0 issues: Zod 4.6.5 versus Remotion's expected 4.5.4; npm frame/output flags dropped in this environment; zero-frame/overlapping captions; short fade failures; contact-sheet label pairing; stale VIDEO-SYSTEM.md; generated-media ignore not yet added.
+- Next is Stage 0 repairs, then the two Stage 1 reel pilots. Local pilot completion and second-laptop handoff verification are separate checks. Footage/fonts remain absent; synthetic mechanics can be built while real inputs are pending.
+
+
+## Stage 0 completion (2026-10-13)
+
+- Current evidence: docs/STAGE-0-COMPLETION.md supersedes the earlier open-issue audit. Six regressions and all project JSON fixtures pass; dependencies align; actual short-span and 10-second demo MP4s pass bundled ffprobe export checks.
+- Local Inter loading and safer generic caption placement are implemented. Footage/audio/mixed-script/reaction capabilities remain Stage 1. No real-media or full-playback review has been completed.
+- Use npm.cmd in PowerShell; render records and props are unique per run. No commits, pushes, media transfer, composition removal or skill cleanup performed.

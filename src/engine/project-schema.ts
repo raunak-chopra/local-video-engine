@@ -8,13 +8,13 @@ export const CANVAS_PRESETS = {
 
 export type CanvasPreset = keyof typeof CANVAS_PRESETS;
 
-const brandSchema = z.object({
+const brandSchema = z.strictObject({
   background: z.string().default("#06101c"),
   foreground: z.string().default("#f8fbff"),
   accent: z.string().default("#62e7ff"),
   fontFamily: z
     .string()
-    .default("Inter, 'Segoe UI', system-ui, sans-serif"),
+    .default("Inter Variable"),
 });
 
 const sceneBase = {
@@ -23,73 +23,73 @@ const sceneBase = {
 };
 
 export const sceneSchema = z.discriminatedUnion("type", [
-  z.object({
+  z.strictObject({
     ...sceneBase,
     type: z.literal("hook"),
-    props: z.object({
+    props: z.strictObject({
       headline: z.string().min(1).max(90),
       eyebrow: z.string().max(40).optional(),
     }),
   }),
-  z.object({
+  z.strictObject({
     ...sceneBase,
     type: z.literal("statement"),
-    props: z.object({
+    props: z.strictObject({
       text: z.string().min(1).max(160),
       eyebrow: z.string().max(40).optional(),
     }),
   }),
-  z.object({
+  z.strictObject({
     ...sceneBase,
     type: z.literal("stat"),
-    props: z.object({
+    props: z.strictObject({
       value: z.string().min(1).max(20),
       label: z.string().min(1).max(90),
       detail: z.string().max(120).optional(),
     }),
   }),
-  z.object({
+  z.strictObject({
     ...sceneBase,
     type: z.literal("list"),
-    props: z.object({
+    props: z.strictObject({
       headline: z.string().min(1).max(70),
       items: z.array(z.string().min(1).max(60)).min(2).max(5),
     }),
   }),
-  z.object({
+  z.strictObject({
     ...sceneBase,
     type: z.literal("compare"),
-    props: z.object({
+    props: z.strictObject({
       headline: z.string().min(1).max(70),
-      left: z.object({label: z.string().min(1).max(24), text: z.string().min(1).max(80)}),
-      right: z.object({label: z.string().min(1).max(24), text: z.string().min(1).max(80)}),
+      left: z.strictObject({label: z.string().min(1).max(24), text: z.string().min(1).max(80)}),
+      right: z.strictObject({label: z.string().min(1).max(24), text: z.string().min(1).max(80)}),
     }),
   }),
-  z.object({
+  z.strictObject({
     ...sceneBase,
     type: z.literal("chart"),
-    props: z.object({
+    props: z.strictObject({
       headline: z.string().min(1).max(70),
       unit: z.string().max(4).default(""),
       bars: z
-        .array(z.object({label: z.string().min(1).max(24), value: z.number().nonnegative()}))
+        .array(z.strictObject({label: z.string().min(1).max(24), value: z.number().nonnegative()}))
         .min(2)
         .max(6),
       source: z.string().max(100).optional(),
     }),
   }),
-  z.object({
+  z.strictObject({
     ...sceneBase,
     type: z.literal("quote"),
-    props: z.object({
+    props: z.strictObject({
       quote: z.string().min(1).max(140),
       attribution: z.string().max(60).optional(),
     }),
   }),
-  z.object({
+  z.strictObject({
     ...sceneBase,
     type: z.literal("endCard"),
-    props: z.object({
+    props: z.strictObject({
       title: z.string().min(1).max(60),
       cta: z.string().max(60).optional(),
       url: z.string().max(80).optional(),
@@ -101,7 +101,7 @@ export type SceneSpec = z.infer<typeof sceneSchema>;
 export type SceneType = SceneSpec["type"];
 
 const captionSchema = z
-  .object({
+  .strictObject({
     startSec: z.number().min(0),
     endSec: z.number().positive(),
     text: z.string().min(1),
@@ -111,7 +111,7 @@ const captionSchema = z
   });
 
 export const projectSchema = z
-  .object({
+  .strictObject({
     version: z.literal(1),
     id: z.string().regex(/^[a-z0-9][a-z0-9-]*$/, "use lowercase letters, digits, hyphens"),
     title: z.string().min(1),

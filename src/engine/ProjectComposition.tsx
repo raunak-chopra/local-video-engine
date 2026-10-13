@@ -1,5 +1,6 @@
-import React from "react";
-import {AbsoluteFill, Sequence, type CalculateMetadataFunction} from "remotion";
+import React, {useEffect, useState} from "react";
+import "@fontsource-variable/inter/wght.css";
+import {AbsoluteFill, Sequence, cancelRender, continueRender, delayRender, type CalculateMetadataFunction} from "remotion";
 import {Caption} from "../components/Caption";
 import {parseProject, type Project} from "./project-schema";
 import {resolveTimeline, type ResolvedTimeline} from "./resolve-timeline";
@@ -8,6 +9,18 @@ import {renderScene} from "./scene-registry";
 /** Props accepted by the composition: raw project JSON, validated at render time. */
 export type ProjectCompositionProps = {
   project: unknown;
+};
+
+const LocalFontReady: React.FC = () => {
+  const [handle] = useState(() => delayRender("Load bundled Inter Variable"));
+  useEffect(() => {
+    Promise.all([400, 650, 800, 900].map((weight) => document.fonts.load(`${weight} 48px "Inter Variable"`)))
+      .then((fonts) => {
+        if (fonts.some((loaded) => loaded.length === 0)) throw new Error("Bundled Inter Variable failed to load");
+        continueRender(handle);
+      }).catch(cancelRender);
+  }, [handle]);
+  return null;
 };
 
 type ResolvedProps = ProjectCompositionProps & {
@@ -37,12 +50,13 @@ export const ProjectComposition: React.FC<ResolvedProps> = ({resolved}) => {
         backgroundColor: project.brand.background,
       }}
     >
+      <LocalFontReady />
       {timeline.scenes.map(({scene, from, durationInFrames}) => (
         <Sequence key={scene.id} from={from} durationInFrames={durationInFrames} name={scene.id}>
           {renderScene(scene, project.brand, durationInFrames)}
         </Sequence>
       ))}
-      <Caption cues={timeline.captions} />
+      <Caption cues={timeline.captions} fontFamily={project.brand.fontFamily} safe />
     </AbsoluteFill>
   );
 };

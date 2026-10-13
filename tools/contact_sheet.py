@@ -9,10 +9,14 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 
 def create_contact_sheet(output_path: str, image_paths: list[str], cols: int = 2):
-    images = [Image.open(p) for p in image_paths if os.path.exists(p)]
+    missing = [p for p in image_paths if not os.path.exists(p)]
+    if missing:
+        raise FileNotFoundError("Missing contact-sheet inputs: " + ", ".join(missing))
+    if cols < 1:
+        raise ValueError("cols must be positive")
+    images = [Image.open(p) for p in image_paths]
     if not images:
-        print("No images found to assemble.")
-        return
+        raise ValueError("No images supplied")
 
     n = len(images)
     rows = (n + cols - 1) // cols

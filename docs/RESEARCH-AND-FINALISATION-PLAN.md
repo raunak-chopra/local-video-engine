@@ -1,4 +1,6 @@
-# Video Engine: research findings and finalisation plan
+# Video Engine: research findings and finalisation plan (historical)
+
+Superseded for reel implementation by REELS-FINAL-UPDATE-PLAN.md. Its older job API/MCP-server phases are not authorized scope; no hosted queue or server is planned. Retained as research history, not the live implementation checklist.
 
 Date: 2026-10-08. Companion to `ENGINE-PLAN.md` (architecture); this file adds the GitHub/Reddit research, a gap analysis of the current repo, and an ordered plan to finish the engine.
 

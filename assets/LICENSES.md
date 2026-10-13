@@ -12,6 +12,7 @@ recordings, purchased fonts, commissioned work, free or open licenses.
 |---|---|---|---|---|---|
 | (own) | Own footage and recordings | Self-shot | Owned by creator | footage/ | |
 | (own) | Own logo and brand files | Self-made | Owned by creator | images-and-logos/ | |
+| @fontsource-variable/inter 5.3.0 | Inter Variable | Fontsource / Inter Project Authors | SIL Open Font License 1.1 | pinned dependency | Bundled local Latin default; licence included in package |
 
 ## Source and license types
 

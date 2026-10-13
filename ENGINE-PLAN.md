@@ -1,5 +1,7 @@
 # JavaScript product-ad video engine: research and build plan
 
+Historical architecture proposal. Reel execution follows [the final update plan](docs/REELS-FINAL-UPDATE-PLAN.md), with [Stage 0 completion](docs/STAGE-0-COMPLETION.md) recording current behavior. The older phases are not a second active backlog.
+
 Research date: 5 October 2026. Status: proposed architecture and implementation backlog; the engine has not been built or benchmarked in this workspace.
 
 ## 1. Recommended direction

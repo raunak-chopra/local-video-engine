@@ -9,3 +9,8 @@ out
 # Licensed media (keep README + LICENSES.md tracked)
 assets/*/*
 !assets/*/.gitkeep
+
+# Prepared media is regenerated locally, not carried by Git.
+public/generated-media/
+__pycache__/
+*.pyc

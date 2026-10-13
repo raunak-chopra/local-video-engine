@@ -1,5 +1,6 @@
 import React from "react";
-import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from "remotion";
+import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from "remotion";
+import {fadeOpacity} from "../fade";
 import type {Project} from "../project-schema";
 
 export const SAFE_AREA = 64;
@@ -21,13 +22,7 @@ export const SceneFrame: React.FC<
   React.PropsWithChildren<{durationInFrames: number; brand: Project["brand"]}>
 > = ({children, durationInFrames, brand}) => {
   const frame = useCurrentFrame();
-  const fade = Math.min(10, Math.floor(durationInFrames / 4));
-  const opacity = interpolate(
-    frame,
-    [0, fade, durationInFrames - fade, durationInFrames],
-    [0, 1, 1, 0],
-    {extrapolateLeft: "clamp", extrapolateRight: "clamp"},
-  );
+  const opacity = fadeOpacity(frame, durationInFrames, Math.min(10, Math.floor(durationInFrames / 4)));
   return (
     <AbsoluteFill
       style={{
