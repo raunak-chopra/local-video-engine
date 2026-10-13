@@ -40,9 +40,9 @@ export const resolveTimeline = (project: Project): ResolvedTimeline => {
 
   let cursor = 0;
   const issues: string[] = [];
-  const scenes = project.scenes.map((scene): ResolvedScene => {
+  const scenes = project.scenes.map((scene, index): ResolvedScene => {
     const durationInFrames = toFrames(scene.durationSec, fps);
-    if (durationInFrames < 1) issues.push(`scenes.${scene.id}: duration rounds to zero frames at ${fps} fps`);
+    if (durationInFrames < 1) issues.push(`scenes[${index}] (${scene.id}): duration rounds to zero frames at ${fps} fps`);
     const resolved = {scene, from: cursor, durationInFrames};
     cursor += durationInFrames;
     return resolved;
@@ -61,10 +61,14 @@ export const resolveTimeline = (project: Project): ResolvedTimeline => {
     return {startFrame, endFrame, text: cue.text};
   });
   const ordered = captions.map((cue, index) => ({...cue, index})).sort((a, b) => a.startFrame - b.startFrame);
-  for (let i = 1; i < ordered.length; i++) {
-    if (ordered[i].startFrame < ordered[i - 1].endFrame) {
-      issues.push(`captions[${ordered[i].index}]: overlaps captions[${ordered[i - 1].index}] in the single caption lane`);
+  // Compare each cue with the furthest-reaching earlier cue, so one long cue
+  // that covers several later ones reports every overlap, not only the first.
+  let reach = ordered[0];
+  for (const cue of ordered.slice(1)) {
+    if (cue.startFrame < reach.endFrame) {
+      issues.push(`captions[${cue.index}]: overlaps captions[${reach.index}] in the single caption lane`);
     }
+    if (cue.endFrame > reach.endFrame) reach = cue;
   }
   if (issues.length > 0) throw new ProjectValidationError(issues);
 

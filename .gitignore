@@ -14,3 +14,6 @@ assets/*/*
 public/generated-media/
 __pycache__/
 *.pyc
+
+# Synthetic fixture locks depend on locally generated media.
+projects/_fixtures/**/media.lock.json

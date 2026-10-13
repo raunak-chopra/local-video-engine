@@ -10,6 +10,7 @@ import {ScienceExplainerComposition} from "./science-explainer/ScienceExplainerC
 import {scienceProject} from "./science-explainer/cues";
 import {ProjectComposition, calculateProjectMetadata} from "./engine/ProjectComposition";
 import demoAdProject from "../projects/demo-ad/project.json";
+import {CounterClip} from "./fixtures/CounterClip";
 
 export const VideoEngineComposition: React.FC = () => (
   <>
@@ -24,6 +25,10 @@ export const VideoEngineComposition: React.FC = () => (
       defaultProps={{project: demoAdProject as unknown}}
       calculateMetadata={calculateProjectMetadata}
     />
+
+    {/* Synthetic counter footage for media tests (npm run fixtures). */}
+    <Composition id="FixtureCounterPortrait" component={CounterClip} durationInFrames={120} fps={30} width={540} height={960} defaultProps={{label: "portrait source"}} />
+    <Composition id="FixtureCounterLandscape" component={CounterClip} durationInFrames={120} fps={30} width={960} height={540} defaultProps={{label: "landscape source"}} />
 
     {/* 8th-Grade Educational Science Explainer (Option A - 20s / 600 frames) */}
     <Composition

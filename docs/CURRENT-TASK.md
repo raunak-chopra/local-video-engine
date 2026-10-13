@@ -3,11 +3,70 @@
 
 ## Active work (2026-10-13)
 
-Stage 0 repairs are implemented and targeted checks passed. Next: Stage 1 media/footage build. Governing plan:
-`docs/REELS-FINAL-UPDATE-PLAN.md`; historical audit:
-`docs/REELS-READINESS-AUDIT-2026-10-13.md`. Completion evidence and Stage 1
-sequence are recorded in `docs/STAGE-0-COMPLETION.md`.
+Stage 0 is committed and pushed (`ae526a2`, branch `engine/phase-0-1-contract`).
+Stage 1 slice 1 (media contract and preparation) is implemented and verified,
+but not yet committed. Governing plan: `docs/REELS-FINAL-UPDATE-PLAN.md`;
+Stage 0 evidence: `docs/STAGE-0-COMPLETION.md`.
 Do not read the previous explainer's status as the current reel milestone.
+
+Owner decisions this session: commit and push Stage 0; use free OFL fonts now
+(Noto Sans Devanagari + Inter; Envato fonts plug in later); build on synthetic
+fixtures until real footage is supplied; stop after fixes + slice 1 for review.
+
+### Implemented (slice 1 + post-audit fixes)
+
+- F2: bundled Noto Sans Devanagari Variable 5.3.0 (OFL) as per-glyph fallback
+  behind Inter; render waits for its Devanagari subset. Hindi no longer uses the
+  Windows system font (machine-dependent).
+- F5: resolver reports every caption overlapping a long cue; scene errors use
+  `scenes[i] (id)` paths.
+- v2 project contract (`version: 2`, strict) with `assets[]`: id, kind, path
+  inside `assets/`, optional rights. v1 unchanged; version picks the schema.
+  Deferred formats (GIF, WebM/alpha, LUT, NLE files) fail with a reason.
+- `video prepare <project.json> [--check] [--accept-changes]`: SHA-256, bundled
+  ffprobe, classify (copy / convert / reject), prepared copy under
+  `public/generated-media/<hash>/`, tracked `media.lock.json` next to the project.
+  Converts VFR -> CFR at project fps, non-H.264 -> H.264, odd pixel formats,
+  non-AAC/MP3 audio. Rotated clips are copied with a note; rotated clips that
+  also need re-encoding are rejected (bundled ffmpeg has no transpose filter).
+- still/render of v2 projects pass a prepared-media map in props; the
+  composition refuses missing media. Render refuses missing lock, wrong project,
+  unprepared assets and missing/altered prepared copies.
+- `npm run fixtures`: Remotion-rendered counter clips (frame number + timestamp
+  + top-left marker) and ffmpeg-derived variants in ignored `assets/_fixtures/`;
+  fixture project `projects/_fixtures/media-smoke` (its lock is git-ignored).
+
+### Verified
+
+- `npm run validate`: lint, tsc, 3 projects, 12/12 tests (6 new media tests,
+  including a real-media prepare test on the fixtures).
+- Fixture prepare: 9 assets, VFR (avg 22.6 fps) converted to CFR 30; rotated
+  clip recorded 90 degrees with display size 540x960; idempotent re-run left
+  the lock byte-identical; `--check` verified; one-byte source change refused by
+  both modes; deleted prepared copy blocked render then was rebuilt.
+- v2 MP4 render: complete, 1080x1920 yuv420p 30 fps 2.0 s (53 s elapsed).
+- Visual: v2 still with mixed English/Devanagari line renders in Noto; v1 demo
+  frame 60 unchanged.
+
+### Not yet verified / open
+
+- No scene plays media yet, so decoded orientation of rotated clips, VFR
+  playback and trims are untested in the renderer (slice 2).
+- `prepare` probes via the Remotion CLI (~3 s per file); fine for a reel, slow
+  for large batches.
+- HEVC sources: conversion path exists but untested (bundled ffmpeg cannot
+  encode a HEVC fixture). Test with a real iPhone clip.
+- Second-laptop restore check pending.
+
+### Next: Stage 1 slice 2 (footage scene)
+
+`clip` scene `{asset, inSec, outSec, fit, focus, sourceAudio}` via
+`@remotion/media@4.0.529` `<Video>`; duration derived from trims (reject
+`durationSec`); trims validated against lock duration; hard cuts by default,
+fade only when requested (fixes frame-0-empty for reels). Exit: frames
+before/at/after cuts match ffmpeg-extracted source frames; rotated and VFR
+fixtures display correctly; MP4 with AAC passes export checks.
+
 ## Historical explainer status
 
 The 18-second CGI explainer `Omega3SmedsExplainer` (540 frames @ 30 fps) has been fully built, structurally validated, and rendered to 1080p MP4.

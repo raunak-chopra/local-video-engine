@@ -1,4 +1,5 @@
 import {z} from "zod";
+import {assetSchema} from "./assets";
 
 export const CANVAS_PRESETS = {
   vertical: {width: 1080, height: 1920},
@@ -14,7 +15,9 @@ const brandSchema = z.strictObject({
   accent: z.string().default("#62e7ff"),
   fontFamily: z
     .string()
-    .default("Inter Variable"),
+    // Inter has no Devanagari glyphs; the browser falls back per glyph to the
+    // bundled Noto face instead of an OS font that differs between machines.
+    .default(`"Inter Variable", "Noto Sans Devanagari Variable"`),
 });
 
 const sceneBase = {
@@ -110,36 +113,57 @@ const captionSchema = z
     message: "endSec must be greater than startSec",
   });
 
-export const projectSchema = z
+const sharedProjectFields = {
+  id: z.string().regex(/^[a-z0-9][a-z0-9-]*$/, "use lowercase letters, digits, hyphens"),
+  title: z.string().min(1),
+  canvas: z.enum(["vertical", "square", "landscape"]).default("vertical"),
+  fps: z.number().int().min(24).max(60).default(30),
+  seed: z.number().int().default(1),
+  brand: brandSchema.default(() => brandSchema.parse({})),
+  scenes: z.array(sceneSchema).min(1),
+  captions: z.array(captionSchema).default([]),
+};
+
+const rejectDuplicateIds = (
+  items: {id: string}[],
+  key: string,
+  ctx: z.core.$RefinementCtx,
+) => {
+  const seen = new Set<string>();
+  items.forEach((item, index) => {
+    if (seen.has(item.id)) {
+      ctx.addIssue({code: "custom", path: [key, index, "id"], message: `duplicate ${key.slice(0, -1)} id "${item.id}"`});
+    }
+    seen.add(item.id);
+  });
+};
+
+/** v1: graphics-only projects. Kept unchanged so existing projects keep validating. */
+const projectV1Schema = z
+  .strictObject({version: z.literal(1), ...sharedProjectFields})
+  .superRefine((project, ctx) => rejectDuplicateIds(project.scenes, "scenes", ctx));
+
+/** v2: reel projects that reference prepared media assets. */
+const projectV2Schema = z
   .strictObject({
-    version: z.literal(1),
-    id: z.string().regex(/^[a-z0-9][a-z0-9-]*$/, "use lowercase letters, digits, hyphens"),
-    title: z.string().min(1),
-    canvas: z.enum(["vertical", "square", "landscape"]).default("vertical"),
-    fps: z.number().int().min(24).max(60).default(30),
-    seed: z.number().int().default(1),
-    brand: brandSchema.default(() => brandSchema.parse({})),
-    scenes: z.array(sceneSchema).min(1),
-    captions: z.array(captionSchema).default([]),
+    version: z.literal(2),
+    ...sharedProjectFields,
+    assets: z.array(assetSchema).default([]),
   })
   .superRefine((project, ctx) => {
-    const seen = new Set<string>();
-    project.scenes.forEach((scene, index) => {
-      if (seen.has(scene.id)) {
-        ctx.addIssue({
-          code: "custom",
-          path: ["scenes", index, "id"],
-          message: `duplicate scene id "${scene.id}"`,
-        });
-      }
-      seen.add(scene.id);
-    });
+    rejectDuplicateIds(project.scenes, "scenes", ctx);
+    rejectDuplicateIds(project.assets, "assets", ctx);
   });
+
+export const projectSchema = z.discriminatedUnion("version", [projectV1Schema, projectV2Schema], {
+  error: "version must be 1 (graphics) or 2 (reels with media assets)",
+});
 
 /** Author-facing input (defaults optional). */
 export type ProjectInput = z.input<typeof projectSchema>;
 /** Parsed project with defaults applied. */
 export type Project = z.output<typeof projectSchema>;
+export type ProjectV2 = Extract<Project, {version: 2}>;
 
 export class ProjectValidationError extends Error {
   readonly issues: string[];
