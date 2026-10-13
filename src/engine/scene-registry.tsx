@@ -1,7 +1,12 @@
 import React from "react";
 import type {Project, SceneSpec} from "./project-schema";
+import {Chart} from "./scenes/Chart";
+import {Compare} from "./scenes/Compare";
 import {EndCard} from "./scenes/EndCard";
 import {Hook} from "./scenes/Hook";
+import {List} from "./scenes/List";
+import {Quote} from "./scenes/Quote";
+import {Stat} from "./scenes/Stat";
 import {Statement} from "./scenes/Statement";
 
 /**
@@ -20,6 +25,16 @@ export const renderScene = (
       return <Hook props={scene.props} brand={brand} durationInFrames={durationInFrames} />;
     case "statement":
       return <Statement props={scene.props} brand={brand} durationInFrames={durationInFrames} />;
+    case "stat":
+      return <Stat props={scene.props} brand={brand} durationInFrames={durationInFrames} />;
+    case "list":
+      return <List props={scene.props} brand={brand} durationInFrames={durationInFrames} />;
+    case "compare":
+      return <Compare props={scene.props} brand={brand} durationInFrames={durationInFrames} />;
+    case "chart":
+      return <Chart props={scene.props} brand={brand} durationInFrames={durationInFrames} />;
+    case "quote":
+      return <Quote props={scene.props} brand={brand} durationInFrames={durationInFrames} />;
     case "endCard":
       return <EndCard props={scene.props} brand={brand} durationInFrames={durationInFrames} />;
     default: {

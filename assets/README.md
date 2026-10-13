@@ -21,4 +21,6 @@ Not usable: After Effects / Premiere / Final Cut templates (.aep, .prproj,
 .mogrt). Remotion cannot render those. Export a rendered clip instead, or
 tell me and I will rebuild the look in code.
 
-Record each Envato item in `LICENSES.md` (item ID or URL, title, folder).
+Record every item's source and license in `LICENSES.md` (Envato or any other
+source: ID or URL, title, license basis, folder). All supplied assets are
+treated as cleared for use.

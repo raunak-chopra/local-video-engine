@@ -41,6 +41,53 @@ export const sceneSchema = z.discriminatedUnion("type", [
   }),
   z.object({
     ...sceneBase,
+    type: z.literal("stat"),
+    props: z.object({
+      value: z.string().min(1).max(20),
+      label: z.string().min(1).max(90),
+      detail: z.string().max(120).optional(),
+    }),
+  }),
+  z.object({
+    ...sceneBase,
+    type: z.literal("list"),
+    props: z.object({
+      headline: z.string().min(1).max(70),
+      items: z.array(z.string().min(1).max(60)).min(2).max(5),
+    }),
+  }),
+  z.object({
+    ...sceneBase,
+    type: z.literal("compare"),
+    props: z.object({
+      headline: z.string().min(1).max(70),
+      left: z.object({label: z.string().min(1).max(24), text: z.string().min(1).max(80)}),
+      right: z.object({label: z.string().min(1).max(24), text: z.string().min(1).max(80)}),
+    }),
+  }),
+  z.object({
+    ...sceneBase,
+    type: z.literal("chart"),
+    props: z.object({
+      headline: z.string().min(1).max(70),
+      unit: z.string().max(4).default(""),
+      bars: z
+        .array(z.object({label: z.string().min(1).max(24), value: z.number().nonnegative()}))
+        .min(2)
+        .max(6),
+      source: z.string().max(100).optional(),
+    }),
+  }),
+  z.object({
+    ...sceneBase,
+    type: z.literal("quote"),
+    props: z.object({
+      quote: z.string().min(1).max(140),
+      attribution: z.string().max(60).optional(),
+    }),
+  }),
+  z.object({
+    ...sceneBase,
     type: z.literal("endCard"),
     props: z.object({
       title: z.string().min(1).max(60),

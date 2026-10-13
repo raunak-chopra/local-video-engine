@@ -35,3 +35,12 @@ Plan: `docs/RESEARCH-AND-FINALISATION-PLAN.md` (phases) and `ENGINE-PLAN.md` (ar
 - Verified: lint + tsc, invalid-project errors with field paths, stills in all three canvases, 10 s vertical MP4 render.
 - Visually reviewed: vertical and landscape frame 45 only. Not yet reviewed: square, scene boundaries, full playback, end card.
 - Not done: ffprobe export check, golden-frame tests, captions from audio, remaining scenes, provider adapters.
+
+## Session 2026-10-13 (reels direction)
+
+- Goal: upload own footage plus licensed assets, get reels (Cardboard / Yonko-style local pipeline). Whisper runs locally, free (`@remotion/install-whisper-cpp`); not yet installed.
+- `assets/` drop folder created (footage, broll, music, sfx, motion-graphics, overlays-and-luts, fonts, images-and-logos, voiceover, references). Media is git-ignored; `assets/LICENSES.md` logs sources. Owner states all supplied assets are cleared.
+- GitHub `origin/main` is an older unrelated-history baseline. This work is pushed as branch `engine/phase-0-1-contract`; do not force-push `main`.
+- Ported scenes from the old baseline: `stat`, `list`, `compare`, `chart`, `quote` (`src/engine/scenes/`), sample `projects/scene-showcase/project.json`.
+- Verified: `npm run validate` passes; project validates. Visually reviewed stills for stat, list, compare, chart (frames 60/150/260/380). Not yet reviewed: quote (frame 470), transitions, other canvases.
+- Next: ingest, Whisper transcription, video-clip scene, animated captions, design-system file, silence and filler cutting.
