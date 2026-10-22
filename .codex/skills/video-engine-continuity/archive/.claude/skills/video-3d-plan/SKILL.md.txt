@@ -1,0 +1,28 @@
+---
+name: video-3d-plan
+description: Plan Blender assets or animated 3D shots for local-video-engine videos, including audit and handoff requirements. Use when a requested visual requires real 3D rather than the existing 2D Remotion scenes.
+---
+
+# Plan a 3D handoff
+
+Read `docs/3d-handoff.md` and use `prompts/3d-shot-request.md`. Establish the
+requested asset/shot, approved input model and rig, units, palette, camera,
+lighting, timing, output format, and measurable constraints. Prefer an approved
+existing rig when character animation is requested. Separate geometry checks
+from shot checks; game mesh budgets are irrelevant to many video shots.
+
+Check whether Blender or an approved connector is actually available. If it is,
+implement only the requested work and render a low-cost local proof before final
+output. When it is unavailable, deliver a concrete shot plan and report the missing
+dependency. Do not report a plan as a completed render.
+
+For topology/material exports, specify relevant mesh and UV audits before baking.
+For animation, specify floor contact, planted-foot movement in scene units, camera
+framing, and final-frame checks with explicit tolerances. Preview start, midpoint,
+end, and each contact or camera change; full playback is still needed.
+
+The bot currently accepts approved still images under `public/`; it does not accept
+video clips, GLB, FBX, or image sequences as scene kinds. An animated Blender clip
+needs an explicit implementation and validation extension before integration.
+Any external model generation must fit the user's asset and spending authorization;
+verify service availability/cost rather than copying model names from Reddit.

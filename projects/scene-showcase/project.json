@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "id": "scene-showcase",
+  "title": "Scene showcase (placeholder copy)",
+  "canvas": "vertical",
+  "fps": 30,
+  "seed": 1,
+  "brand": {"background": "#06101c", "foreground": "#f8fbff", "accent": "#62e7ff"},
+  "scenes": [
+    {"id": "stat", "type": "stat", "durationSec": 3, "props": {"value": "1,250+", "label": "Placeholder metric", "detail": "Replace with a verified number."}},
+    {"id": "list", "type": "list", "durationSec": 3.5, "props": {"headline": "Three points", "items": ["Brand fonts and colors", "Frame-perfect timing", "Rendered locally"]}},
+    {"id": "compare", "type": "compare", "durationSec": 3.5, "props": {"headline": "Before and after", "left": {"label": "Before", "text": "Hand-edited timelines"}, "right": {"label": "After", "text": "One JSON, rendered in minutes"}}},
+    {"id": "chart", "type": "chart", "durationSec": 3.5, "props": {"headline": "Example chart", "unit": "%", "bars": [{"label": "Option A", "value": 38}, {"label": "Option B", "value": 64}, {"label": "Option C", "value": 91}], "source": "Placeholder data"}},
+    {"id": "quote", "type": "quote", "durationSec": 3, "props": {"quote": "Placeholder quote from an approved source.", "attribution": "Name, Role"}}
+  ],
+  "captions": []
+}

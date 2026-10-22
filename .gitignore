@@ -1,10 +1,23 @@
-node_modules/
-.npm-cache/
-out/
-.remotion/
-*.log
-
-# Local credentials and configuration
+node_modules
+dist
+.DS_Store
 .env
-.env.*
-!.env.example
+
+# Ignore the output video from Git but not videos you import into src/.
+out
+
+# Licensed media (keep README + LICENSES.md tracked)
+assets/*/*
+!assets/*/.gitkeep
+
+# Prepared media is regenerated locally, not carried by Git.
+public/generated-media/
+__pycache__/
+*.pyc
+
+# Synthetic fixture locks depend on locally generated media.
+projects/_fixtures/**/media.lock.json
+
+# Local package cache and generated guides
+/.npm-cache/
+/artifacts/

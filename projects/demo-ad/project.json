@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "id": "demo-ad",
+  "title": "Demo ad (placeholder copy)",
+  "canvas": "vertical",
+  "fps": 30,
+  "seed": 1,
+  "brand": {
+    "background": "#06101c",
+    "foreground": "#f8fbff",
+    "accent": "#62e7ff"
+  },
+  "scenes": [
+    {"id": "hook", "type": "hook", "durationSec": 3, "props": {"eyebrow": "Demo product", "headline": "One clear idea. Zero fuss."}},
+    {"id": "benefit", "type": "statement", "durationSec": 4, "props": {"eyebrow": "Placeholder benefit", "text": "Change the copy in JSON and re-render in any shape."}},
+    {"id": "end", "type": "endCard", "durationSec": 3, "props": {"title": "Demo Brand", "cta": "Learn more", "url": "example.com"}}
+  ],
+  "captions": [
+    {"startSec": 0.5, "endSec": 2.5, "text": "Start with one clear idea."},
+    {"startSec": 3.5, "endSec": 6.5, "text": "Data drives the scenes."}
+  ]
+}
