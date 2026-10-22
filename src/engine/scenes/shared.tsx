@@ -1,6 +1,7 @@
 import React from "react";
 import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from "remotion";
-import {fadeOpacity} from "../fade";
+import {graphicOpacity} from "../fade";
+import {useGraphicMotion} from "../graphic-motion";
 import type {Project} from "../project-schema";
 
 export const SAFE_AREA = 64;
@@ -22,7 +23,8 @@ export const SceneFrame: React.FC<
   React.PropsWithChildren<{durationInFrames: number; brand: Project["brand"]}>
 > = ({children, durationInFrames, brand}) => {
   const frame = useCurrentFrame();
-  const opacity = fadeOpacity(frame, durationInFrames, Math.min(10, Math.floor(durationInFrames / 4)));
+  const motion = useGraphicMotion();
+  const opacity = graphicOpacity(frame, durationInFrames, motion?.enter ?? "spring", motion?.exit ?? "fade");
   return (
     <AbsoluteFill
       style={{
@@ -41,6 +43,8 @@ export const SceneFrame: React.FC<
 export const useEnter = (delay = 0) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const motion = useGraphicMotion();
+  if (motion?.enter === "cut") return 1;
   return spring({frame: frame - delay, fps, config: {damping: 16, stiffness: 95}});
 };
 

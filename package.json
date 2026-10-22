@@ -40,7 +40,7 @@
     "lint": "eslint src && tsc",
     "video": "tsx tools/video.ts",
     "validate:projects": "tsx tools/validate-projects.ts",
-    "test": "tsx --test tests/stage0.test.ts tests/media.test.ts tests/clip.test.ts",
+    "test": "tsx --test tests/stage0.test.ts tests/media.test.ts tests/clip.test.ts tests/direction.test.ts",
     "fixtures": "tsx tools/make-fixtures.ts"
   },
   "sideEffects": [

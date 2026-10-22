@@ -1,5 +1,60 @@
 # Current task: Stage 1 reel engine (slices 1-2 done)
 
+## Prompt references and Namak Kum Tha lab (2026-10-21)
+
+Owner asked to collect the shared site's prompts for use with Namak Kum Tha
+videos, then explicitly said **we will test later**. No video generation or
+footage selection is authorized by this lab preparation alone.
+
+- Public source-link/creator/category snapshot and retrieval documentation:
+  `docs/references/prompt-motion/README.md`. This is a reference catalog, not
+  a verbatim copy of the entire third-party prompt collection.
+  Verified coverage: all 1,152 library links plus 230 gallery links (1,382 distinct
+  URLs), with all observed URL forms handled. Prompt bodies were not archived.
+- `projects/namak-kum-tha-lab/prompts.json`: 20 original house prompts, shared
+  production instructions, comparison variables and capability/review criteria.
+  All experiments remain `not-run`. The README explains later invocation;
+  `result-template.json` contains no invented result.
+- Brand spelling follows the owner. Final palette, logo, slogans, recipes,
+  source footage and preferred script have not been inferred or approved.
+- Test this lab only after the owner requests testing and selects footage.
+  These files are planning material; do not pass `prompts.json` to the render CLI.
+
+## Motion research and production update (2026-10-21)
+
+Owner requested deep research of Prompt Motion and the linked Reddit discussion,
+with detailed shared guidance for Codex, Claude and Antigravity. This update
+supplements the reel roadmap; **next reel feature remains Stage 1 slice 3**.
+
+- Source assessment and bounded adoption decisions:
+  `docs/MOTION-RESEARCH-2026-10-21.md`.
+- Shared production guide: `docs/MOTION-DIRECTION-PLAYBOOK.md`; reusable briefs:
+  `docs/MOTION-PROMPT-TEMPLATES.md`. AGENTS/CLAUDE/GEMINI route to shared files.
+- Implemented optional graphic `motion: {enter: spring|cut, exit: fade|cut}`.
+  Omission preserves existing behavior; cut entrance settles nested elements
+  immediately. Clips and captions keep independent timing.
+- Implemented strict optional adjacent `direction.json` and
+  `video plan <project.json> [--direction=file] [--canvas=...] [--out=file]`.
+  Absolute beat rounding, cue/hold scene bounds, unique IDs, boundary/beat/hold
+  samples and parsed-input hashes. This is planning, not audio analysis or a
+  second render clock. `npm run validate` checks adjacent sidecars.
+- Mechanics sample: `projects/motion-study/` (silent, square, 240 frames).
+  Read `docs/DIRECTION-CONTRACT.md` for the exact implementation contract.
+- Current verification and review evidence:
+  `docs/MOTION-UPDATE-VERIFICATION-2026-10-21.md` and the study's review notes.
+  Use those results rather than assuming historical-PC media tests passed here.
+  Final local result: lint/tsc, six projects, 22 tests passed, one fixture-dependent
+  media test skipped; doctor passed with normal process access. Two MP4 exports
+  passed metadata checks; 47 encoded-frame samples and two additional opening
+  stills were visually inspected. Full-speed playback and phone review pending.
+
+Research limits: text/metadata review plus a limited muted browser spot check;
+original X access failed and two Skill cards did not expose their skill bodies.
+No third-party skill installed, no paid service, no alternate renderer, no
+engagement result claimed. Real-footage, full audio and phone checks remain
+distinct acceptance steps. The untracked `.npm-cache/` predated this work and
+was preserved.
+
 
 ## Active work (2026-10-13)
 
@@ -70,8 +125,8 @@ HDR10+/HLG).
 
 - No real Android footage yet: confirm rotation, VFR, HDR and audio on a real
   clip (and HEVC: the bundled ffmpeg cannot make an HEVC fixture).
-- Graphic scenes still fade from the background (reel opening on a graphic
-  card starts empty). Decide cut/fade option with the text-overlay slice.
+- Graphic scenes fade by default; the 2026-10-21 motion update adds explicit
+  immediate-entry and hard-exit choices. See its verification report above.
 - Full-speed playback review and phone-app preview not done.
 - One `npm run fixtures` run failed in a Remotion render and passed on rerun;
   cause not captured.

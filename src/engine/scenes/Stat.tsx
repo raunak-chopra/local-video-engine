@@ -1,6 +1,7 @@
 import React from "react";
 import {interpolate, useCurrentFrame, useVideoConfig} from "remotion";
 import type {SceneSpec} from "../project-schema";
+import {useGraphicMotion} from "../graphic-motion";
 import {SceneFrame, useEnter, useUnit, type SceneProps} from "./shared";
 
 /** Parses "$1,250+" into prefix, number and suffix so the number can count up. */
@@ -27,7 +28,8 @@ export const Stat: React.FC<SceneProps<Extract<SceneSpec, {type: "stat"}>["props
   const {fps} = useVideoConfig();
   const enter = useEnter();
   const label = useEnter(10);
-  const progress = interpolate(frame, [0, fps * 1.4], [0, 1], {
+  const motion = useGraphicMotion();
+  const progress = motion?.enter === "cut" ? 1 : interpolate(frame, [0, fps * 1.4], [0, 1], {
     extrapolateRight: "clamp",
     easing: (t) => 1 - Math.pow(1 - t, 3),
   });

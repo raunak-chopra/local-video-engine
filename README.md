@@ -96,8 +96,9 @@ Generic v1 projects support eight graphic scenes and one non-overlapping caption
 lane. Unknown fields, zero-frame spans and overlapping captions fail validation.
 Graphics bundle and wait for Inter Variable plus Noto Sans Devanagari (per-glyph
 fallback, so Hindi no longer depends on an OS font). v2 projects play trimmed
-footage clips with their source sound. Graphic scenes still fade in from the
-background (so a reel opening on a graphic card starts on an empty frame).
+footage clips with their source sound. Graphic scenes preserve their legacy
+fades by default; optional `"motion": {"enter": "cut", "exit": "cut"}` reveals
+all scene content immediately and holds it through the final frame.
 Supplied fonts, mixed-script runs, text overlays, music/SFX layers and reaction
 inserts are the next Stage 1 slices. The seed field is
 reserved; current graphic scenes have no random behavior. Three canvas sizes
@@ -109,8 +110,36 @@ were removed during Stage 0.
 
 ## Handoff
 
-AGENTS.md is shared guidance; CLAUDE.md imports it. CURRENT-TASK.md is the active
+AGENTS.md is shared guidance; CLAUDE.md imports it and GEMINI.md routes
+Antigravity/Gemini to it. CURRENT-TASK.md is the active
 handoff. See the Stage 0 completion report and Stage 1 sequence there.
 Git does not carry assets/ media, out/, or public/generated-media/. Copy selected
 original clips/fonts/music/memes separately, preserve rights notes and regenerate
 prepared media on the main laptop. Whisper is optional for spoken clips.
+
+## Motion direction and source research
+
+Start with [the shared production playbook](docs/MOTION-DIRECTION-PLAYBOOK.md).
+The [research report](docs/MOTION-RESEARCH-2026-10-21.md) assesses Prompt Motion,
+the supplied Reddit discussion and related briefs with access/evidence limits.
+[Prompt templates](docs/MOTION-PROMPT-TEMPLATES.md) work across agents.
+
+Optional adjacent `direction.json` records scene intentions and frame/beat cues.
+Generate deterministic review samples before rendering:
+
+```powershell
+npm.cmd run video -- plan projects/motion-study/project.json
+npm.cmd run video -- still projects/motion-study/project.json --frame=0
+npm.cmd run video -- render projects/motion-study/project.json
+```
+
+The [direction contract](docs/DIRECTION-CONTRACT.md) covers rounding, provenance,
+holds, validation and output hashes. Planning does not require media preparation
+and does not alter the edit or analyze audio. `npm.cmd run validate` also checks
+adjacent direction files. The silent eight-second motion study exercises the
+new graphic edge controls; it is not a completed cooking pilot.
+
+For later channel experiments, [the Namak Kum Tha prompt lab](projects/namak-kum-tha-lab/README.md)
+contains 20 original briefs and an empty result template. The owner deferred
+testing. [The Prompt Motion catalog](docs/references/prompt-motion/README.md)
+stores source-link metadata rather than a verbatim copy of the prompt collection.

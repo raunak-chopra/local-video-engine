@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "motion-study",
+  "title": "Directed motion mechanics study",
+  "canvas": "square",
+  "fps": 30,
+  "brand": {"background": "#101820", "foreground": "#F7F4EA", "accent": "#E8B44C"},
+  "scenes": [
+    {"id": "opening", "type": "hook", "durationSec": 2, "motion": {"enter": "cut", "exit": "cut"}, "props": {"eyebrow": "01 / INTENT", "headline": "Make every move mean something."}},
+    {"id": "progress", "type": "statement", "durationSec": 2, "motion": {"enter": "spring", "exit": "cut"}, "props": {"eyebrow": "02 / RHYTHM", "text": "Move. Settle. Let the idea land."}},
+    {"id": "proof", "type": "list", "durationSec": 2, "motion": {"enter": "cut", "exit": "fade"}, "props": {"headline": "Review the actual frames.", "items": ["Opening and boundaries", "Reading hold", "Final frame"]}},
+    {"id": "payoff", "type": "endCard", "durationSec": 2, "motion": {"enter": "cut", "exit": "cut"}, "props": {"title": "One clear idea.", "cta": "Then the next."}}
+  ]
+}

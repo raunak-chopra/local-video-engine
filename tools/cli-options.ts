@@ -1,6 +1,7 @@
-export type Command = "validate" | "still" | "render" | "doctor" | "probe" | "prepare" | "studio";
-const COMMANDS: Command[] = ["validate", "still", "render", "doctor", "probe", "prepare", "studio"];
+export type Command = "validate" | "still" | "render" | "doctor" | "probe" | "prepare" | "studio" | "plan";
+const COMMANDS: Command[] = ["validate", "still", "render", "doctor", "probe", "prepare", "studio", "plan"];
 const VALUE_FLAGS: Record<Command, string[]> = {
+  plan: ["canvas", "direction", "out"],
   still: ["canvas", "frame", "out", "log"],
   render: ["canvas", "out", "log"],
   validate: ["canvas"],
@@ -11,6 +12,7 @@ const VALUE_FLAGS: Record<Command, string[]> = {
 };
 /** Flags written bare (`--check`), meaning true. */
 const SWITCH_FLAGS: Record<Command, string[]> = {
+  plan: [],
   prepare: ["check", "accept-changes"],
   studio: ["no-open"],
   still: [], render: [], validate: [], doctor: [], probe: [],
@@ -18,7 +20,7 @@ const SWITCH_FLAGS: Record<Command, string[]> = {
 
 export const parseOptions = (args: string[]) => {
   const [command, input, ...rest] = args as [Command, string, ...string[]];
-  if (!COMMANDS.includes(command)) throw new Error("Usage: video <validate|still|render|prepare|studio> <project.json> [--canvas=vertical|square|landscape] [--frame=N] [--out=file] [--log=verbose]; video prepare <project.json> [--check] [--accept-changes]; video doctor; video probe <media>");
+  if (!COMMANDS.includes(command)) throw new Error("Usage: video <validate|still|render|prepare|studio|plan> <project.json> [--canvas=vertical|square|landscape]; video plan <project.json> [--direction=direction.json] [--out=review-plan.json]; video still <project.json> [--frame=N] [--out=file.png]; video render <project.json> [--out=file.mp4]; video prepare <project.json> [--check] [--accept-changes]; video doctor; video probe <media>");
   if (command !== "doctor" && (!input || input.startsWith("--"))) throw new Error("An input file is required.");
   if (command === "doctor" && input) throw new Error("doctor takes no arguments.");
   const flags: Record<string, string> = {};

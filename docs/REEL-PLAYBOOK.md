@@ -1,5 +1,11 @@
 # Reel playbook (cooking, faceless, music + text)
 
+Motion-planning supplement (21 October 2026): use the shared
+[motion direction playbook](MOTION-DIRECTION-PLAYBOOK.md) for art direction and
+frame review, and [the direction contract](DIRECTION-CONTRACT.md) for optional
+manual beat/shot cues. The gallery research adds production methods; it does
+not replace footage-led cooking choices or establish audience results.
+
 Status: DRAFT, updated with primary-source research on 2026-10-13. Read
 [the evidence and practical creative guide](REEL-CREATIVE-RESEARCH-2026-10-13.md)
 for source dates, limits, hook examples, story beats and testing conventions.

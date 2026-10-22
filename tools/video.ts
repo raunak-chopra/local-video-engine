@@ -6,6 +6,7 @@ import path from "node:path";
 import type {MediaMap} from "../src/engine/assets";
 import {parseProject, type Project} from "../src/engine/project-schema";
 import {resolveTimeline} from "../src/engine/resolve-timeline";
+import {buildReviewPlan, parseDirection} from "../src/engine/review-plan";
 import {parseOptions} from "./cli-options";
 import {lockPathFor, mediaMapFromLock, readLock} from "./media/lock";
 import {prepareProject} from "./media/prepare";
@@ -21,7 +22,7 @@ const mediaFor = (project: Project, projectPath: string): MediaMap | undefined =
 
 const main = async () => {
   const {command, input, flags, frame} = parseOptions(process.argv.slice(2));
-  for (const key of ["frame", "canvas", "out", "log", "port", "check", "accept-changes"]) {
+  for (const key of ["frame", "canvas", "out", "log", "port", "check", "accept-changes", "direction"]) {
     if (process.env[`npm_config_${key.replace("-", "_")}`] && !(key in flags)) throw new Error(`npm consumed --${key}; use npm.cmd run video -- ... or invoke tools/video.ts directly.`);
   }
   if (command === "doctor") {
@@ -40,6 +41,25 @@ const main = async () => {
   const raw = JSON.parse(readFileSync(projectPath, "utf8"));
   if (flags.canvas) raw.canvas = flags.canvas;
   const project = parseProject(raw);
+  if (command === "plan") {
+    // Read-only preproduction: no media lock needed, no project mutation.
+    const directionPath = flags.direction ? path.resolve(flags.direction) : path.join(path.dirname(projectPath), "direction.json");
+    if (flags.direction && !existsSync(directionPath)) throw new Error(`Direction file not found: ${directionPath}`);
+    const direction = existsSync(directionPath) ? parseDirection(JSON.parse(readFileSync(directionPath, "utf8"))) : undefined;
+    const plan = {
+      ...buildReviewPlan(project, direction),
+      projectHash: createHash("sha256").update(JSON.stringify(project)).digest("hex"),
+      directionHash: direction ? createHash("sha256").update(JSON.stringify(direction)).digest("hex") : null,
+    };
+    const json = JSON.stringify(plan, null, 2);
+    if (flags.out) {
+      const output = path.resolve(flags.out);
+      mkdirSync(path.dirname(output), {recursive: true});
+      writeFileSync(output, `${json}\n`, {flag: "wx"});
+      console.log(`Wrote ${output} (${plan.frames.length} review frames)`);
+    } else console.log(json);
+    return;
+  }
   if (command === "prepare") {
     if (project.version !== 2) throw new Error("prepare needs a version 2 project with an assets list.");
     const check = flags.check === "true";

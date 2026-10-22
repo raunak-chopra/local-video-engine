@@ -7,6 +7,7 @@ import {mediaMapSchema, type MediaMap} from "./assets";
 import {parseProject, type Project} from "./project-schema";
 import {resolveTimeline, type ResolvedTimeline} from "./resolve-timeline";
 import {renderScene} from "./scene-registry";
+import {GraphicMotionProvider} from "./graphic-motion";
 
 /**
  * Props accepted by the composition: raw project JSON, validated at render
@@ -84,7 +85,9 @@ export const ProjectComposition: React.FC<ResolvedProps> = ({resolved}) => {
       <LocalFontReady />
       {timeline.scenes.map((resolvedScene) => (
         <Sequence key={resolvedScene.scene.id} from={resolvedScene.from} durationInFrames={resolvedScene.durationInFrames} name={resolvedScene.scene.id}>
-          {renderScene(resolvedScene, project.brand, media)}
+          <GraphicMotionProvider value={resolvedScene.scene.type === "clip" ? undefined : resolvedScene.scene.motion}>
+            {renderScene(resolvedScene, project.brand, media)}
+          </GraphicMotionProvider>
         </Sequence>
       ))}
       <Caption cues={timeline.captions} fontFamily={project.brand.fontFamily} safe />

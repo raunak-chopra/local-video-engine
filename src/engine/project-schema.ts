@@ -23,6 +23,11 @@ const brandSchema = z.strictObject({
 const sceneBase = {
   id: z.string().min(1),
   durationSec: z.number().positive().max(120),
+  /** Omit to preserve legacy spring entrances and scene fades. */
+  motion: z.strictObject({
+    enter: z.enum(["spring", "cut"]).default("spring"),
+    exit: z.enum(["fade", "cut"]).default("fade"),
+  }).optional(),
 };
 
 export const sceneSchema = z.discriminatedUnion("type", [
@@ -168,7 +173,7 @@ const rejectDuplicateIds = (
   });
 };
 
-/** v1: graphics-only projects. Kept unchanged so existing projects keep validating. */
+/** v1: graphics-only projects. Optional motion controls preserve existing defaults. */
 const projectV1Schema = z
   .strictObject({version: z.literal(1), ...sharedProjectFields})
   .superRefine((project, ctx) => rejectDuplicateIds(project.scenes, "scenes", ctx));

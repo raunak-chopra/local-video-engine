@@ -17,3 +17,7 @@ __pycache__/
 
 # Synthetic fixture locks depend on locally generated media.
 projects/_fixtures/**/media.lock.json
+
+# Local package cache and generated guides
+/.npm-cache/
+/artifacts/
