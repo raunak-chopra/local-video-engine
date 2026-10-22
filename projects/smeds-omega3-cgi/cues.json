@@ -1,0 +1,87 @@
+{
+  "project": "Omega3SmedsExplainer",
+  "fps": 30,
+  "durationInFrames": 540,
+  "durationSeconds": 18.0,
+  "status": "draft",
+  "shots": [
+    {
+      "name": "Shot 1 - Establish the comparison",
+      "startFrame": 0,
+      "endFrame": 35,
+      "startMs": 0,
+      "endMs": 1167,
+      "description": "Fade up from near-black into aqueous chamber. Camera pushes slowly toward floating traditional softgel. Label: Traditional softgel."
+    },
+    {
+      "name": "Shot 2 - Traditional release",
+      "startFrame": 35,
+      "endFrame": 125,
+      "startMs": 1167,
+      "endMs": 4167,
+      "description": "Shell softens and opens along natural seam. Release large amber drops with surface tension and mild coalescence."
+    },
+    {
+      "name": "Shot 3 - Slow dispersion",
+      "startFrame": 125,
+      "endFrame": 185,
+      "startMs": 4167,
+      "endMs": 6167,
+      "description": "Large drops drifting past membrane with limited contact. Label: Large oil droplets."
+    },
+    {
+      "name": "Shot 4 - Seamless system transition",
+      "startFrame": 185,
+      "endFrame": 225,
+      "startMs": 6167,
+      "endMs": 7500,
+      "description": "Camera pass through one large amber droplet as full-frame transition. Reveals SMEDS softgel with cyan-teal accent lighting."
+    },
+    {
+      "name": "Shot 5 - SMEDS activation",
+      "startFrame": 225,
+      "endFrame": 335,
+      "startMs": 7500,
+      "endMs": 11167,
+      "description": "Label: SMEDS softgel. Shell ruptures with controlled vortex into spiral of progressively smaller droplets."
+    },
+    {
+      "name": "Shot 6 - Rapid microdispersion",
+      "startFrame": 335,
+      "endFrame": 460,
+      "startMs": 11167,
+      "endMs": 15333,
+      "description": "Field of 300+ microdroplets disperses evenly across aqueous volume. Broad membrane contact with gentle light pulses. Label: Microscopic droplets."
+    },
+    {
+      "name": "Shot 7 - Resolve and end card",
+      "startFrame": 460,
+      "endFrame": 540,
+      "startMs": 15333,
+      "endMs": 18000,
+      "description": "Droplets settle into balanced field. Simple scientific end card with disclaimer and required placeholders."
+    }
+  ],
+  "captions": [
+    {
+      "startFrame": 10,
+      "endFrame": 175,
+      "text": "Most omega-3s don't fully blend in the body."
+    },
+    {
+      "startFrame": 185,
+      "endFrame": 235,
+      "text": "Our new delivery system changes that."
+    },
+    {
+      "startFrame": 240,
+      "endFrame": 350,
+      "text": "Instead of large oil drops, it forms microscopic droplets,"
+    },
+    {
+      "startFrame": 355,
+      "endFrame": 470,
+      "text": "making them far easier to absorb—even without a fatty meal."
+    }
+  ]
+}

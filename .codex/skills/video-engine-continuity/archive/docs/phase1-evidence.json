@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-12T15:15:45.812Z",
+  "status": "passed",
+  "baselineCommit": "d5a960b",
+  "verifiedRenderCommit": "7c1b3e703149c38bc99d08efdcf648a2d87201cb",
+  "unitTests": 28,
+  "integrationQa": {
+    "sceneKinds": 9,
+    "formats": [
+      "portrait",
+      "landscape"
+    ],
+    "audioSeconds": 5,
+    "sourceAudioFrames": 120,
+    "invalidTrimsRejected": true,
+    "excessiveFadesRejected": true
+  },
+  "reference": {
+    "path": "out/phase1-qa/results.json",
+    "sha256": "7f1cd7b0d0b91831420f2bb78f2f2d5f191708fdfd227e90aa531944eda5b044",
+    "runs": 30
+  },
+  "cleanCheckout": {
+    "path": "out/phase1-clean/out/phase1-clean-qa/results.json",
+    "sha256": "e5079c0f108db0b6343036f67ccbb6be7c171dd000ac115af9f253b30b5985ed",
+    "runs": 10,
+    "workingTreeClean": true,
+    "nodeVersion": "24.11.1",
+    "processTreeMemory": {
+      "intervalMs": 500,
+      "elapsedSeconds": 152.9689234,
+      "limitations": "Sampled Node worker and current descendants; excludes monitor and npm launcher. CIM enumeration adds overhead; short peaks may be missed.",
+      "samples": 199,
+      "status": "measured",
+      "sampledPeakWorkingSetBytes": 1352953856
+    }
+  },
+  "fixtures": [
+    {
+      "fixture": "fixture-1-title",
+      "decodedHash": "e9158c295d19a82fe93a47221bb1b924feb2be4557db4c4f74a120b2db042c24",
+      "matchedReferenceRuns": 3
+    },
+    {
+      "fixture": "fixture-2-point",
+      "decodedHash": "ace6b2fa3363c917b72e7f0b2c7ba719fc28d204295976f7a0193e8437695e48",
+      "matchedReferenceRuns": 3
+    },
+    {
+      "fixture": "fixture-3-stat",
+      "decodedHash": "1b651a975ed2707b8190351ca85b8e1e5861acf85ed74534952b17d58415f8e8",
+      "matchedReferenceRuns": 3
+    },
+    {
+      "fixture": "fixture-4-list",
+      "decodedHash": "7e203647ca44565414cdf96b5108c004c8711526fefdc3300d7cf583632618e3",
+      "matchedReferenceRuns": 3
+    },
+    {
+      "fixture": "fixture-5-quote",
+      "decodedHash": "9666a35b194c890ed4514cd1b58ff07dc4bfc15c087a11efd0f38640326d8de4",
+      "matchedReferenceRuns": 3
+    },
+    {
+      "fixture": "fixture-6-compare",
+      "decodedHash": "41685ed240f10451b222d57ba4ab52a2693b4ad8e175502b584d41cdc808916c",
+      "matchedReferenceRuns": 3
+    },
+    {
+      "fixture": "fixture-7-chart",
+      "decodedHash": "42306a9d358dd67158ea44fafc231dfde06876c2874da3f3c29837f1df786ad1",
+      "matchedReferenceRuns": 3
+    },
+    {
+      "fixture": "fixture-8-image",
+      "decodedHash": "29a2856ea7beb32ef23e6a5718f09f9c03bdbbb355984ea32801d561861dccc2",
+      "matchedReferenceRuns": 3
+    },
+    {
+      "fixture": "fixture-9-outro",
+      "decodedHash": "24592f7e236b69a38a2343820caabf7b92a2ecae8307c10b74710736f2791025",
+      "matchedReferenceRuns": 3
+    },
+    {
+      "fixture": "fixture-10-long-copy",
+      "decodedHash": "70b07cb31a50e91d0505357bcfa90752ef2daea81324f84d25722c421a13ab4f",
+      "matchedReferenceRuns": 3
+    }
+  ],
+  "limitations": [
+    "Draft scale 0.2; no full-resolution visual acceptance or audio listening.",
+    "Initial 30-run suite used a working tree; all decoded outputs were compared to the clean committed checkout.",
+    "Hosted CI has not run; commercial eligibility and customer font rights remain unresolved."
+  ]
+}

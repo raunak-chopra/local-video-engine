@@ -1,0 +1,123 @@
+{
+  "archivedOn": "2026-10-13",
+  "sourceCommit": "ca232b26e2a421c479a1398db31e21fda0e08e48",
+  "activeCommit": "f874842e6c52a2e040eb40b2fd1f2192449e2467",
+  "warning": "Historical source only. Old commands, claims and acceptance results do not describe the active engine.",
+  "files": [
+    {
+      "source": ".claude/skills/video-3d-plan/SKILL.md",
+      "destination": "archive/.claude/skills/video-3d-plan/SKILL.md.txt",
+      "sha256": "544cc0809e76866dfebf1fb730bb635bb12f2c10652c64bbae717f193dda1dd1"
+    },
+    {
+      "source": ".claude/skills/video-director/SKILL.md",
+      "destination": "archive/.claude/skills/video-director/SKILL.md.txt",
+      "sha256": "8ea125b1d8a3bf26d03f5264df088dfa6310e8fb984a5ccddbf8f5166ef054c1"
+    },
+    {
+      "source": ".claude/skills/video-review/SKILL.md",
+      "destination": "archive/.claude/skills/video-review/SKILL.md.txt",
+      "sha256": "5541d739ebe95b88dd3e6622590b8272f6138e35ca3103711fe97872dbd253eb"
+    },
+    {
+      "source": "docs/3d-handoff.md",
+      "destination": "archive/docs/3d-handoff.md",
+      "sha256": "648c3c83d5b592dc95e827927f6675127ee6f6fe0037735b2928be1d512cbef6"
+    },
+    {
+      "source": "docs/animation-tool-selection.md",
+      "destination": "archive/docs/animation-tool-selection.md",
+      "sha256": "b45dd7235a890031322ca008679ef8b2068d64bedc89ee47caa5f4f25783300f"
+    },
+    {
+      "source": "docs/brand-manager-creative-video.md",
+      "destination": "archive/docs/brand-manager-creative-video.md",
+      "sha256": "bedf7c2db81ea9f034a1e79b809ac930bbe24d5bd11cb860f56d12ef4f3f32c7"
+    },
+    {
+      "source": "docs/claude-video-workflow.md",
+      "destination": "archive/docs/claude-video-workflow.md",
+      "sha256": "5ca72495475f2d639c7126f31be72091bf3cabe7413f0d03a2ca6adf4e623770"
+    },
+    {
+      "source": "docs/motion-workflow-research.md",
+      "destination": "archive/docs/motion-workflow-research.md",
+      "sha256": "b3bd75de122958f457081d93976e46526d9cbe01c7a324da0a49505765427852"
+    },
+    {
+      "source": "docs/phase1-evidence.json",
+      "destination": "archive/docs/phase1-evidence.json",
+      "sha256": "387859eb6ea068d6db16728a54582a0838a76055eec72072f8e5dfa47180f9e5"
+    },
+    {
+      "source": "docs/phase1-readiness.md",
+      "destination": "archive/docs/phase1-readiness.md",
+      "sha256": "6eb63f8b424ca63b99216a8d7072cde4b2c3a720278f1994b8ec929f7e5ef26b"
+    },
+    {
+      "source": "docs/production-readiness-plan.md",
+      "destination": "archive/docs/production-readiness-plan.md",
+      "sha256": "9810eb799b40e91721bbf5eb6fac341944b3d7fcfcda4dc9243f34a04af3e031"
+    },
+    {
+      "source": "docs/version-history.md",
+      "destination": "archive/docs/version-history.md",
+      "sha256": "052f1e18195d0c50d7fffcdbd4cb0c2c8ead077c5fc226328c52c52fe80ce142"
+    },
+    {
+      "source": "docs/video-prompting-research.md",
+      "destination": "archive/docs/video-prompting-research.md",
+      "sha256": "079bfbd7a19f93070593ce4fb5e5f24cfe5bb7adf0a87c3ef63d803b1e798d1a"
+    },
+    {
+      "source": "prompts/3d-shot-request.md",
+      "destination": "archive/prompts/3d-shot-request.md",
+      "sha256": "85e5c2199ee8720f68edc0faae697582d86b06f1b4cbcc32071c2843f9441935"
+    },
+    {
+      "source": "prompts/opening-variants.md",
+      "destination": "archive/prompts/opening-variants.md",
+      "sha256": "883d6b7da39c642b0abfe05beaf67add6d3f1bd935031b380dd7ca783738883b"
+    },
+    {
+      "source": "prompts/reference-critique.md",
+      "destination": "archive/prompts/reference-critique.md",
+      "sha256": "7e7129f8208f7f3be6e61b014b6a9968a9f7a992204d0746eccfa9773b41281a"
+    },
+    {
+      "source": "prompts/repair-video.md",
+      "destination": "archive/prompts/repair-video.md",
+      "sha256": "965d34246c62c2d19bf866dc085305d96e6b3128d8332b6137d449481a2419e3"
+    },
+    {
+      "source": "prompts/shot-plan.md",
+      "destination": "archive/prompts/shot-plan.md",
+      "sha256": "1164ca00a8524210855f1813aa7415087251257626577067dd37598b8529a83f"
+    },
+    {
+      "source": "prompts/video-request.md",
+      "destination": "archive/prompts/video-request.md",
+      "sha256": "ec7bb1039ecb994e02cfab7aa2307cf9068c0b5468fa31034e895554fa72714c"
+    },
+    {
+      "source": "AGENTS.md",
+      "destination": "archive/AGENTS.md",
+      "sha256": "d8f5efb92a2384a22a66a3cf9d0812ee6893be859b875ffe58c49c369781bec4"
+    },
+    {
+      "source": "README.md",
+      "destination": "archive/README.md",
+      "sha256": "be978d0594272e569709c3b89c3250c0adf5ab2693b63f89bbeb479af1eb7566"
+    },
+    {
+      "source": "CLAUDE.md",
+      "destination": "archive/CLAUDE.md",
+      "sha256": "2c93c51d8b6c09a6931790eb6844d5f6bdda7f94286e7c2da358246e6716f892"
+    },
+    {
+      "source": "package.json",
+      "destination": "archive/package.json",
+      "sha256": "b248fa505d27c9f7a423648001a9029335d155aca14ac20b766a1b59d793dfc1"
+    }
+  ]
+}

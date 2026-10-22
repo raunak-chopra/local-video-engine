@@ -1,0 +1,29 @@
+---
+name: video-review
+description: Review or repair a local-video-engine brief or render using exact timeline frames, contrast references, and visual evidence. Use for clipping, pacing, readability, incorrect values, or audio timing problems.
+---
+
+# Review with evidence
+
+Read `prompts/repair-video.md`, the affected brief, and its relevant implementation.
+Run `npm run review -- --brief briefs/<name>.json --output out/<name>-review.json`.
+An invalid brief or missing asset fails before a report is produced. Contrast
+flags use opaque palette colors; reading flags assume three words per second.
+Neither check establishes rendered contrast or adequate reading time.
+
+Use `npm run preview -- --brief briefs/<name>.json --output out/<name>-repair
+--frames <comma-separated-final-timeline-frames>` for the problem, settled state,
+pre-exit state, and adjacent transitions. Read actual PNGs, not only filenames or
+HTML. For very brief glitches, inspect neighboring frames and MP4 playback.
+Use `--sample motion` instead of `--frames` for automatic motion-state sampling.
+Use `prompts/reference-critique.md` for a supplied reference and concrete redesign notes.
+
+Record frame/time, concrete observed defect, expected behavior, repair scope,
+and evidence after repair. Preserve approved values/assets/copy unless asked to
+change them. FitContent prevents overflow but can make long copy too small.
+Use the phone-width sheet and full-size frames to judge the result.
+
+Run `npm run check` after code changes and re-render affected evidence. When a
+finished video is requested, render the final MP4 and report the review limits.
+Do not equate a passing typecheck, a contact sheet, or a subjective score with a
+verified soundtrack, glitch scan, or aesthetic pass.

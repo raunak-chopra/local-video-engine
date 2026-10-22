@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "id": "graphic-cut",
+  "title": "Immediate-entry checks for remaining graphic types",
+  "canvas": "square",
+  "fps": 30,
+  "scenes": [
+    {"id": "stat", "type": "stat", "durationSec": 1, "motion": {"enter": "cut", "exit": "cut"}, "props": {"value": "1,250+", "label": "Synthetic fixture", "detail": "Final value at frame zero"}},
+    {"id": "compare", "type": "compare", "durationSec": 1, "motion": {"enter": "cut", "exit": "cut"}, "props": {"headline": "Both visible on entry", "left": {"label": "A", "text": "First state"}, "right": {"label": "B", "text": "Second state"}}},
+    {"id": "chart", "type": "chart", "durationSec": 1, "motion": {"enter": "cut", "exit": "cut"}, "props": {"headline": "Settled bars on entry", "bars": [{"label": "A", "value": 20}, {"label": "B", "value": 40}], "source": "Synthetic data; not a real comparison"}},
+    {"id": "quote", "type": "quote", "durationSec": 1, "motion": {"enter": "cut", "exit": "cut"}, "props": {"quote": "A readable beginning.", "attribution": "Synthetic typography fixture"}}
+  ]
+}

@@ -1,22 +1,49 @@
 {
-  "name": "local-video-engine",
-  "version": "0.1.0",
+  "name": "personal-video-engine",
+  "version": "1.0.0",
+  "description": "A local, agent-friendly Remotion video production workspace",
+  "repository": {},
+  "license": "UNLICENSED",
   "private": true,
-  "scripts": {
-    "studio": "remotion studio src/index.ts",
-    "render": "node scripts/render.mjs",
-    "check": "tsc --noEmit && node --test tests/*.test.mjs"
-  },
   "dependencies": {
+    "@fontsource-variable/inter": "5.3.0",
+    "@fontsource-variable/noto-sans-devanagari": "5.3.0",
     "@remotion/cli": "4.0.529",
-    "@remotion/google-fonts": "4.0.529",
-    "@remotion/transitions": "4.0.529",
-    "react": "19.1.1",
-    "react-dom": "19.1.1",
-    "remotion": "4.0.529"
+    "@remotion/media": "4.0.529",
+    "@remotion/tailwind-v4": "4.0.529",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.529",
+    "tailwindcss": "4.0.0",
+    "zod": "4.5.4"
   },
   "devDependencies": {
-    "@types/react": "19.1.10",
-    "typescript": "5.9.2"
-  }
+    "@remotion/eslint-config-flat": "4.0.529",
+    "@types/node": "^22.20.5",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "9.19.0",
+    "prettier": "3.8.1",
+    "tsx": "^4.23.15",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "validate": "eslint src tools tests && tsc && npm run validate:projects && npm test",
+    "render:smeds": "remotion render SmedsOmega3Explainer out/smeds-omega3-explainer.mp4",
+    "still:smeds": "remotion still SmedsOmega3Explainer out/smeds-omega3-still.png --frame=290",
+    "render:smeds:vertical": "remotion render SmedsOmega3Vertical out/smeds-omega3-vertical.mp4",
+    "render:demo": "remotion render VideoEngineDemo out/video-engine-demo.mp4",
+    "still:demo": "remotion still VideoEngineDemo out/video-engine-demo.png --frame=270",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc",
+    "video": "tsx tools/video.ts",
+    "validate:projects": "tsx tools/validate-projects.ts",
+    "test": "tsx --test tests/stage0.test.ts tests/media.test.ts tests/clip.test.ts tests/direction.test.ts",
+    "fixtures": "tsx tools/make-fixtures.ts"
+  },
+  "sideEffects": [
+    "*.css"
+  ]
 }

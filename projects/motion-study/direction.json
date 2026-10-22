@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "projectId": "motion-study",
+  "beatGrid": {"bpm": 120, "offsetSec": 0, "beatsPerBar": 4, "provenance": "Synthetic timing grid for a silent mechanics study. No music was analyzed or supplied."},
+  "cues": [
+    {"id": "immediate-opening", "sceneId": "opening", "at": {"beat": 0}, "holdFrames": 60, "role": "hook", "purpose": "All copy visible at frame zero; no empty opening or exit fade."},
+    {"id": "settled-statement", "sceneId": "progress", "at": {"frame": 100}, "holdFrames": 20, "role": "progress", "purpose": "Inspect the spring near its settled state and the hard exit."},
+    {"id": "instant-list", "sceneId": "proof", "at": {"beat": 8}, "holdFrames": 45, "role": "proof", "purpose": "All list items appear immediately, with a fade only at the end."},
+    {"id": "held-payoff", "sceneId": "payoff", "at": {"beat": 12}, "holdFrames": 60, "role": "payoff", "purpose": "Title and CTA visible on entry and through the final frame. This study does not promise a loop."}
+  ]
+}
