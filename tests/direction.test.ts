@@ -7,6 +7,36 @@ import {spawnSync} from "node:child_process";
 import {parseProject} from "../src/engine/project-schema";
 import {fadeOpacity, graphicOpacity} from "../src/engine/fade";
 import {beatToFrame, buildReviewPlan, parseDirection} from "../src/engine/review-plan";
+import {chartDisplayValue} from "../src/engine/scenes/Chart";
+import {fitStatSize} from "../src/engine/scenes/Stat";
+import {spring} from "remotion";
+
+test("held chart labels retain supplied decimal and small values", () => {
+  for (const value of [0, 12.5, 25.6, 0.00000012, 1234.56789, 1.2e-300]) {
+    assert.equal(chartDisplayValue(value, 1), value);
+    assert.equal(chartDisplayValue(value, 1.01), value);
+  }
+  assert.equal(chartDisplayValue(38, 0), 0);
+  assert.equal(chartDisplayValue(38, 0.5), 19);
+  assert.equal(chartDisplayValue(12.5, 0.5), 6.3);
+  assert.equal(chartDisplayValue(1.2e-300, 0.99999999), 1.2e-300);
+  // Real scene timing: a spring oscillates around 1 rather than staying >= 1.
+  // The readable hold must not flash between a decimal and a rounded integer.
+  for (let frame = 70; frame < 90; frame++) {
+    for (const [i, value] of [12.5, 25.6, 38.7, 51.8, 64.9, 78].entries()) {
+      const progress = Math.min(1, spring({frame: frame - (12 + i * 6), fps: 30, config: {damping: 16, stiffness: 95}}));
+      assert.equal(chartDisplayValue(value, progress), value, `bar ${i} at frame ${frame}`);
+    }
+  }
+});
+
+test("stat fitting preserves the preferred size when possible and refuses unreadable fitting", () => {
+  assert.equal(fitStatSize(700, 230, 888, 64), 230);
+  const fitted = fitStatSize(2300, 230, 888, 64);
+  assert.equal(fitted, 88.8);
+  assert.ok(2300 * fitted / 230 <= 888);
+  assert.throws(() => fitStatSize(5000, 230, 888, 64), /different layout/);
+});
 
 const project = parseProject({version: 1, id: "study", title: "Study", fps: 30, scenes: [
   {id: "a", type: "hook", durationSec: 2, props: {headline: "A"}},
