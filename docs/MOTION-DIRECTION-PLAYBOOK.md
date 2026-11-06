@@ -214,6 +214,16 @@ Store review findings in `projects/<id>/review-notes.md` using separate statuses
 
 ## 8. Durable knowledge across agents
 
+For any owner-designated bot acting as art/creative director, use
+[the collaboration contract](CREATIVE-COLLABORATION.md). It defines who owns
+the direction, how this engine contributes ideas, how accepted intentions map
+to shots and evidence, and the optional "Grill me" interview. See the
+[29 October audit](CREATIVE-LEARNING-AUDIT-2026-10-29.md) for reference utility,
+capability drift and actual creative-review limits.
+Show relevant choices from [the option menu](CREATIVE-OPTIONS.md); the
+[deeper tags/output audit](CREATIVE-TAGS-AND-QUALITY-AUDIT-2026-10-29.md)
+records fresh cross-canvas samples and open quality defects.
+
 `AGENTS.md` is the shared routing file; `CLAUDE.md` and `GEMINI.md` point to it.
 Keep the substantial guidance here rather than duplicating it for every agent.
 Existing agent-specific skill directories may contain historical or newer

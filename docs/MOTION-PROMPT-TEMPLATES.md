@@ -83,3 +83,44 @@ and render fresh evidence at the defect and neighboring boundaries.
 Run the appropriate checks and record exactly what was reviewed.
 Do not mark full-speed, listening or phone review complete from still images.
 ```
+
+## Any collaborating creative lead / art-director handoff
+
+```text
+Read docs/CREATIVE-COLLABORATION.md and the current task.
+The owner has designated [bot name] as creative lead within [scope].
+Follow its direction and show relevant options/tradeoffs from
+docs/CREATIVE-OPTIONS.md; expose the full menu when asked. Its choices within
+this delegation do not need to be sent back for separate owner approval.
+Director/source/version/accepted scope: [record or path].
+Audience, tension and intended takeaway/feeling: [brief].
+Approved route and visual mechanism: [one specific idea].
+Creative locks: [exact copy, name, assets, source ranges, type/color roles,
+exclusions and what must survive revisions].
+Engine discretion: [choices open to exploration].
+Reference properties and do-not-copy list: [source/frame/time + observations].
+Facts/assets and unknowns: [authoritative paths and evidence].
+Delivery and sound: [canvas, fps, duration, scripts and policy].
+Acceptance and revision scope: [observable result and explicit decision gates].
+
+Return your interpretation and a direction-to-shot traceability table. Contribute
+distinct mechanisms where choices remain open. Preserve the selected route.
+Check current code for each requirement; state gaps, faithful extensions and
+fallback tradeoffs. Do not silently substitute template cards for the idea.
+Continue authorized production, prototype the highest-risk meaningful shot,
+inspect evidence and report each direction's status. Keep unperformed reviews
+pending; no claim of director acceptance without their recorded decision.
+```
+
+## Grill me / critique the brief
+
+```text
+Grill me about [project / creative problem], using
+docs/CREATIVE-COLLABORATION.md. First read existing facts, accepted direction and
+feedback. State what is already settled. Ask a focused round about material
+open choices with a recommended answer, reason and tradeoff for each.
+Challenge vague aesthetic words with concrete alternatives. Preserve locks,
+do not invent missing facts, and turn answers into a usable brief. Do not treat
+your recommendations as my choices. Continue within my authorization after
+answers; honor any explicit agreement gate I give you.
+```

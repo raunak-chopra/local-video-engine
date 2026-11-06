@@ -14,6 +14,14 @@ creator workspace, not a SaaS, render service, or multi-user editor.
   `docs/MOTION-PROMPT-TEMPLATES.md`.
 - For footage-based reels, read `docs/REEL-PLAYBOOK.md` before planning the edit;
   use its source-linked creative guidance and distinguish hypotheses from results.
+- For any collaborating creative-lead bot (e.g. Brand Manager or Spunge),
+  art-director handoffs, creative critique or "Grill me",
+  read `docs/CREATIVE-COLLABORATION.md`. Preserve accepted direction and creative
+  locks; the designated bot leads creativity and this engine follows. Show
+  relevant options/tradeoffs from `docs/CREATIVE-OPTIONS.md`, label capability
+  gaps and translate the selected direction into observable shots.
+  "Grill me" activates a focused interview; do not re-ask established decisions
+  or impose an interview on routine authorized work.
 - Inspect the current Git diff and preserve unrelated work.
 - Keep animation deterministic: derive visuals from props, the current frame,
   and the video configuration.

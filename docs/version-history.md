@@ -1,3 +1,10 @@
+## 2026-11-06 — Preserve scene layout and creative review improvements
+
+- Behavior: preserve owner changes to decimal chart labels, dense chart/list layouts and long stat fitting, plus creative review guidance and synthetic fixtures.
+- Changed files: pending scene implementations/tests, shared instructions, and creative direction/reference documents in this checkpoint.
+- Reason: resume the paused source preservation with reviewed source separated from generated media and local configuration.
+- Verification: npm run validate passed (24 tests passed, one real-media test skipped). Fresh chart-square, long-stat vertical and dense-list landscape stills were rendered and visually inspected. Playback, audio and device acceptance were not tested.
+- Rollback: revert this checkpoint commit on a feature branch. Original worktree and staging are preserved; no release or main integration is included.
 
 ## 2026-10-22 — Preserve motion direction and review-plan source
 

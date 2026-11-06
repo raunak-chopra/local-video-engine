@@ -119,6 +119,16 @@ prepared media on the main laptop. Whisper is optional for spoken clips.
 
 ## Motion direction and source research
 
+When any owner-designated bot (such as Brand Manager or Spunge) supplies art direction, use the
+[creative collaboration contract](docs/CREATIVE-COLLABORATION.md) for a faithful
+brief-to-shot handoff, capability checks and precise revisions. Say "Grill me"
+to interview the open creative decisions, or "Grill this brief" for critique.
+The [reference utility audit](docs/CREATIVE-LEARNING-AUDIT-2026-10-29.md)
+records what has been learned, what is only indexed and what still needs testing.
+Show the lead relevant choices from [the option menu](docs/CREATIVE-OPTIONS.md).
+The [deeper tags/output audit](docs/CREATIVE-TAGS-AND-QUALITY-AUDIT-2026-10-29.md)
+records fresh frame tests and known quality defects.
+
 Start with [the shared production playbook](docs/MOTION-DIRECTION-PLAYBOOK.md).
 The [research report](docs/MOTION-RESEARCH-2026-10-21.md) assesses Prompt Motion,
 the supplied Reddit discussion and related briefs with access/evidence limits.

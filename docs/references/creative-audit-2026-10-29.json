@@ -1,0 +1,444 @@
+{
+  "date": "2026-10-29",
+  "sourceCommit": "65d6390",
+  "scope": "Structural census of saved reference metadata and lab; selective source-text and image review. No model training or video experiment.",
+  "catalog": {
+    "path": "docs/references/prompt-motion/catalog-2026-10-21.json",
+    "sha256": "f85c173f8314cb36d4d7af114063e4e29016e9882dca2a8642153b00a49f82d5",
+    "entries": 1382,
+    "uniqueUrls": 1382,
+    "uniqueIds": 1382,
+    "missingFromLinks": 0,
+    "invalidHosts": 0,
+    "promptTextStatuses": [
+      "not-copied"
+    ],
+    "categoryCounts": {
+      "Films": 79,
+      "Motion graphics": 378,
+      "UI motion": 71,
+      "Art": 43,
+      "3D scenes": 136,
+      "Interactive": 56,
+      "Music": 33,
+      "Other": 19,
+      "Games": 94,
+      "Explainers": 126,
+      "Product launch": 99,
+      "Comparisons": 9,
+      "Data viz": 4,
+      "Direction": 5
+    },
+    "freshCompleteIndexVerified": false,
+    "allBodiesReviewed": false,
+    "allVideosReviewed": false
+  },
+  "lab": {
+    "path": "projects/namak-kum-tha-lab/prompts.json",
+    "sha256": "184665816bb2b455a10b401a0d7c20d4b831a1593e6cbcc91876d727142ed389",
+    "status": "not-run",
+    "experiments": [
+      {
+        "id": "nkt-01",
+        "status": "not-run",
+        "comparisonVariable": "opening order",
+        "requiredCapabilities": [
+          "prepared footage",
+          "clip trims",
+          "optional on-footage text"
+        ],
+        "reviewFocus": [
+          "dish identifiable immediately",
+          "opening promise resolved",
+          "recipe order understandable"
+        ]
+      },
+      {
+        "id": "nkt-02",
+        "status": "not-run",
+        "comparisonVariable": "opening order",
+        "requiredCapabilities": [
+          "prepared footage",
+          "clip trims",
+          "optional on-footage text"
+        ],
+        "reviewFocus": [
+          "action readable",
+          "subject clear",
+          "same body as comparison"
+        ]
+      },
+      {
+        "id": "nkt-03",
+        "status": "not-run",
+        "comparisonVariable": "sensory emphasis",
+        "requiredCapabilities": [
+          "prepared footage",
+          "clip trims",
+          "optional source audio"
+        ],
+        "reviewFocus": [
+          "visible texture",
+          "complete mini-arc",
+          "no unsupported sound claim"
+        ]
+      },
+      {
+        "id": "nkt-04",
+        "status": "not-run",
+        "comparisonVariable": "instructional focus",
+        "requiredCapabilities": [
+          "prepared footage",
+          "clip trims",
+          "on-footage text"
+        ],
+        "reviewFocus": [
+          "technique visible",
+          "explanation supported",
+          "muted comprehension"
+        ]
+      },
+      {
+        "id": "nkt-05",
+        "status": "not-run",
+        "comparisonVariable": "ingredient presentation",
+        "requiredCapabilities": [
+          "prepared footage",
+          "on-footage ingredient text",
+          "font registry"
+        ],
+        "reviewFocus": [
+          "quantity accuracy",
+          "longest ingredient fits",
+          "label maps to correct action"
+        ]
+      },
+      {
+        "id": "nkt-06",
+        "status": "not-run",
+        "comparisonVariable": "step hierarchy",
+        "requiredCapabilities": [
+          "prepared footage",
+          "step overlays",
+          "configurable safe area"
+        ],
+        "reviewFocus": [
+          "steps map to footage",
+          "stable placement",
+          "edited time distinguished from cooking time"
+        ]
+      },
+      {
+        "id": "nkt-07",
+        "status": "not-run",
+        "comparisonVariable": "cut continuity",
+        "requiredCapabilities": [
+          "prepared footage",
+          "clip trims",
+          "crop focus"
+        ],
+        "reviewFocus": [
+          "motion direction at cut",
+          "no misleading step omission",
+          "food remains identifiable"
+        ]
+      },
+      {
+        "id": "nkt-08",
+        "status": "not-run",
+        "comparisonVariable": "payoff hold",
+        "requiredCapabilities": [
+          "prepared footage",
+          "clip trims",
+          "review cues"
+        ],
+        "reviewFocus": [
+          "time recovered without lost instruction",
+          "hold shows useful information",
+          "same total duration"
+        ]
+      },
+      {
+        "id": "nkt-09",
+        "status": "not-run",
+        "comparisonVariable": "brand placement",
+        "requiredCapabilities": [
+          "prepared footage",
+          "optional brand overlay",
+          "graphic end card"
+        ],
+        "reviewFocus": [
+          "no delayed subject",
+          "brand readable",
+          "food unobscured"
+        ]
+      },
+      {
+        "id": "nkt-10",
+        "status": "not-run",
+        "comparisonVariable": "typographic density",
+        "requiredCapabilities": [
+          "text overlays",
+          "font registry",
+          "configurable safe area"
+        ],
+        "reviewFocus": [
+          "reading order",
+          "longest copy",
+          "facts retained"
+        ]
+      },
+      {
+        "id": "nkt-11",
+        "status": "not-run",
+        "comparisonVariable": "script treatment",
+        "requiredCapabilities": [
+          "mixed-script runs",
+          "font registry",
+          "text overlays"
+        ],
+        "reviewFocus": [
+          "translation reviewed",
+          "Devanagari shaping",
+          "readable exposure in both variants"
+        ]
+      },
+      {
+        "id": "nkt-12",
+        "status": "not-run",
+        "comparisonVariable": "source sound emphasis",
+        "requiredCapabilities": [
+          "source audio",
+          "layered audio for comparison",
+          "listening review"
+        ],
+        "reviewFocus": [
+          "visible sound source",
+          "no doubled recording",
+          "muted comprehension"
+        ]
+      },
+      {
+        "id": "nkt-13",
+        "status": "not-run",
+        "comparisonVariable": "music alignment",
+        "requiredCapabilities": [
+          "music layer",
+          "manual music markers",
+          "direction cues",
+          "listening review"
+        ],
+        "reviewFocus": [
+          "track alignment verified",
+          "technique still readable",
+          "off-grid decisions documented"
+        ]
+      },
+      {
+        "id": "nkt-14",
+        "status": "not-run",
+        "comparisonVariable": "narrative structure",
+        "requiredCapabilities": [
+          "prepared footage",
+          "optional text overlay",
+          "optional reaction insert"
+        ],
+        "reviewFocus": [
+          "setup and payoff connected",
+          "joke supported",
+          "own footage carries story"
+        ]
+      },
+      {
+        "id": "nkt-15",
+        "status": "not-run",
+        "comparisonVariable": "problem-solution framing",
+        "requiredCapabilities": [
+          "source evidence",
+          "prepared footage",
+          "text overlays"
+        ],
+        "reviewFocus": [
+          "problem actually observed",
+          "resolution visible",
+          "no generalized unsupported claim"
+        ]
+      },
+      {
+        "id": "nkt-16",
+        "status": "not-run",
+        "comparisonVariable": "ending treatment",
+        "requiredCapabilities": [
+          "compatible source motion",
+          "precise trims",
+          "loop seam review",
+          "audio seam review if audible"
+        ],
+        "reviewFocus": [
+          "wrap motion",
+          "no duplicate endpoint pause",
+          "complete payoff"
+        ]
+      },
+      {
+        "id": "nkt-17",
+        "status": "not-run",
+        "comparisonVariable": "reference information placement",
+        "requiredCapabilities": [
+          "recipe facts",
+          "ingredient card",
+          "font registry",
+          "safe area"
+        ],
+        "reviewFocus": [
+          "readable full information",
+          "adequate hold",
+          "no missing quantities"
+        ]
+      },
+      {
+        "id": "nkt-18",
+        "status": "not-run",
+        "comparisonVariable": "viewer action",
+        "requiredCapabilities": [
+          "payoff footage",
+          "optional text overlay or end card"
+        ],
+        "reviewFocus": [
+          "payoff precedes request",
+          "single relevant action",
+          "dish unobscured"
+        ]
+      },
+      {
+        "id": "nkt-19",
+        "status": "not-run",
+        "comparisonVariable": "graphic continuity",
+        "requiredCapabilities": [
+          "source-specific visual concept",
+          "text or graphic overlays",
+          "possible reusable primitive"
+        ],
+        "reviewFocus": [
+          "motif related to recipe",
+          "footage remains dominant",
+          "two useful occurrences"
+        ]
+      },
+      {
+        "id": "nkt-20",
+        "status": "not-run",
+        "comparisonVariable": "overall direction; exploratory comparison",
+        "requiredCapabilities": [
+          "reviewed recipe",
+          "selected footage",
+          "format-specific features",
+          "comparative review"
+        ],
+        "reviewFocus": [
+          "three distinct viewer experiences",
+          "consistent facts",
+          "no causal claim from multi-variable comparison"
+        ]
+      }
+    ]
+  },
+  "assets": [
+    "assets/broll/.gitkeep",
+    "assets/ENVATO-SHOPPING-LIST.md",
+    "assets/fonts/.gitkeep",
+    "assets/footage/.gitkeep",
+    "assets/images-and-logos/.gitkeep",
+    "assets/LICENSES.md",
+    "assets/memes/.gitkeep",
+    "assets/motion-graphics/.gitkeep",
+    "assets/music/.gitkeep",
+    "assets/overlays-and-luts/.gitkeep",
+    "assets/README.md",
+    "assets/references/.gitkeep",
+    "assets/sfx/.gitkeep",
+    "assets/voiceover/.gitkeep"
+  ],
+  "inspectedExistingImages": [
+    {
+      "path": "out/motion-study/qa/contact-sheet.png",
+      "sha256": "a73b0dcd239acc6c3b6de077b961b1e54e78be5d93a2fe997483396727a6e126"
+    },
+    {
+      "path": "out/brand-manager-creative-preview/scenes.jpg",
+      "sha256": "d3e35fc2a47f274a02fcf287d200d7d58a4f3e67b4a943af3881360c2f214ddb"
+    }
+  ],
+  "freshGalleryTextPages": [
+    "https://promptmotion.org/stephanlivera-df17a2",
+    "https://promptmotion.org/twoclipping-5cba86",
+    "https://promptmotion.org/twoclipping-221cab",
+    "https://promptmotion.org/notdwd-7de38a",
+    "https://promptmotion.org/emollick-8661a8",
+    "https://promptmotion.org/anthonyriera-9b1b2a",
+    "https://promptmotion.org/lexnlin-6161a6"
+  ],
+  "reviewLimits": [
+    "Skill bodies absent in extracted text of the two skill cards",
+    "Other saved catalog bodies were not reviewed in this session",
+    "No real media selected or lab testing performed",
+    "No live director/engine bot test",
+    "No full-speed, muted, listening or target-phone review"
+  ],
+  "sourceFiles": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "5d5deab7101ade28a815388f094857989d8aeccc8dc255d236f26d52ddf186f6"
+    },
+    {
+      "path": "docs/CURRENT-TASK.md",
+      "sha256": "e3b4dca3700114451df30a4c71f77e2205fe5e4a0c4d5e43dc574d51c626e46c"
+    },
+    {
+      "path": "src/engine/project-schema.ts",
+      "sha256": "d7c474a018fd9b692db4520078b2b1c42064f4ffe0f7e82e4e2c74844193409c"
+    },
+    {
+      "path": "src/engine/review-plan.ts",
+      "sha256": "1eb1d07b95c7eca809400561050bb6f7887f5834614f056035035c4bf5673b7f"
+    },
+    {
+      "path": "src/engine/scenes/Clip.tsx",
+      "sha256": "002997ab6386dd8fedfa7677cf3f2a1c319e9f55dcd986e919a58dec7ba09fbc"
+    },
+    {
+      "path": "tools/video.ts",
+      "sha256": "dca09392d3a0404e4c20132d5f727eeaf94325d218e6c7f277ebd4eefc875d60"
+    },
+    {
+      "path": "package.json",
+      "sha256": "43baecda32d3c65b65d0af358f95dfbe729d444adf74f70846e6d8d07147a964"
+    }
+  ],
+  "verification": {
+    "validate": {
+      "exitCode": 0,
+      "lint": "passed",
+      "typescript": "passed",
+      "projectCount": 6,
+      "testsPassed": 22,
+      "testsSkipped": 1,
+      "skipReason": "Generated media fixture sources absent"
+    },
+    "doctor": {
+      "sandboxExitCode": 1,
+      "ffprobeExitCode": 3221225477,
+      "normalProcessExitCode": 0,
+      "remotion": "4.0.529",
+      "ffmpeg": "n7.1",
+      "ffprobe": "n7.1"
+    },
+    "relativeLinks": "passed",
+    "diffCheck": "passed",
+    "liveBotCollaboration": "not-run",
+    "fullSpeedPlayback": "not-performed",
+    "mutedComprehension": "not-performed",
+    "listening": "not-performed",
+    "targetPhone": "not-performed"
+  }
+}

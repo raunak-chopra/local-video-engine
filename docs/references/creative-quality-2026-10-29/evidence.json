@@ -1,0 +1,2289 @@
+{
+  "date": "2026-10-29",
+  "baselineSourceCommit": "65d6390",
+  "role": "Any owner-designated collaborating bot leads creativity; this engine follows and offers relevant options.",
+  "reviewScope": "All saved tag records; fourteen source-text samples; all eight stock graphic scene types across three canvases and chosen baseline/stress conditions. Not all reference bodies/videos, possible inputs or real-media pilots.",
+  "tagAudit": {
+    "catalogPath": "docs/references/prompt-motion/catalog-2026-10-21.json",
+    "sha256": "f85c173f8314cb36d4d7af114063e4e29016e9882dca2a8642153b00a49f82d5",
+    "rows": 1382,
+    "categorized": 1152,
+    "uncategorized": 230,
+    "categoryCounts": {
+      "Films": 79,
+      "Motion graphics": 378,
+      "UI motion": 71,
+      "Art": 43,
+      "3D scenes": 136,
+      "Interactive": 56,
+      "Music": 33,
+      "Other": 19,
+      "Games": 94,
+      "Explainers": 126,
+      "Product launch": 99,
+      "Comparisons": 9,
+      "Data viz": 4,
+      "Direction": 5
+    },
+    "sourceSamples": [
+      {
+        "category": "Films",
+        "url": "https://promptmotion.org/prompts/p-0079089a",
+        "status": "fetched",
+        "htmlSha256": "156986fe761c2d7d021ee420d83af323450f73291abe4d3caaccdbf65bb04893",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      },
+      {
+        "category": "Motion graphics",
+        "url": "https://promptmotion.org/prompts/p-0079089a-2",
+        "status": "fetched",
+        "htmlSha256": "bfd1386f0ebe52cc29c2b03ed9c7af12e63850ec6f92f900b82e9837e8aa67d9",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      },
+      {
+        "category": "UI motion",
+        "url": "https://promptmotion.org/prompts/p-010a5509",
+        "status": "fetched",
+        "htmlSha256": "7214fde721b7f3fad52907a5c20656735db255d32da9d1f69b0c281263330e02",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      },
+      {
+        "category": "Art",
+        "url": "https://promptmotion.org/prompts/p-0145e116",
+        "status": "fetched",
+        "htmlSha256": "c404ee098e200920e060972c647b60ee63d9a0d2bb3882d763b3805e4f6e15b9",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      },
+      {
+        "category": "3D scenes",
+        "url": "https://promptmotion.org/prompts/p-01c74804",
+        "status": "fetched",
+        "htmlSha256": "ad3df25ad4ed5510da268d1346fd77ca6a4ebdc3569a12b6ec79d3ec88088279",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      },
+      {
+        "category": "Interactive",
+        "url": "https://promptmotion.org/prompts/p-01eeadea",
+        "status": "fetched",
+        "htmlSha256": "2d9c92474530c7447805fcd94df593a97a5012c04c48d95ebe5bcd6692521222",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      },
+      {
+        "category": "Music",
+        "url": "https://promptmotion.org/prompts/p-01f095d7",
+        "status": "fetched",
+        "htmlSha256": "1098aab17af21c281a9cfb07c5c11b482672a3641db99816d6562a678ee4db87",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      },
+      {
+        "category": "Other",
+        "url": "https://promptmotion.org/prompts/p-0232ba60",
+        "status": "unavailable",
+        "error": "The read operation timed out",
+        "textReviewScope": null
+      },
+      {
+        "category": "Games",
+        "url": "https://promptmotion.org/prompts/p-0267c8b1",
+        "status": "fetched",
+        "htmlSha256": "8a72403f5f94951bebfb9776fe0fa2caf746ddadf1dcdd850b3e0d49f60a98f1",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      },
+      {
+        "category": "Explainers",
+        "url": "https://promptmotion.org/prompts/p-0531df0c",
+        "status": "fetched",
+        "htmlSha256": "d71b12b59026b47368096c4e683e8823a57824baf9084c060f54280d40a2bdd0",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      },
+      {
+        "category": "Product launch",
+        "url": "https://promptmotion.org/prompts/p-083ecedc",
+        "status": "fetched",
+        "htmlSha256": "6b3b7fe7522913992eb63aa99624652c26193e9923cefb5eb1648c851fce299b",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      },
+      {
+        "category": "Comparisons",
+        "url": "https://promptmotion.org/prompts/p-0a64c521",
+        "status": "fetched",
+        "htmlSha256": "ede4fabbe1a239374a684aa40504337e8f77aad35aeee9548f62d989c0ed506b",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      },
+      {
+        "category": "Data viz",
+        "url": "https://promptmotion.org/prompts/p-0c0de226",
+        "status": "fetched",
+        "htmlSha256": "bcbc7e992fb0ea90afdef41a99ac4eedfdc0c0795485ad2942c7efdd161b034f",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      },
+      {
+        "category": "Direction",
+        "url": "https://promptmotion.org/prompts/p-4a34c590",
+        "status": "fetched",
+        "htmlSha256": "51082c5dd1613a673250623e4f8f06ea3de2c94416795cb7f4a2e10c4421fa9e",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      },
+      {
+        "category": "Other",
+        "url": "https://promptmotion.org/prompts/p-04ae9391",
+        "status": "fetched",
+        "htmlSha256": "5fad290df9de0f4020d88ce8bef126941a281672bda1aff8c8b5f065af35a686",
+        "textReviewScope": "Prompt-area excerpt, up to 850 characters; not a claim of complete body or video review."
+      }
+    ]
+  },
+  "beforeSourceHashes": [
+    {
+      "path": "src/engine/scenes/Stat.tsx",
+      "sha256": "e00f7024648013c8e7c5a6717869125b82f36df4cbf01ece4da3f6838dfa7392"
+    },
+    {
+      "path": "src/engine/scenes/Chart.tsx",
+      "sha256": "8a7d918ead4ddb244654d324d97d8ecdeda5eb0a90f46291fbad823252ccd339"
+    },
+    {
+      "path": "src/engine/scenes/List.tsx",
+      "sha256": "a27cc1019b5acf055729d80990848c12d4b1ebc3fd547803050935a80f030209"
+    }
+  ],
+  "afterSourceHashes": [
+    {
+      "path": "src/engine/scenes/Stat.tsx",
+      "sha256": "a9ce052748ffefa65da9e7ce8d9a08358baec41042133550c146c38625dc97c7"
+    },
+    {
+      "path": "src/engine/scenes/Chart.tsx",
+      "sha256": "183f960e1f00453c83f8f013483fec42e3ffb7e04263289f94809d73e21ea4bd"
+    },
+    {
+      "path": "src/engine/scenes/List.tsx",
+      "sha256": "253dbdd6dc7c030489b22e71d4b5f8e1ab33a05edfa270cd50e56827d75b0be0"
+    },
+    {
+      "path": "tests/direction.test.ts",
+      "sha256": "914a250029e9934acae480086c8c92935e9156878ebb46b0b3f4ec4c13fb4027"
+    }
+  ],
+  "baselineAndStress": {
+    "status": "complete",
+    "method": "Direct stills using current ProjectAd composition and pinned Remotion 4.0.529 Node APIs; no encoded-video or playback claim.",
+    "frames": [
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "hook",
+        "frame": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-vertical-hook-f60.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "36b4aaf92d0038203e0f27605a807bd1dac9fb7a2a8d94cfc6501822955ae23f"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "statement",
+        "frame": 150,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-vertical-statement-f150.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "74a1561bb1acac39725e81c1574c854396cf0e6b444a7545c0d427ef980bef6e"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "stat",
+        "frame": 240,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-vertical-stat-f240.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "4d9cf4b35dd4c6594e9af5c450d3f92d2193db3a76df24e4f808abd7505f1dc8"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "list",
+        "frame": 330,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-vertical-list-f330.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "cd09485f1e139f5ae389c11b48918bf91bfd6d9d1d8e21761b95da665c78d515"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "compare",
+        "frame": 420,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-vertical-compare-f420.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "e943a121721a4d71f632be1b4100449ed2c572d033e0154e87bae684e0915ad8"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 510,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-vertical-chart-f510.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "e917a08e4fdbf433dcb0edb9316db526e24367ecbef1a9b207bb19b24e1c3815"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "quote",
+        "frame": 600,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-vertical-quote-f600.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "ab779d5e6418043c7dbe46018754c37eeb485bab8392052b693177bdbf9f67ff"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "endCard",
+        "frame": 690,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-vertical-endCard-f690.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "07c65b3f0d855ecec867a894306b9e2c850d6daa9f0063b99e8e3d1190752e7e"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "hook",
+        "frame": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-square-hook-f60.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "673ffd0c2cfc42730cad119c45b40b0a7cdd036c6acf68efed0f74c51ad559fc"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "statement",
+        "frame": 150,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-square-statement-f150.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "8fcd350a57c2228187431c5a2da9357e1fe913aa550d485119c240d031669e55"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "stat",
+        "frame": 240,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-square-stat-f240.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "a6fb13578e5663e345eeb6b0d7e0ec8423fc444240b30544628a9a012575a492"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "list",
+        "frame": 330,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-square-list-f330.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "7a7dc97c74c7a5e2aee31afb84f8c1a33827c8713d4bafb9da061e1d106d9a23"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "compare",
+        "frame": 420,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-square-compare-f420.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "43d94558af002a2400ea8a545a07e81f68df150f9c59a35253e08de9e7cd69db"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 510,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-square-chart-f510.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "2e98d3237eb07a588bc859e9fc4c0de9da375150d023a0b75377a45405c37f4a"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "quote",
+        "frame": 600,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-square-quote-f600.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "ba9c3339c015121ae0bf5a8d6c70216feaa687ac151d9926ffe718f179e32fa3"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "endCard",
+        "frame": 690,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-square-endCard-f690.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "d3f3c0a4d95df77eda0b6986b0400e4df5f0c275481c3700a294970abd9f2452"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "hook",
+        "frame": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-landscape-hook-f60.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "09393bce3708d373d8f056d4e6ff3591770ec4accec483c47628cc4943aad1fe"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "statement",
+        "frame": 150,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-landscape-statement-f150.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "691e7249ddb882a1d85caf48665db1e1ab944ca6dc0756b94698ae6dc37b9b2f"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "stat",
+        "frame": 240,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-landscape-stat-f240.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "c337fb5681403f1e3f141ea6264cc9e4e4438bca966bece7a98f0eacfc726cd1"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "list",
+        "frame": 330,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-landscape-list-f330.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "7f371a0424c7bfc94d378022e9dc21240c56756fa7bec84a9960f851bff2f7cd"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "compare",
+        "frame": 420,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-landscape-compare-f420.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "148c96c6f66618184895014bd955b1fec566ca38067bd2d7d778f049e9e47095"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 510,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-landscape-chart-f510.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "3481e632ab420305148bd86bc7cbfa1e4745b95437f909056e8490523a294d32"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "quote",
+        "frame": 600,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-landscape-quote-f600.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "a3fdfc5ef0d459a4a2af8b17e0e51bae732f74958361b08b9bda348aa9b1b6e4"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "endCard",
+        "frame": 690,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-landscape-endCard-f690.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "63611cadb800695d44ef57b65cb062e2e733d1e4fd79d5d607c81424f7d71da6"
+      },
+      {
+        "kind": "stress",
+        "canvas": "vertical",
+        "scene": "hook",
+        "frame": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-vertical-hook-f60.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "19f567ab3b4c7dc7377befe4623d8cf76e02fb4354977bdadcf0aa39ab1e6d75"
+      },
+      {
+        "kind": "stress",
+        "canvas": "vertical",
+        "scene": "statement",
+        "frame": 150,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-vertical-statement-f150.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "38acb518b273ddd7f25ba996e6c16c3c1a6e35f059a64f056e0685ebb4bd53f1"
+      },
+      {
+        "kind": "stress",
+        "canvas": "vertical",
+        "scene": "stat",
+        "frame": 240,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-vertical-stat-f240.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "e447879cea59717e1676b767db7a87f2dbe710cf3aee6c78197f85a5b705baf0"
+      },
+      {
+        "kind": "stress",
+        "canvas": "vertical",
+        "scene": "list",
+        "frame": 330,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-vertical-list-f330.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "19a95b8d5c32264dad60cf3d983333836c5356deaf2945e704450731233c0b66"
+      },
+      {
+        "kind": "stress",
+        "canvas": "vertical",
+        "scene": "compare",
+        "frame": 420,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-vertical-compare-f420.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "0e2705f0200e77f5c713052ba7cc3f40d28ae2d20067d3a6555c72486a9bc74c"
+      },
+      {
+        "kind": "stress",
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 510,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-vertical-chart-f510.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "8dde0e61bbed920e90259c905c3137db5350939b42e784b28c82a6ecf3b05bbb"
+      },
+      {
+        "kind": "stress",
+        "canvas": "vertical",
+        "scene": "quote",
+        "frame": 600,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-vertical-quote-f600.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "5e726f5eb4c441fe426c1776150c55507154d34053efb52e6c9c96f446c2c921"
+      },
+      {
+        "kind": "stress",
+        "canvas": "vertical",
+        "scene": "endCard",
+        "frame": 690,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-vertical-endCard-f690.png",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "62869abbb2699df7341c524c90b01cfe821aa9813d675b3f4512883de13f2eef"
+      },
+      {
+        "kind": "stress",
+        "canvas": "square",
+        "scene": "hook",
+        "frame": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-square-hook-f60.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "8e2d7e4903b6ba654e8aa1f8bd4a5c47b45a26a501d3944b0e96004ec97f7133"
+      },
+      {
+        "kind": "stress",
+        "canvas": "square",
+        "scene": "statement",
+        "frame": 150,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-square-statement-f150.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "a44c35ce745dfca77e074819b806d24709fd4bb0a4eba7b95bf904be89a2c599"
+      },
+      {
+        "kind": "stress",
+        "canvas": "square",
+        "scene": "stat",
+        "frame": 240,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-square-stat-f240.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "9031a3975bb0d8011381fb41884f808652bbcbf1b565acecbfadb3048b8cb9a2"
+      },
+      {
+        "kind": "stress",
+        "canvas": "square",
+        "scene": "list",
+        "frame": 330,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-square-list-f330.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "d6dab51228d2fe01068e0c7840c3a941003865fdfdd148df7c0d6fe76d415b8a"
+      },
+      {
+        "kind": "stress",
+        "canvas": "square",
+        "scene": "compare",
+        "frame": 420,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-square-compare-f420.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "ed98a3f307693ed1a5e2ed76733257fc9217b44cffdcab91942f81f756219ec7"
+      },
+      {
+        "kind": "stress",
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 510,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-square-chart-f510.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "689de85f1c6b789f2f31677c5e545826400edec758fdfa9b2ad8dc087ed755d0"
+      },
+      {
+        "kind": "stress",
+        "canvas": "square",
+        "scene": "quote",
+        "frame": 600,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-square-quote-f600.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "ef7efe8bd28a4f475ecd0322a5024693570b0b06c398ea4552e643edcb9aa833"
+      },
+      {
+        "kind": "stress",
+        "canvas": "square",
+        "scene": "endCard",
+        "frame": 690,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-square-endCard-f690.png",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "9d58c684e2842ee8c15d05795dcd4cb1be471f8d7b5516611c2564a95adc173a"
+      },
+      {
+        "kind": "stress",
+        "canvas": "landscape",
+        "scene": "hook",
+        "frame": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-landscape-hook-f60.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "8e499f1d4fe093cd0d593f5a337581d284d4079a6e9c9a869efc3c482cbac0ab"
+      },
+      {
+        "kind": "stress",
+        "canvas": "landscape",
+        "scene": "statement",
+        "frame": 150,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-landscape-statement-f150.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "a2c6432c87d3c7e23136a8fdef4bf3ab2d3151cdc05735543a80be0567731d85"
+      },
+      {
+        "kind": "stress",
+        "canvas": "landscape",
+        "scene": "stat",
+        "frame": 240,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-landscape-stat-f240.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "f9f5e9a566762792a716c8ae6ee577d15338c1efe57eba2f618ce054bfcb51df"
+      },
+      {
+        "kind": "stress",
+        "canvas": "landscape",
+        "scene": "list",
+        "frame": 330,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-landscape-list-f330.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "637ae3cef63a2079630c63373726fd993ed461344003d4c54f45f7141e568f67"
+      },
+      {
+        "kind": "stress",
+        "canvas": "landscape",
+        "scene": "compare",
+        "frame": 420,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-landscape-compare-f420.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "181a9b95f72274be7363fe15814faebb5c9aeb2e29b68a474d42c2610fa8211b"
+      },
+      {
+        "kind": "stress",
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 510,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-landscape-chart-f510.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "9640cc45968459d6b3f1f6cba580d13a3d29e97dc80fcb3edef8cdadea444fa5"
+      },
+      {
+        "kind": "stress",
+        "canvas": "landscape",
+        "scene": "quote",
+        "frame": 600,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-landscape-quote-f600.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "0ab68874e67e6b1ea92982a0728f5f14f968013bb689b3800dad832a683052a4"
+      },
+      {
+        "kind": "stress",
+        "canvas": "landscape",
+        "scene": "endCard",
+        "frame": 690,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-landscape-endCard-f690.png",
+        "width": 1920,
+        "height": 1080,
+        "sha256": "d2871bc85c00f48768a63bbb0eab31387124138462a5d5f4d9826bfd5344e469"
+      }
+    ],
+    "inputs": [
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-vertical-props.json",
+        "sha256": "5427b0d6119f95c5d8712d4617daeb13f16f1d15ae882e489ec4f9b5ae0a27dc"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-square-props.json",
+        "sha256": "2708e88f925d66a87ea80d245d12e60a99c554adbe3d138feb40537f3686bf36"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\baseline-landscape-props.json",
+        "sha256": "1a10d02449890eb117cbdc73ed1800e02241ebeea23b6f245374eb13f168734e"
+      },
+      {
+        "kind": "stress",
+        "canvas": "vertical",
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-vertical-props.json",
+        "sha256": "47cb3b2cd4dbfee2c21413d24782df5c2f5e3608267a8f93f23d3cd7615786e4"
+      },
+      {
+        "kind": "stress",
+        "canvas": "square",
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-square-props.json",
+        "sha256": "fa21b3054ec232855288aafaf462bccb41b53f56fc0741f7e0a52edf1a90c6dc"
+      },
+      {
+        "kind": "stress",
+        "canvas": "landscape",
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\stress-landscape-props.json",
+        "sha256": "5f6f7341394d2f739af44f4bde7be302c3bb621c4f5a6415ddb19132307ea3b3"
+      }
+    ]
+  },
+  "boundaries": {
+    "status": "complete",
+    "frames": [
+      {
+        "canvas": "vertical",
+        "scene": "hook",
+        "frame": 0,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-hook-f0.png",
+        "sha256": "ab2571ef2713721bc3f573c7f0ad296c612d8a5b72e3712cebfb01f8b994d7b9"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "hook",
+        "frame": 1,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-hook-f1.png",
+        "sha256": "bca465a57a78a1951d543fcddfc86d3885487ff85f4f5709cc88869b736b38df"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "hook",
+        "frame": 89,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-hook-f89.png",
+        "sha256": "c4a26e5919659697a2cb206521daceb31a3c82c0fea489d30e437c9559f730ae"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "statement",
+        "frame": 90,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-statement-f90.png",
+        "sha256": "ab2571ef2713721bc3f573c7f0ad296c612d8a5b72e3712cebfb01f8b994d7b9"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "statement",
+        "frame": 91,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-statement-f91.png",
+        "sha256": "f906e6b49e132a261f857a217ed26d719916457b3f8a93221bffef9440ea9f31"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "statement",
+        "frame": 179,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-statement-f179.png",
+        "sha256": "1be525cda48c9ef9bc94e7ec61a0e19c49510272d8c4e0413440d41968ba3bc6"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "stat",
+        "frame": 180,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-stat-f180.png",
+        "sha256": "ab2571ef2713721bc3f573c7f0ad296c612d8a5b72e3712cebfb01f8b994d7b9"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "stat",
+        "frame": 181,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-stat-f181.png",
+        "sha256": "59eff18751cdd86a3dcd919851b66ee54e96af34483f7fbf5fc518c7ca7d6747"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "stat",
+        "frame": 269,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-stat-f269.png",
+        "sha256": "422756cdf3ff8c6e9eec99b09f979ef61f135b499195e171c89908e920039917"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "list",
+        "frame": 270,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-list-f270.png",
+        "sha256": "ab2571ef2713721bc3f573c7f0ad296c612d8a5b72e3712cebfb01f8b994d7b9"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "list",
+        "frame": 271,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-list-f271.png",
+        "sha256": "88938a5d23c5ff824042521c850660343d3517dd661d180642126826f684fc55"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "list",
+        "frame": 359,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-list-f359.png",
+        "sha256": "eb0c5ff15732363d2f49bf662a8d9f152ba9f6b6bd95c71672977dbbfbd06cbe"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "compare",
+        "frame": 360,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-compare-f360.png",
+        "sha256": "ab2571ef2713721bc3f573c7f0ad296c612d8a5b72e3712cebfb01f8b994d7b9"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "compare",
+        "frame": 361,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-compare-f361.png",
+        "sha256": "e9551359f8776b97f347067b928bb995e6ea1c98350d0d631435f2ae951f13b2"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "compare",
+        "frame": 449,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-compare-f449.png",
+        "sha256": "6d4c4c0458def5dba2e058b698d5bba1135c43f813f9bb4b556a7c8d86925e03"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 450,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-chart-f450.png",
+        "sha256": "ab2571ef2713721bc3f573c7f0ad296c612d8a5b72e3712cebfb01f8b994d7b9"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 451,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-chart-f451.png",
+        "sha256": "ea3bd78c5d7c2f20b15f1b35f2c4e088635bc1b7d06fceb1aa84d070d2d05e60"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 539,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-chart-f539.png",
+        "sha256": "a2c3678ec42bd147ac04e353f6e412f25379e53169d3cbd08956e10032fca482"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "quote",
+        "frame": 540,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-quote-f540.png",
+        "sha256": "ab2571ef2713721bc3f573c7f0ad296c612d8a5b72e3712cebfb01f8b994d7b9"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "quote",
+        "frame": 541,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-quote-f541.png",
+        "sha256": "6243a67238a03092155a6a906fa659add768b7cee461a77be92d27353c89d325"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "quote",
+        "frame": 629,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-quote-f629.png",
+        "sha256": "80920540ae0db41a60ad69fa4aa7d074bf0c91030e6316ffcfbd9f37887a8c3a"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "endCard",
+        "frame": 630,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-endCard-f630.png",
+        "sha256": "ab2571ef2713721bc3f573c7f0ad296c612d8a5b72e3712cebfb01f8b994d7b9"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "endCard",
+        "frame": 631,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-endCard-f631.png",
+        "sha256": "ab2571ef2713721bc3f573c7f0ad296c612d8a5b72e3712cebfb01f8b994d7b9"
+      },
+      {
+        "canvas": "vertical",
+        "scene": "endCard",
+        "frame": 719,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-vertical-endCard-f719.png",
+        "sha256": "b4fc2e33b4e9ab04c2d79b8e5ba390287061c5e0187253039856515e2a69ff9c"
+      },
+      {
+        "canvas": "square",
+        "scene": "hook",
+        "frame": 0,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-hook-f0.png",
+        "sha256": "cfa2cadc1c343447e58735e568a9ecfdf7e093a73f342b1d4a010e742ee687e4"
+      },
+      {
+        "canvas": "square",
+        "scene": "hook",
+        "frame": 1,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-hook-f1.png",
+        "sha256": "cfa2cadc1c343447e58735e568a9ecfdf7e093a73f342b1d4a010e742ee687e4"
+      },
+      {
+        "canvas": "square",
+        "scene": "hook",
+        "frame": 89,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-hook-f89.png",
+        "sha256": "a94ba41afe1fe51caa9e5fe65297554a96756c36db81c4ba532e2b7859398cb3"
+      },
+      {
+        "canvas": "square",
+        "scene": "statement",
+        "frame": 90,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-statement-f90.png",
+        "sha256": "cfa2cadc1c343447e58735e568a9ecfdf7e093a73f342b1d4a010e742ee687e4"
+      },
+      {
+        "canvas": "square",
+        "scene": "statement",
+        "frame": 91,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-statement-f91.png",
+        "sha256": "162126b1d558adf7573927f1b5a40d63f03dbaac72d27e5a21914e031fb9471e"
+      },
+      {
+        "canvas": "square",
+        "scene": "statement",
+        "frame": 179,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-statement-f179.png",
+        "sha256": "43c66fda9ceafb45638d21283e263af7b4c32ae60dd4f8cc38b42b783feb0464"
+      },
+      {
+        "canvas": "square",
+        "scene": "stat",
+        "frame": 180,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-stat-f180.png",
+        "sha256": "cfa2cadc1c343447e58735e568a9ecfdf7e093a73f342b1d4a010e742ee687e4"
+      },
+      {
+        "canvas": "square",
+        "scene": "stat",
+        "frame": 181,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-stat-f181.png",
+        "sha256": "fb31b4a89ee3fbba091181a2cf876535e3e28ecc75562e9f480ab9a646070461"
+      },
+      {
+        "canvas": "square",
+        "scene": "stat",
+        "frame": 269,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-stat-f269.png",
+        "sha256": "35632081a50f01557ae6eff80d278cca21a182a37d885024a01bcace560d8b36"
+      },
+      {
+        "canvas": "square",
+        "scene": "list",
+        "frame": 270,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-list-f270.png",
+        "sha256": "cfa2cadc1c343447e58735e568a9ecfdf7e093a73f342b1d4a010e742ee687e4"
+      },
+      {
+        "canvas": "square",
+        "scene": "list",
+        "frame": 271,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-list-f271.png",
+        "sha256": "15362ffdd43ce8da95fb0e140744a592116c77f38b1f8c9b332a197b97e5c7ef"
+      },
+      {
+        "canvas": "square",
+        "scene": "list",
+        "frame": 359,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-list-f359.png",
+        "sha256": "3cb929963513428f45dd96a94eb424a40199cb0dd32e6e28d1fa0478a158e29c"
+      },
+      {
+        "canvas": "square",
+        "scene": "compare",
+        "frame": 360,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-compare-f360.png",
+        "sha256": "cfa2cadc1c343447e58735e568a9ecfdf7e093a73f342b1d4a010e742ee687e4"
+      },
+      {
+        "canvas": "square",
+        "scene": "compare",
+        "frame": 361,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-compare-f361.png",
+        "sha256": "a8f4b0c0bba571b872b23bb3df5a56a2f9212962d983d5ba69ebe661925f1d24"
+      },
+      {
+        "canvas": "square",
+        "scene": "compare",
+        "frame": 449,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-compare-f449.png",
+        "sha256": "9bb892bf25095273a6b54153f1b9b90d3de1f306d7d327635e1ed474a94e1b15"
+      },
+      {
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 450,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-chart-f450.png",
+        "sha256": "cfa2cadc1c343447e58735e568a9ecfdf7e093a73f342b1d4a010e742ee687e4"
+      },
+      {
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 451,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-chart-f451.png",
+        "sha256": "ac7e2310baa996adaffd50d95d3bff2af3868b632723ed52bb93230d7a13d44f"
+      },
+      {
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 539,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-chart-f539.png",
+        "sha256": "f91cbbea190a012e249f6dbeaaf29de01329f42feddb875b1187700dc80bb4c7"
+      },
+      {
+        "canvas": "square",
+        "scene": "quote",
+        "frame": 540,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-quote-f540.png",
+        "sha256": "cfa2cadc1c343447e58735e568a9ecfdf7e093a73f342b1d4a010e742ee687e4"
+      },
+      {
+        "canvas": "square",
+        "scene": "quote",
+        "frame": 541,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-quote-f541.png",
+        "sha256": "38ccf0b02e93b827b4e7a4e0630d1dfccbe669cde0cbee26d887f55182f48226"
+      },
+      {
+        "canvas": "square",
+        "scene": "quote",
+        "frame": 629,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-quote-f629.png",
+        "sha256": "184f14c41754ab074551b0928adf54b1305ae6b2eabde131189661ed18417b98"
+      },
+      {
+        "canvas": "square",
+        "scene": "endCard",
+        "frame": 630,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-endCard-f630.png",
+        "sha256": "cfa2cadc1c343447e58735e568a9ecfdf7e093a73f342b1d4a010e742ee687e4"
+      },
+      {
+        "canvas": "square",
+        "scene": "endCard",
+        "frame": 631,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-endCard-f631.png",
+        "sha256": "cfa2cadc1c343447e58735e568a9ecfdf7e093a73f342b1d4a010e742ee687e4"
+      },
+      {
+        "canvas": "square",
+        "scene": "endCard",
+        "frame": 719,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-square-endCard-f719.png",
+        "sha256": "5eeb595f62ed3d400fa6edfd6e18da203e50dae736475248827b52c96e0fa738"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "hook",
+        "frame": 0,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-hook-f0.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "hook",
+        "frame": 1,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-hook-f1.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "hook",
+        "frame": 89,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-hook-f89.png",
+        "sha256": "e4e8f6d5338d04dc104c5d7725f389473060705e5fe19a10cede86f804830a14"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "statement",
+        "frame": 90,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-statement-f90.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "statement",
+        "frame": 91,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-statement-f91.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "statement",
+        "frame": 179,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-statement-f179.png",
+        "sha256": "f4b69e3ac14d4112d25565824356a558aa531ce939fe4eca85f895f868605d73"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "stat",
+        "frame": 180,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-stat-f180.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "stat",
+        "frame": 181,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-stat-f181.png",
+        "sha256": "f2e5d4b9988a3c55eb5e7eeece4d8e0a3e50bb92e94b275a946ca5b99143fda7"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "stat",
+        "frame": 269,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-stat-f269.png",
+        "sha256": "fdab17d4b38dff88437000099ab5014ac89a49b0105363fbf00dd5433c5f5a9b"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "list",
+        "frame": 270,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-list-f270.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "list",
+        "frame": 271,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-list-f271.png",
+        "sha256": "a7b622b9ac43a6dabf8af4604f682a6643a37a6fb6e49a64b698025377cc8b9b"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "list",
+        "frame": 359,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-list-f359.png",
+        "sha256": "2d5932e489ba422827ca92780126f009662c6cc1f2074b803d94db66f7fe8430"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "compare",
+        "frame": 360,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-compare-f360.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "compare",
+        "frame": 361,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-compare-f361.png",
+        "sha256": "6420ebfb5199e6f48cee965ad1ab2e89191a94f8b06a5668efc1ee77144483d8"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "compare",
+        "frame": 449,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-compare-f449.png",
+        "sha256": "3bd52487f3fed56b4b6d7241723ebdf29aa94a4ffe3ff5889d610738d8959171"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 450,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-chart-f450.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 451,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-chart-f451.png",
+        "sha256": "99e623166d03b1865df6dcae3cda6a7487d4a0ecfd27161797255e0461da4b1b"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 539,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-chart-f539.png",
+        "sha256": "d5517ac994721abd64faf9894fe0fbcd558bda27afa6928051b9e8abdb67a5b1"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "quote",
+        "frame": 540,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-quote-f540.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "quote",
+        "frame": 541,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-quote-f541.png",
+        "sha256": "a5f081e71948f251ff3a43942bb5a38a5707066cd7661810755f2e01cae25e41"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "quote",
+        "frame": 629,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-quote-f629.png",
+        "sha256": "3b7744df3db8485190fc5fefa0ea6241e77293ee51f279172955bdbcf42e416a"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "endCard",
+        "frame": 630,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-endCard-f630.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "endCard",
+        "frame": 631,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-endCard-f631.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "canvas": "landscape",
+        "scene": "endCard",
+        "frame": 719,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\boundary-landscape-endCard-f719.png",
+        "sha256": "3a767ad592b72e58dbd8cc33ad4b2af7f7ad57690c523091d31ca64a8f6018fa"
+      }
+    ]
+  },
+  "repairs": {
+    "status": "complete",
+    "frames": [
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "stat",
+        "frame": 180,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-vertical-stat-f180.png",
+        "sha256": "ab2571ef2713721bc3f573c7f0ad296c612d8a5b72e3712cebfb01f8b994d7b9"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "stat",
+        "frame": 181,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-vertical-stat-f181.png",
+        "sha256": "59eff18751cdd86a3dcd919851b66ee54e96af34483f7fbf5fc518c7ca7d6747"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "stat",
+        "frame": 240,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-vertical-stat-f240.png",
+        "sha256": "4d9cf4b35dd4c6594e9af5c450d3f92d2193db3a76df24e4f808abd7505f1dc8"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "stat",
+        "frame": 269,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-vertical-stat-f269.png",
+        "sha256": "422756cdf3ff8c6e9eec99b09f979ef61f135b499195e171c89908e920039917"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "list",
+        "frame": 270,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-vertical-list-f270.png",
+        "sha256": "ab2571ef2713721bc3f573c7f0ad296c612d8a5b72e3712cebfb01f8b994d7b9"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "list",
+        "frame": 271,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-vertical-list-f271.png",
+        "sha256": "88938a5d23c5ff824042521c850660343d3517dd661d180642126826f684fc55"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "list",
+        "frame": 330,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-vertical-list-f330.png",
+        "sha256": "cd09485f1e139f5ae389c11b48918bf91bfd6d9d1d8e21761b95da665c78d515"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "list",
+        "frame": 359,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-vertical-list-f359.png",
+        "sha256": "eb0c5ff15732363d2f49bf662a8d9f152ba9f6b6bd95c71672977dbbfbd06cbe"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 450,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-vertical-chart-f450.png",
+        "sha256": "ab2571ef2713721bc3f573c7f0ad296c612d8a5b72e3712cebfb01f8b994d7b9"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 451,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-vertical-chart-f451.png",
+        "sha256": "ea3bd78c5d7c2f20b15f1b35f2c4e088635bc1b7d06fceb1aa84d070d2d05e60"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 510,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-vertical-chart-f510.png",
+        "sha256": "e917a08e4fdbf433dcb0edb9316db526e24367ecbef1a9b207bb19b24e1c3815"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 539,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-vertical-chart-f539.png",
+        "sha256": "a2c3678ec42bd147ac04e353f6e412f25379e53169d3cbd08956e10032fca482"
+      },
+      {
+        "kind": "stress",
+        "canvas": "vertical",
+        "scene": "stat",
+        "frame": 240,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-stress-vertical-stat-f240.png",
+        "sha256": "7da311a04900b5301d54fc04ba52b535a4a93fe1909ee98d9811665ffb119b33"
+      },
+      {
+        "kind": "stress",
+        "canvas": "vertical",
+        "scene": "list",
+        "frame": 330,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-stress-vertical-list-f330.png",
+        "sha256": "19a95b8d5c32264dad60cf3d983333836c5356deaf2945e704450731233c0b66"
+      },
+      {
+        "kind": "stress",
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 510,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-stress-vertical-chart-f510.png",
+        "sha256": "cc9047a342fe11d385561c7ae6e45946ac3918ed7b0b495e08a77e84efac6382"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "stat",
+        "frame": 180,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-square-stat-f180.png",
+        "sha256": "cfa2cadc1c343447e58735e568a9ecfdf7e093a73f342b1d4a010e742ee687e4"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "stat",
+        "frame": 181,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-square-stat-f181.png",
+        "sha256": "fb31b4a89ee3fbba091181a2cf876535e3e28ecc75562e9f480ab9a646070461"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "stat",
+        "frame": 240,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-square-stat-f240.png",
+        "sha256": "a6fb13578e5663e345eeb6b0d7e0ec8423fc444240b30544628a9a012575a492"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "stat",
+        "frame": 269,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-square-stat-f269.png",
+        "sha256": "35632081a50f01557ae6eff80d278cca21a182a37d885024a01bcace560d8b36"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "list",
+        "frame": 270,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-square-list-f270.png",
+        "sha256": "cfa2cadc1c343447e58735e568a9ecfdf7e093a73f342b1d4a010e742ee687e4"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "list",
+        "frame": 271,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-square-list-f271.png",
+        "sha256": "15362ffdd43ce8da95fb0e140744a592116c77f38b1f8c9b332a197b97e5c7ef"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "list",
+        "frame": 330,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-square-list-f330.png",
+        "sha256": "7a7dc97c74c7a5e2aee31afb84f8c1a33827c8713d4bafb9da061e1d106d9a23"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "list",
+        "frame": 359,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-square-list-f359.png",
+        "sha256": "3cb929963513428f45dd96a94eb424a40199cb0dd32e6e28d1fa0478a158e29c"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 450,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-square-chart-f450.png",
+        "sha256": "cfa2cadc1c343447e58735e568a9ecfdf7e093a73f342b1d4a010e742ee687e4"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 451,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-square-chart-f451.png",
+        "sha256": "ac7e2310baa996adaffd50d95d3bff2af3868b632723ed52bb93230d7a13d44f"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 510,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-square-chart-f510.png",
+        "sha256": "2e98d3237eb07a588bc859e9fc4c0de9da375150d023a0b75377a45405c37f4a"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 539,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-square-chart-f539.png",
+        "sha256": "f91cbbea190a012e249f6dbeaaf29de01329f42feddb875b1187700dc80bb4c7"
+      },
+      {
+        "kind": "stress",
+        "canvas": "square",
+        "scene": "stat",
+        "frame": 240,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-stress-square-stat-f240.png",
+        "sha256": "4dcc19cfcda4ef47f728d1b26ae993e336ef8102ff9d93fb33ba0a6d3505381d"
+      },
+      {
+        "kind": "stress",
+        "canvas": "square",
+        "scene": "list",
+        "frame": 330,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-stress-square-list-f330.png",
+        "sha256": "d02935662c31a6074a6666fb7d265c959068479aae547d72cd12df85f3e6b966"
+      },
+      {
+        "kind": "stress",
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 510,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-stress-square-chart-f510.png",
+        "sha256": "c0acf1b3ecea715fc633103b106c049a2378037e8e794363c0b72e96b00c6a82"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "stat",
+        "frame": 180,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-landscape-stat-f180.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "stat",
+        "frame": 181,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-landscape-stat-f181.png",
+        "sha256": "f2e5d4b9988a3c55eb5e7eeece4d8e0a3e50bb92e94b275a946ca5b99143fda7"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "stat",
+        "frame": 240,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-landscape-stat-f240.png",
+        "sha256": "c337fb5681403f1e3f141ea6264cc9e4e4438bca966bece7a98f0eacfc726cd1"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "stat",
+        "frame": 269,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-landscape-stat-f269.png",
+        "sha256": "fdab17d4b38dff88437000099ab5014ac89a49b0105363fbf00dd5433c5f5a9b"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "list",
+        "frame": 270,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-landscape-list-f270.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "list",
+        "frame": 271,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-landscape-list-f271.png",
+        "sha256": "a7b622b9ac43a6dabf8af4604f682a6643a37a6fb6e49a64b698025377cc8b9b"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "list",
+        "frame": 330,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-landscape-list-f330.png",
+        "sha256": "7f371a0424c7bfc94d378022e9dc21240c56756fa7bec84a9960f851bff2f7cd"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "list",
+        "frame": 359,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-landscape-list-f359.png",
+        "sha256": "2d5932e489ba422827ca92780126f009662c6cc1f2074b803d94db66f7fe8430"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 450,
+        "offset": 0,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-landscape-chart-f450.png",
+        "sha256": "0ae9c88fd762dc81113f00d36cd458a74a8252e98f4902d8f1564a8c1f1c870f"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 451,
+        "offset": 1,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-landscape-chart-f451.png",
+        "sha256": "99e623166d03b1865df6dcae3cda6a7487d4a0ecfd27161797255e0461da4b1b"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 510,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-landscape-chart-f510.png",
+        "sha256": "3481e632ab420305148bd86bc7cbfa1e4745b95437f909056e8490523a294d32"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 539,
+        "offset": 89,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-baseline-landscape-chart-f539.png",
+        "sha256": "d5517ac994721abd64faf9894fe0fbcd558bda27afa6928051b9e8abdb67a5b1"
+      },
+      {
+        "kind": "stress",
+        "canvas": "landscape",
+        "scene": "stat",
+        "frame": 240,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-stress-landscape-stat-f240.png",
+        "sha256": "8d073cbc62d419744d0bb1097eda48d6b9dc1dc452dd458b9323d3bd23e5bf28"
+      },
+      {
+        "kind": "stress",
+        "canvas": "landscape",
+        "scene": "list",
+        "frame": 330,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-stress-landscape-list-f330.png",
+        "sha256": "637ae3cef63a2079630c63373726fd993ed461344003d4c54f45f7141e568f67"
+      },
+      {
+        "kind": "stress",
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 510,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\repaired-stress-landscape-chart-f510.png",
+        "sha256": "27e8cb492d3fc610eb7f94c7d1d5207fc0060672a70fd167ec0f7e847e597469"
+      }
+    ]
+  },
+  "baselinePixelComparison": [
+    {
+      "canvas": "vertical",
+      "scene": "stat",
+      "frame": 180,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "vertical",
+      "scene": "stat",
+      "frame": 181,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "vertical",
+      "scene": "stat",
+      "frame": 240,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "vertical",
+      "scene": "stat",
+      "frame": 269,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "vertical",
+      "scene": "list",
+      "frame": 270,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "vertical",
+      "scene": "list",
+      "frame": 271,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "vertical",
+      "scene": "list",
+      "frame": 330,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "vertical",
+      "scene": "list",
+      "frame": 359,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "vertical",
+      "scene": "chart",
+      "frame": 450,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "vertical",
+      "scene": "chart",
+      "frame": 451,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "vertical",
+      "scene": "chart",
+      "frame": 510,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "vertical",
+      "scene": "chart",
+      "frame": 539,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "square",
+      "scene": "stat",
+      "frame": 180,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "square",
+      "scene": "stat",
+      "frame": 181,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "square",
+      "scene": "stat",
+      "frame": 240,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "square",
+      "scene": "stat",
+      "frame": 269,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "square",
+      "scene": "list",
+      "frame": 270,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "square",
+      "scene": "list",
+      "frame": 271,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "square",
+      "scene": "list",
+      "frame": 330,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "square",
+      "scene": "list",
+      "frame": 359,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "square",
+      "scene": "chart",
+      "frame": 450,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "square",
+      "scene": "chart",
+      "frame": 451,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "square",
+      "scene": "chart",
+      "frame": 510,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "square",
+      "scene": "chart",
+      "frame": 539,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "landscape",
+      "scene": "stat",
+      "frame": 180,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "landscape",
+      "scene": "stat",
+      "frame": 181,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "landscape",
+      "scene": "stat",
+      "frame": 240,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "landscape",
+      "scene": "stat",
+      "frame": 269,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "landscape",
+      "scene": "list",
+      "frame": 270,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "landscape",
+      "scene": "list",
+      "frame": 271,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "landscape",
+      "scene": "list",
+      "frame": 330,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "landscape",
+      "scene": "list",
+      "frame": 359,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "landscape",
+      "scene": "chart",
+      "frame": 450,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "landscape",
+      "scene": "chart",
+      "frame": 451,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "landscape",
+      "scene": "chart",
+      "frame": 510,
+      "identicalPixels": true,
+      "differenceBounds": null
+    },
+    {
+      "canvas": "landscape",
+      "scene": "chart",
+      "frame": 539,
+      "identicalPixels": true,
+      "differenceBounds": null
+    }
+  ],
+  "reviewedSheets": [
+    {
+      "path": "out/creative-quality-2026-10-29/baseline-landscape-sheet.png",
+      "sha256": "50cbdd1cd73c7454450c88b1b28693990b06379059748a59882eb3ab908828e8"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/baseline-square-sheet.png",
+      "sha256": "5fd0d0b3ef0d7cc4743d8e58c38580574db21366dc3f78d656e1cfbc75d6fc0f"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/baseline-vertical-sheet.png",
+      "sha256": "b7278b33258ea63032683c68bece76e42626ca4482759c367828877203a681c2"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/boundary-landscape-1-sheet.png",
+      "sha256": "457699ebb2aff6c17395b5b559f9cc5811b2467765b2f8ac80301b271852242f"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/boundary-landscape-2-sheet.png",
+      "sha256": "b8dddff0cf6d9696c67eb3d21a525ed8b842e08ec50c1a2e9ed34f8ead627f13"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/boundary-square-1-sheet.png",
+      "sha256": "e023e04c5752c8d0e5da5391331a415ccfd94fa280ba17e2c2c1d3b71cf92a35"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/boundary-square-2-sheet.png",
+      "sha256": "44d33e0166508a1f9032939b7798768d271490fd1a767ba7cefa3588fc13e890"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/boundary-vertical-1-sheet.png",
+      "sha256": "1e0051847b3bd51d068ffa54100adaa43f14690b05f8d7e9e06ff7241e11dd9e"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/boundary-vertical-2-sheet.png",
+      "sha256": "4840c1a0fd75bd046bf96e4983143db7b35c487e4912adf96eb47b1803336d79"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/repaired-stress-sheet.png",
+      "sha256": "7faeeeac4ef7074bf69aebcb12aeced17dadff90dd67c1083311529da6ebba9a"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/stress-landscape-sheet.png",
+      "sha256": "96a32abbf2398ebb780351c370f7b2a21d44d06a06e1e14dfffa6e1f81d0b57f"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/stress-square-sheet.png",
+      "sha256": "a6bfe4da3d04d8e260cce58887acf5b3fc8962a4c3fd2d2ff3cc9fbe0030ce90"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/stress-vertical-sheet.png",
+      "sha256": "9922b1ae330925be0bd65ad1f6bca2707dbecad1351ab15c5af3229f52668644"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/final-chart-spring-sheet.png",
+      "sha256": "dd6ec09a9f8ef5d3a549ad895a134e6ef28a5d513938396d5f215fedf0779c33"
+    }
+  ],
+  "fullSizeReviewed": [
+    {
+      "path": "out/creative-quality-2026-10-29/stress-square-chart-f510.png",
+      "sha256": "689de85f1c6b789f2f31677c5e545826400edec758fdfa9b2ad8dc087ed755d0"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/stress-landscape-stat-f240.png",
+      "sha256": "f9f5e9a566762792a716c8ae6ee577d15338c1efe57eba2f618ce054bfcb51df"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/stress-vertical-hook-f60.png",
+      "sha256": "19f567ab3b4c7dc7377befe4623d8cf76e02fb4354977bdadcf0aa39ab1e6d75"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/repaired-stress-square-chart-f510.png",
+      "sha256": "c0acf1b3ecea715fc633103b106c049a2378037e8e794363c0b72e96b00c6a82"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/repaired-stress-square-list-f330.png",
+      "sha256": "d02935662c31a6074a6666fb7d265c959068479aae547d72cd12df85f3e6b966"
+    },
+    {
+      "path": "out/creative-quality-2026-10-29/repaired-stress-vertical-stat-f240.png",
+      "sha256": "7da311a04900b5301d54fc04ba52b535a4a93fe1909ee98d9811665ffb119b33"
+    }
+  ],
+  "verification": {
+    "validate": {
+      "exitCode": 0,
+      "lint": "passed",
+      "typescript": "passed",
+      "projects": 6,
+      "testsPassed": 24,
+      "testsSkipped": 1
+    },
+    "visual": "120 initial stills reviewed through 12 sheets; 9 repaired holds reviewed in sheet and 3 full-size views; 36 repaired baseline frames pixel-identical to initially inspected originals. Final precision check: six spring holds visually inspected and six other chart holds pixel-identical to prior inspected holds.",
+    "encodedVideo": "not-rendered",
+    "fullSpeedPlayback": "not-performed",
+    "listening": "not-performed",
+    "targetPhone": "not-performed",
+    "liveBotCollaboration": "not-run",
+    "artifactIntegrity": {
+      "frames": 177,
+      "missingOrChanged": 0,
+      "sourceHashMismatches": 0,
+      "missingRelativeLinks": []
+    }
+  },
+  "repairsStatus": {
+    "longStatValue": "fixed for reviewed cases; measured fit with floor",
+    "decimalChartValues": "source precision retained through spring settling and cut entry; regression tests cover held frames 70-89 for all six staggered bars",
+    "denseSquareChart": "fixed for reviewed 6-bar case",
+    "denseSquareList": "fixed for reviewed 5-item case"
+  },
+  "remainingLimits": [
+    "No exhaustive content-size proof",
+    "No supplied-font registry or branded on-footage overlays",
+    "No generic layered audio",
+    "Real-footage pilot pending",
+    "No full review of all catalog prompt bodies or videos"
+  ],
+  "archiveFiles": [
+    {
+      "path": "docs/references/creative-quality-2026-10-29/render-audit.cjs",
+      "sha256": "8d0235a790e500f2b287227db2884677c9df8caee7bf3d8974b7d908c2d5e7d9"
+    },
+    {
+      "path": "docs/references/creative-quality-2026-10-29/render-boundaries.cjs",
+      "sha256": "2a58b4828341eb6e83af0d1f0cfcf2c70d9fb75dead39e787a8d6af3795ef992"
+    },
+    {
+      "path": "docs/references/creative-quality-2026-10-29/render-repairs.cjs",
+      "sha256": "9f7901107f55635af9bf8f397fecfab27367a52a629b343106a755ab45633d01"
+    },
+    {
+      "path": "docs/references/creative-quality-2026-10-29/make-sheets.py",
+      "sha256": "ca96a9086033770b8110c2962fbe12a8f5bb843063ee80bb0a2a174ad5257184"
+    },
+    {
+      "path": "docs/references/creative-quality-2026-10-29/make-boundary-sheets.py",
+      "sha256": "cfb47be7b711e075ec54ac8525bd83286555918c420ed1c219ba1c7aa9d97da3"
+    },
+    {
+      "path": "docs/references/creative-quality-2026-10-29/make-repair-sheet.py",
+      "sha256": "716c84081a8ba585a9a6f7ebf907c178cc2d73040ba343bb312eea80cd3e9fd4"
+    },
+    {
+      "path": "docs/references/creative-quality-2026-10-29/compare-baseline.py",
+      "sha256": "3f5d6757252f0320a50497dd6749c28f50effd7c5b8e1ab443532c367a9cc1b4"
+    },
+    {
+      "path": "docs/references/creative-quality-2026-10-29/render-final-chart.cjs",
+      "sha256": "e1e22375810c00a0925f9edc3b2961209a29a722a21ab18a80e6d478c3e8cafb"
+    },
+    {
+      "path": "docs/references/creative-quality-2026-10-29/make-final-chart-sheet.py",
+      "sha256": "75e943a5ae00ab7701f019a4ed0a11d077348c51a81c1b8f6c59a3de018df796"
+    }
+  ],
+  "firstRepairSourceHashes": [
+    {
+      "path": "src/engine/scenes/Stat.tsx",
+      "sha256": "a9ce052748ffefa65da9e7ce8d9a08358baec41042133550c146c38625dc97c7"
+    },
+    {
+      "path": "src/engine/scenes/Chart.tsx",
+      "sha256": "73884b2730035aadd68398d38eb46c25a2e3017ca7053fe59a7a59b53f2f5fa2"
+    },
+    {
+      "path": "src/engine/scenes/List.tsx",
+      "sha256": "253dbdd6dc7c030489b22e71d4b5f8e1ab33a05edfa270cd50e56827d75b0be0"
+    },
+    {
+      "path": "tests/direction.test.ts",
+      "sha256": "0e6cce1a5faa7022595124e8d6635594294ea1ea55f6e7f7c1015a84687084ac"
+    }
+  ],
+  "finalChart": {
+    "status": "complete",
+    "frames": [
+      {
+        "kind": "baseline",
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 510,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\final-baseline-vertical-chart-f510.png",
+        "sha256": "e917a08e4fdbf433dcb0edb9316db526e24367ecbef1a9b207bb19b24e1c3815"
+      },
+      {
+        "kind": "stress",
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 510,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\final-stress-vertical-chart-f510.png",
+        "sha256": "cc9047a342fe11d385561c7ae6e45946ac3918ed7b0b495e08a77e84efac6382"
+      },
+      {
+        "kind": "spring-stress",
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 520,
+        "offset": 70,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\final-spring-stress-vertical-chart-f520.png",
+        "sha256": "cc9047a342fe11d385561c7ae6e45946ac3918ed7b0b495e08a77e84efac6382"
+      },
+      {
+        "kind": "spring-stress",
+        "canvas": "vertical",
+        "scene": "chart",
+        "frame": 529,
+        "offset": 79,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\final-spring-stress-vertical-chart-f529.png",
+        "sha256": "cc9047a342fe11d385561c7ae6e45946ac3918ed7b0b495e08a77e84efac6382"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 510,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\final-baseline-square-chart-f510.png",
+        "sha256": "2e98d3237eb07a588bc859e9fc4c0de9da375150d023a0b75377a45405c37f4a"
+      },
+      {
+        "kind": "stress",
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 510,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\final-stress-square-chart-f510.png",
+        "sha256": "c0acf1b3ecea715fc633103b106c049a2378037e8e794363c0b72e96b00c6a82"
+      },
+      {
+        "kind": "spring-stress",
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 520,
+        "offset": 70,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\final-spring-stress-square-chart-f520.png",
+        "sha256": "c0acf1b3ecea715fc633103b106c049a2378037e8e794363c0b72e96b00c6a82"
+      },
+      {
+        "kind": "spring-stress",
+        "canvas": "square",
+        "scene": "chart",
+        "frame": 529,
+        "offset": 79,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\final-spring-stress-square-chart-f529.png",
+        "sha256": "c0acf1b3ecea715fc633103b106c049a2378037e8e794363c0b72e96b00c6a82"
+      },
+      {
+        "kind": "baseline",
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 510,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\final-baseline-landscape-chart-f510.png",
+        "sha256": "3481e632ab420305148bd86bc7cbfa1e4745b95437f909056e8490523a294d32"
+      },
+      {
+        "kind": "stress",
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 510,
+        "offset": 60,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\final-stress-landscape-chart-f510.png",
+        "sha256": "27e8cb492d3fc610eb7f94c7d1d5207fc0060672a70fd167ec0f7e847e597469"
+      },
+      {
+        "kind": "spring-stress",
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 520,
+        "offset": 70,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\final-spring-stress-landscape-chart-f520.png",
+        "sha256": "27e8cb492d3fc610eb7f94c7d1d5207fc0060672a70fd167ec0f7e847e597469"
+      },
+      {
+        "kind": "spring-stress",
+        "canvas": "landscape",
+        "scene": "chart",
+        "frame": 529,
+        "offset": 79,
+        "path": "C:\\Users\\rauna\\Desktop\\Bots\\local-video-engine\\out\\creative-quality-2026-10-29\\final-spring-stress-landscape-chart-f529.png",
+        "sha256": "27e8cb492d3fc610eb7f94c7d1d5207fc0060672a70fd167ec0f7e847e597469"
+      }
+    ],
+    "springOverride": {
+      "source": "stress-<canvas>-props.json",
+      "sceneIndex": 5,
+      "motion": {
+        "enter": "spring",
+        "exit": "cut"
+      }
+    },
+    "springInputSnapshots": [
+      {
+        "canvas": "vertical",
+        "path": "docs/references/creative-quality-2026-10-29/spring-vertical-props.json",
+        "sha256": "cbd88b0a4bfb93452cd3f84a3f11e06a0c4b18607ff2825e70a44e1b3af70a32"
+      },
+      {
+        "canvas": "square",
+        "path": "docs/references/creative-quality-2026-10-29/spring-square-props.json",
+        "sha256": "3c0dea131e54fdb88e331c134335cc1ff843aed88b8e5345b08d35e9139b6d9a"
+      },
+      {
+        "canvas": "landscape",
+        "path": "docs/references/creative-quality-2026-10-29/spring-landscape-props.json",
+        "sha256": "79411176a666287ba683a77239aea3361c3c7cbc69d0d68c5a5f02eeeee53d04"
+      }
+    ]
+  },
+  "finalChartPixelComparison": [
+    {
+      "kind": "baseline",
+      "canvas": "vertical",
+      "frame": 510,
+      "identicalPixels": true
+    },
+    {
+      "kind": "stress",
+      "canvas": "vertical",
+      "frame": 510,
+      "identicalPixels": true
+    },
+    {
+      "kind": "baseline",
+      "canvas": "square",
+      "frame": 510,
+      "identicalPixels": true
+    },
+    {
+      "kind": "stress",
+      "canvas": "square",
+      "frame": 510,
+      "identicalPixels": true
+    },
+    {
+      "kind": "baseline",
+      "canvas": "landscape",
+      "frame": 510,
+      "identicalPixels": true
+    },
+    {
+      "kind": "stress",
+      "canvas": "landscape",
+      "frame": 510,
+      "identicalPixels": true
+    }
+  ],
+  "totalGeneratedFrames": 177
+}

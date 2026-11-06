@@ -1,5 +1,91 @@
 # Current task: Stage 1 reel engine (slices 1-2 done)
 
+## Clarified creative-lead role and deeper output audit (2026-10-29)
+
+Owner clarified that **any collaborating bot they designate** (e.g. Brand
+Manager or Spunge) leads creativity/art direction; this engine follows, shows
+relevant options/tradeoffs and executes the selected treatment. The delegation
+does not require separate human approval for each creative choice within scope.
+Actual Brand Manager collaboration comes after this audit; no bot was messaged.
+
+- Universal role: `docs/CREATIVE-COLLABORATION.md`; complete supported/planned
+  choice menu: `docs/CREATIVE-OPTIONS.md`. Shared agent entries/templates updated.
+- Deeper findings and taste/tag discipline:
+  `docs/CREATIVE-TAGS-AND-QUALITY-AUDIT-2026-10-29.md`.
+  All 1,382 category records checked; 1,152 have one broad public category and
+  230 gallery rows are uncategorized. Fourteen categories each received a fresh
+  source-text sample (15 direct retrieval attempts, one timed-out example replaced).
+  Categories overlap in meaning and include weak/mistagged examples; never treat
+  a category as technique implementation, taste approval or output quality proof.
+- Fresh output QA: all eight graphic scene types × three canvases × baseline
+  and synthetic stress copy = 48 holds; 72 first/next/last baseline samples.
+  Original timings were normalized to three seconds per scene and captions
+  omitted for layout isolation, not changed in the source demo projects.
+- Fixed discovered defects: stat font-loaded fitting preserves full long values
+  and refuses unreadable fits; chart finished labels preserve decimals;
+  dense square 5–6-bar charts and five-item lists use compact layouts.
+  No schema change, content shortening or timeline change.
+- Repair QA: 45 further frames, nine repaired stress holds visually inspected;
+  all 36 ordinary-content holds/boundaries pixel-identical to inspected originals.
+  Twelve final chart frames cover source precision during spring settling;
+  six spring holds visually inspected and six other holds pixel-identical to
+  earlier inspected chart holds. Total fresh still evidence: 177 frames.
+  Evidence root: `out/creative-quality-2026-10-29/`. Full paths, hashes, inputs,
+  source samples and runner snapshots preserved in
+  `docs/references/creative-quality-2026-10-29/evidence.json` and adjacent files.
+- `npm.cmd run validate`: lint/TypeScript, six projects, 24 tests passed; one
+  media-fixture test skipped. Actual renders succeeded with normal process
+  access after sandbox localhost denial. No encoded video, full-speed playback,
+  listening, phone-app check or live bot collaboration was performed.
+- Still open: bespoke graphic relationships, supplied fonts/on-footage overlays,
+  layered audio and real-footage acceptance per Stage 1 roadmap. All twenty
+  owner-deferred lab experiments remain `not-run`. Unstudied reference bodies
+  and videos have not been relabelled as learned or reviewed.
+
+Next: a scoped real collaboration with Brand Manager as creative lead, using the
+menu and its chosen brief/locks. Preserve the engine dependency boundaries and
+record director feedback. Do not infer a full pilot approval from the audit.
+
+## Creative learning and director collaboration (2026-10-29)
+
+Owner requested a deep reference/learning review, better creative support for a
+Brand Manager acting as art/creative director, and a "Grill me" mode.
+
+- Audit and utility decisions: `docs/CREATIVE-LEARNING-AUDIT-2026-10-29.md`.
+  All 1,382 saved reference metadata records were structurally checked; seven
+  gallery text pages and selected primary sources were freshly reopened.
+  This is not a claim that every linked prompt body or video was reviewed.
+- Operational contract: `docs/CREATIVE-COLLABORATION.md`; qualitative creative
+  lenses, director authority/locks, capability mapping, traceable shot evidence,
+  precise revisions and optional Grill me/interview/brief/render critique modes.
+  Routed from AGENTS/CLAUDE/GEMINI, playbook, README and reusable templates.
+- Six worked desk exercises: `docs/CREATIVE-DIRECTION-EXERCISES.md`. These are
+  single-assistant rehearsals, not executed cross-bot tests or accepted renders.
+- Read-only comparison with neighboring Brand Manager found capability drift:
+  its named `prepare_edit.py` / `render.mts` / `finish.py` pipeline, brand overlays,
+  supplied-font registry and layered audio are not this checkout's implemented
+  generic project contract. Do not promise them or silently substitute templates.
+  Local Namak Kum Tha spelling/approvals also differ from neighboring records;
+  preserve both until an authoritative project handoff resolves applicability.
+- Existing images reviewed: `out/motion-study/qa/contact-sheet.png` (31 samples)
+  and `out/brand-manager-creative-preview/scenes.jpg` (seven settled scenes).
+  Clear type hierarchy, limited demonstrated conceptual range; no new visual
+  implementation or render. Playback, muted comprehension, listening and phone
+  checks were not performed. Image hashes and catalog/lab checks are saved in
+  `docs/references/creative-audit-2026-10-29.json`.
+- No media selected; assets contains guidance/placeholders only. All 20 lab
+  experiments remain `not-run`; no brand approvals, audience results or model
+  training claimed. No other workspace changed and no bot messaged.
+- Verification: `npm.cmd run validate` passed lint, TypeScript, six projects and
+  22 tests; one real-media test skipped (fixtures absent). `video doctor` passed
+  with normal process access (Remotion 4.0.529, bundled ffmpeg/ffprobe n7.1);
+  initial sandbox ffprobe exited 3221225477. New-document relative links resolve;
+  `git diff --check` passed. No runtime code changed.
+
+Next engineering milestone remains Stage 1 slice 3. Next creative acceptance
+needs an owner-selected real project and accepted director brief, followed by
+prototype, actual review, bounded revision and a recorded director decision.
+
 ## Prompt references and Namak Kum Tha lab (2026-10-21)
 
 Owner asked to collect the shared site's prompts for use with Namak Kum Tha
