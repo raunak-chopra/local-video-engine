@@ -83,6 +83,12 @@ export const buildReviewPlan = (project: Project, direction?: Direction, resolve
   for (const [index, cue] of timeline.captions.entries()) {
     for (const frame of [cue.startFrame - 1, cue.startFrame, cue.endFrame - 1, cue.endFrame]) add(frame, `caption ${index}: boundary`);
   }
+  for (const item of timeline.textOverlays) {
+    for (const frame of [item.startFrame - 1, item.startFrame, item.startFrame + 1,
+      item.startFrame + Math.floor((item.endFrame - item.startFrame) / 2), item.endFrame - 1, item.endFrame]) {
+      add(frame, `text overlay ${item.cue.id}: boundary / hold`);
+    }
+  }
   const beats: {beat: number; bar: number; frame: number}[] = [];
   if (grid) {
     const count = Math.ceil((durationInFrames / fps - grid.offsetSec) * grid.bpm / 60);

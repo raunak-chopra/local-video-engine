@@ -8,6 +8,8 @@ import {parseProject, type Project} from "./project-schema";
 import {resolveTimeline, type ResolvedTimeline} from "./resolve-timeline";
 import {renderScene} from "./scene-registry";
 import {GraphicMotionProvider} from "./graphic-motion";
+import {ProjectFonts} from "./ProjectFonts";
+import {TextOverlays} from "./TextOverlays";
 
 /**
  * Props accepted by the composition: raw project JSON, validated at render
@@ -75,22 +77,26 @@ export const calculateProjectMetadata: CalculateMetadataFunction<ResolvedProps> 
 export const ProjectComposition: React.FC<ResolvedProps> = ({resolved}) => {
   if (!resolved) throw new Error("Project was not resolved; calculateMetadata did not run.");
   const {project, timeline, media} = resolved;
+  const content = <>
+    {timeline.scenes.map((resolvedScene) => (
+      <Sequence key={resolvedScene.scene.id} from={resolvedScene.from} durationInFrames={resolvedScene.durationInFrames} name={resolvedScene.scene.id}>
+        <GraphicMotionProvider value={resolvedScene.scene.type === "clip" || resolvedScene.scene.type === "image" ? undefined : resolvedScene.scene.motion}>
+          {renderScene(resolvedScene, project.brand, media)}
+        </GraphicMotionProvider>
+      </Sequence>
+    ))}
+    <Caption cues={timeline.captions} fontFamily={project.brand.fontFamily} safe />
+    {project.version === 2 ? <TextOverlays project={project} timeline={timeline} /> : null}
+  </>;
   return (
     <AbsoluteFill
       style={{
-        background: `radial-gradient(circle at 18% 12%, ${project.brand.accent}22 0, ${project.brand.background} 55%)`,
+        background: project.brand.backgroundStyle === "flat" ? project.brand.background : `radial-gradient(circle at 18% 12%, ${project.brand.accent}22 0, ${project.brand.background} 55%)`,
         backgroundColor: project.brand.background,
       }}
     >
       <LocalFontReady />
-      {timeline.scenes.map((resolvedScene) => (
-        <Sequence key={resolvedScene.scene.id} from={resolvedScene.from} durationInFrames={resolvedScene.durationInFrames} name={resolvedScene.scene.id}>
-          <GraphicMotionProvider value={resolvedScene.scene.type === "clip" ? undefined : resolvedScene.scene.motion}>
-            {renderScene(resolvedScene, project.brand, media)}
-          </GraphicMotionProvider>
-        </Sequence>
-      ))}
-      <Caption cues={timeline.captions} fontFamily={project.brand.fontFamily} safe />
+      {project.version === 2 ? <ProjectFonts project={project} media={media}>{content}</ProjectFonts> : content}
     </AbsoluteFill>
   );
 };

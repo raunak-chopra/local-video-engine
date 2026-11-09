@@ -1,5 +1,6 @@
 import {z} from "zod";
 import {assetSchema} from "./assets";
+import {isBuiltinFont, fontSpecSchema, safeAreaSchema, textOverlaySchema} from "./text-design";
 
 export const CANVAS_PRESETS = {
   vertical: {width: 1080, height: 1920},
@@ -13,6 +14,7 @@ const brandSchema = z.strictObject({
   background: z.string().default("#06101c"),
   foreground: z.string().default("#f8fbff"),
   accent: z.string().default("#62e7ff"),
+  backgroundStyle: z.enum(["radial", "flat"]).optional(),
   fontFamily: z
     .string()
     // Inter has no Devanagari glyphs; the browser falls back per glyph to the
@@ -130,7 +132,12 @@ const clipSceneSchema = z
   })
   .refine((clip) => clip.outSec > clip.inSec, {message: "outSec must be greater than inSec", path: ["outSec"]});
 
-const reelSceneSchema = z.discriminatedUnion("type", [...sceneSchema.options, clipSceneSchema]);
+const imageSceneSchema = z.strictObject({
+  id: z.string().min(1), type: z.literal("image"),
+  asset: z.string().min(1), durationSec: z.number().positive().max(120),
+  fit: z.enum(["cover", "contain"]).default("contain"),
+});
+const reelSceneSchema = z.discriminatedUnion("type", [...sceneSchema.options, clipSceneSchema, imageSceneSchema]);
 
 /** v1 graphic scenes. */
 export type GraphicSceneSpec = z.infer<typeof sceneSchema>;
@@ -185,19 +192,35 @@ const projectV2Schema = z
     ...sharedProjectFields,
     scenes: z.array(reelSceneSchema).min(1),
     assets: z.array(assetSchema).default([]),
+    fonts: z.array(fontSpecSchema).default([]),
+    safeArea: safeAreaSchema.optional(),
+    textOverlays: z.array(textOverlaySchema).default([]),
   })
   .superRefine((project, ctx) => {
     rejectDuplicateIds(project.scenes, "scenes", ctx);
     rejectDuplicateIds(project.assets, "assets", ctx);
+    rejectDuplicateIds(project.fonts, "fonts", ctx);
+    rejectDuplicateIds(project.textOverlays, "textOverlays", ctx);
     const kinds = new Map(project.assets.map((asset) => [asset.id, asset.kind]));
+    const fonts = new Map(project.fonts.map((font) => [font.id, font]));
+    project.fonts.forEach((font, index) => {
+      if (isBuiltinFont(font.id)) ctx.addIssue({code: "custom", path: ["fonts", index, "id"], message: "built-in font ids cannot be replaced"});
+      if (kinds.get(font.asset) !== "font") ctx.addIssue({code: "custom", path: ["fonts", index, "asset"], message: `asset "${font.asset}" is not a registered font`});
+    });
+    project.textOverlays.forEach((cue, index) => cue.runs.forEach((run, runIndex) => {
+      const font = fonts.get(run.fontId);
+      if (!isBuiltinFont(run.fontId) && !font) ctx.addIssue({code: "custom", path: ["textOverlays", index, "runs", runIndex, "fontId"], message: `unknown font "${run.fontId}"`});
+      if (font && cue.style.fontWeight !== font.weight) ctx.addIssue({code: "custom", path: ["textOverlays", index, "style", "fontWeight"], message: `font "${run.fontId}" requires its registered weight ${font.weight}`});
+    }));
     project.scenes.forEach((scene, index) => {
-      if (scene.type !== "clip") return;
+      if (scene.type !== "clip" && scene.type !== "image") return;
       const kind = kinds.get(scene.asset);
-      if (kind !== "video") {
+      const expected = scene.type === "clip" ? "video" : "image";
+      if (kind !== expected) {
         ctx.addIssue({
           code: "custom",
           path: ["scenes", index, "asset"],
-          message: kind ? `asset "${scene.asset}" is ${kind}, not video` : `unknown asset "${scene.asset}"`,
+          message: kind ? `asset "${scene.asset}" is ${kind}, not ${expected}` : `unknown asset "${scene.asset}"`,
         });
       }
     });
