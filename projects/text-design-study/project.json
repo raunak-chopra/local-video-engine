@@ -1,0 +1,170 @@
+{
+  "version": 2,
+  "id": "text-design-study",
+  "title": "General-purpose text design specimen",
+  "fps": 30,
+  "canvas": "vertical",
+  "brand": {
+    "background": "#122d30",
+    "foreground": "#f5f4ed",
+    "accent": "#e1be7d",
+    "backgroundStyle": "flat"
+  },
+  "safeArea": {
+    "top": 96,
+    "right": 96,
+    "bottom": 96,
+    "left": 96
+  },
+  "scenes": [
+    {
+      "id": "title",
+      "type": "statement",
+      "durationSec": 3,
+      "props": {
+        "text": " "
+      },
+      "motion": {
+        "enter": "cut",
+        "exit": "cut"
+      }
+    },
+    {
+      "id": "interview",
+      "type": "statement",
+      "durationSec": 3,
+      "props": {
+        "text": " "
+      },
+      "motion": {
+        "enter": "cut",
+        "exit": "cut"
+      }
+    },
+    {
+      "id": "multilingual",
+      "type": "statement",
+      "durationSec": 3,
+      "props": {
+        "text": " "
+      },
+      "motion": {
+        "enter": "cut",
+        "exit": "cut"
+      }
+    }
+  ],
+  "textOverlays": [
+    {
+      "id": "title",
+      "lane": "title",
+      "startSec": 0,
+      "endSec": 3,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "runs": [
+        {
+          "text": "One engine.\nMany directions.",
+          "fontId": "inter"
+        }
+      ],
+      "style": {
+        "fontSize": 78,
+        "fontWeight": 650,
+        "color": "#f5f4ed",
+        "align": "left",
+        "verticalAlign": "center",
+        "lineHeight": 1.3
+      }
+    },
+    {
+      "id": "speaker",
+      "lane": "speaker",
+      "startSec": 3,
+      "endSec": 6,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.45
+      },
+      "runs": [
+        {
+          "text": "A conversation\nworth hearing.",
+          "fontId": "inter"
+        }
+      ],
+      "style": {
+        "fontSize": 62,
+        "fontWeight": 650,
+        "color": "#f5f4ed",
+        "align": "left",
+        "verticalAlign": "center",
+        "lineHeight": 1.3
+      }
+    },
+    {
+      "id": "lower-third",
+      "lane": "lower-third",
+      "startSec": 3,
+      "endSec": 6,
+      "box": {
+        "x": 0,
+        "y": 0.65,
+        "width": 1,
+        "height": 0.35
+      },
+      "runs": [
+        {
+          "text": "Ananya Rao\nIndependent filmmaker",
+          "fontId": "inter"
+        }
+      ],
+      "style": {
+        "fontSize": 40,
+        "fontWeight": 650,
+        "color": "#f5f4ed",
+        "align": "left",
+        "verticalAlign": "center",
+        "lineHeight": 1.3,
+        "background": "#254145",
+        "padding": 24,
+        "borderRadius": 16
+      }
+    },
+    {
+      "id": "mixed",
+      "lane": "mixed",
+      "startSec": 6,
+      "endSec": 9,
+      "box": {
+        "x": 0,
+        "y": 0.15,
+        "width": 1,
+        "height": 0.7
+      },
+      "runs": [
+        {
+          "text": "अपनी कहानी कहिए।\n",
+          "fontId": "devanagari"
+        },
+        {
+          "text": "Tell your story.",
+          "fontId": "inter"
+        }
+      ],
+      "style": {
+        "fontSize": 58,
+        "fontWeight": 650,
+        "color": "#f5f4ed",
+        "align": "left",
+        "verticalAlign": "center",
+        "lineHeight": 1.3
+      }
+    }
+  ]
+}

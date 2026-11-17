@@ -7,6 +7,7 @@ import type {MediaMap} from "../src/engine/assets";
 import {parseProject, type Project} from "../src/engine/project-schema";
 import {resolveTimeline} from "../src/engine/resolve-timeline";
 import {buildReviewPlan, parseDirection} from "../src/engine/review-plan";
+import {compareProjectData} from "../src/engine/project-diff";
 import {parseOptions} from "./cli-options";
 import {lockPathFor, mediaMapFromLock, readLock} from "./media/lock";
 import {prepareProject} from "./media/prepare";
@@ -41,6 +42,16 @@ const main = async () => {
   const raw = JSON.parse(readFileSync(projectPath, "utf8"));
   if (flags.canvas) raw.canvas = flags.canvas;
   const project = parseProject(raw);
+  if (command === "diff") {
+    const baseline = parseProject(JSON.parse(readFileSync(path.resolve(flags.against), "utf8")));
+    const changes = compareProjectData(baseline, project, flags.allow?.split(",") ?? []);
+    const unexpected = changes.filter((change) => !change.allowed);
+    console.log(JSON.stringify({baseline: path.resolve(flags.against), candidate: projectPath,
+      status: unexpected.length ? "unexpected-changes" : "within-allowed-fields", changes,
+      warning: "Field comparison does not establish visual fidelity, correct source media or creative approval."}, null, 2));
+    if (unexpected.length) process.exitCode = 1;
+    return;
+  }
   if (command === "plan") {
     // Read-only preproduction: no media lock needed, no project mutation.
     const directionPath = flags.direction ? path.resolve(flags.direction) : path.join(path.dirname(projectPath), "direction.json");

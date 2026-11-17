@@ -1,6 +1,7 @@
-export type Command = "validate" | "still" | "render" | "doctor" | "probe" | "prepare" | "studio" | "plan";
-const COMMANDS: Command[] = ["validate", "still", "render", "doctor", "probe", "prepare", "studio", "plan"];
+export type Command = "validate" | "still" | "render" | "doctor" | "probe" | "prepare" | "studio" | "plan" | "diff";
+const COMMANDS: Command[] = ["validate", "still", "render", "doctor", "probe", "prepare", "studio", "plan", "diff"];
 const VALUE_FLAGS: Record<Command, string[]> = {
+  diff: ["against", "allow"],
   plan: ["canvas", "direction", "out"],
   still: ["canvas", "frame", "out", "log"],
   render: ["canvas", "out", "log"],
@@ -12,6 +13,7 @@ const VALUE_FLAGS: Record<Command, string[]> = {
 };
 /** Flags written bare (`--check`), meaning true. */
 const SWITCH_FLAGS: Record<Command, string[]> = {
+  diff: [],
   plan: [],
   prepare: ["check", "accept-changes"],
   studio: ["no-open"],
@@ -20,7 +22,7 @@ const SWITCH_FLAGS: Record<Command, string[]> = {
 
 export const parseOptions = (args: string[]) => {
   const [command, input, ...rest] = args as [Command, string, ...string[]];
-  if (!COMMANDS.includes(command)) throw new Error("Usage: video <validate|still|render|prepare|studio|plan> <project.json> [--canvas=vertical|square|landscape]; video plan <project.json> [--direction=direction.json] [--out=review-plan.json]; video still <project.json> [--frame=N] [--out=file.png]; video render <project.json> [--out=file.mp4]; video prepare <project.json> [--check] [--accept-changes]; video doctor; video probe <media>");
+  if (!COMMANDS.includes(command)) throw new Error("Usage: video <validate|still|render|prepare|studio|plan> <project.json> [--canvas=vertical|square|landscape]; video diff <candidate.json> --against=accepted.json [--allow=scenes[0].props.headline]; video plan <project.json> [--direction=direction.json] [--out=review-plan.json]; video still <project.json> [--frame=N] [--out=file.png]; video render <project.json> [--out=file.mp4]; video prepare <project.json> [--check] [--accept-changes]; video doctor; video probe <media>");
   if (command !== "doctor" && (!input || input.startsWith("--"))) throw new Error("An input file is required.");
   if (command === "doctor" && input) throw new Error("doctor takes no arguments.");
   const flags: Record<string, string> = {};
@@ -46,6 +48,8 @@ export const parseOptions = (args: string[]) => {
   if (flags.port && !/^\d{2,5}$/.test(flags.port)) throw new Error("--port must be a number");
   if (flags.frame && !/^\d+$/.test(flags.frame)) throw new Error("--frame must be a nonnegative integer");
   if (flags.check && flags["accept-changes"]) throw new Error("--check is read-only; it cannot be combined with --accept-changes");
+  if (command === "diff" && !flags.against) throw new Error("diff requires --against=approved-project.json; optional --allow=path,path");
+  if (flags.allow && flags.allow.split(",").some((field) => !/^[a-zA-Z][a-zA-Z0-9]*(?:\[\d+\]|\.[a-zA-Z][a-zA-Z0-9]*)*$/.test(field))) throw new Error("--allow takes comma-separated project field paths, for example scenes[0].props.headline");
   const frame = Number(flags.frame ?? 0);
   if (!Number.isSafeInteger(frame)) throw new Error("--frame is too large");
   return {command, input, flags, frame};

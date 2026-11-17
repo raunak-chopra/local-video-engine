@@ -1,4 +1,5 @@
 import React from "react";
+import {Img, staticFile} from "remotion";
 import type {MediaMap} from "./assets";
 import type {Project} from "./project-schema";
 import type {ResolvedScene} from "./resolve-timeline";
@@ -24,6 +25,11 @@ export const renderScene = (
   media: MediaMap,
 ): React.ReactElement => {
   switch (scene.type) {
+    case "image": {
+      const source = media[scene.asset];
+      if (!source || source.kind !== "image") throw new Error(`Image "${scene.id}" has no prepared image`);
+      return <Img src={staticFile(source.src)} style={{width: "100%", height: "100%", objectFit: scene.fit}} />;
+    }
     case "clip": {
       const source = media[scene.asset];
       if (!source || !trim) throw new Error(`Clip "${scene.id}" has no prepared media or trim; run prepare.`);

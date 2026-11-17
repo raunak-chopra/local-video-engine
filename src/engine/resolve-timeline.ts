@@ -5,6 +5,7 @@ import {
   type SceneSpec,
 } from "./project-schema";
 import type {MediaMap} from "./assets";
+import {boxesIntersect, safeRectangle, type TextOverlay} from "./text-design";
 
 export type ResolvedScene = {
   scene: SceneSpec;
@@ -28,6 +29,7 @@ export type ResolvedTimeline = {
   durationInFrames: number;
   scenes: ResolvedScene[];
   captions: ResolvedCaption[];
+  textOverlays: {cue: TextOverlay; startFrame: number; endFrame: number}[];
 };
 
 const toFrames = (seconds: number, fps: number) => Math.round(seconds * fps);
@@ -70,6 +72,20 @@ export const resolveTimeline = (project: Project, media?: MediaMap): ResolvedTim
     return resolved;
   });
   const durationInFrames = cursor;
+  safeRectangle(width, height, project.version === 2 ? project.safeArea : undefined);
+  const textOverlays = (project.version === 2 ? project.textOverlays : []).map((cue, index) => {
+    const startFrame = toFrames(cue.startSec, fps);
+    const endFrame = toFrames(cue.endSec, fps);
+    if (endFrame <= startFrame) issues.push(`textOverlays[${index}]: span rounds to zero frames`);
+    if (endFrame > durationInFrames) issues.push(`textOverlays[${index}]: ends after the timeline`);
+    return {cue, startFrame, endFrame};
+  });
+  textOverlays.forEach((a, i) => textOverlays.slice(i + 1).forEach((b, j) => {
+    if (a.startFrame >= b.endFrame || b.startFrame >= a.endFrame) return;
+    if (a.cue.lane === b.cue.lane || boxesIntersect(a.cue.box, b.cue.box)) {
+      issues.push(`textOverlays[${i}]: overlaps textOverlays[${i + j + 1}] in lane or safe-area box`);
+    }
+  }));
 
   const captions = project.captions.map((cue, index): ResolvedCaption => {
     const startFrame = Math.round(cue.startSec * fps);
@@ -83,6 +99,7 @@ export const resolveTimeline = (project: Project, media?: MediaMap): ResolvedTim
     return {startFrame, endFrame, text: cue.text};
   });
   const ordered = captions.map((cue, index) => ({...cue, index})).sort((a, b) => a.startFrame - b.startFrame);
+  if (captions.length && textOverlays.length) issues.push("Use textOverlays for all styled text when overlays are present; mixing legacy captions has ambiguous placement");
   // Compare each cue with the furthest-reaching earlier cue, so one long cue
   // that covers several later ones reports every overlap, not only the first.
   let reach = ordered[0];
@@ -94,5 +111,5 @@ export const resolveTimeline = (project: Project, media?: MediaMap): ResolvedTim
   }
   if (issues.length > 0) throw new ProjectValidationError(issues);
 
-  return {width, height, fps, durationInFrames, scenes, captions};
+  return {width, height, fps, durationInFrames, scenes, captions, textOverlays};
 };
